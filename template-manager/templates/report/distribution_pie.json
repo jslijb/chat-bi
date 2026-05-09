@@ -1,0 +1,15 @@
+{
+  "template_id": "distribution_pie",
+  "template_type": "report",
+  "name": "分布占比报表",
+  "description": "各维度占比分布，支持饼图/环形图展示",
+  "version": "1.0",
+  "dimensions": [{"name": "category", "label": "分类维度", "type": "string"}],
+  "metrics": [
+    {"name": "value", "label": "指标值", "type": "decimal", "aggregation": "SUM"},
+    {"name": "percentage", "label": "占比", "type": "decimal", "derived": true}
+  ],
+  "features": {"pie_chart": true, "donut_chart": true, "min_percentage_threshold": 0.02},
+  "storage_engine_hint": "ADS",
+  "render_config": {"chart_type": "pie", "label_field": "category", "value_field": "value"}
+}

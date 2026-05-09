@@ -1,0 +1,5 @@
+__pycache__
+.arts
+.codeartsdoer
+# 模型缓存不入库
+.model_cache/

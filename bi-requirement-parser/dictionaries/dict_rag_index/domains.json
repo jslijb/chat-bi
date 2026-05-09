@@ -1,0 +1,280 @@
+{
+  "产品域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_product_definition"
+    ]
+  },
+  "代理人域": {
+    "tables": 4,
+    "names": [
+      "pingan_insurance_agent",
+      "pingan_insurance_agent_customer",
+      "pingan_insurance_agent_performance",
+      "pingan_insurance_agent_tool_log"
+    ]
+  },
+  "企业域": {
+    "tables": 9,
+    "names": [
+      "pingan_insurance_enterprise",
+      "pingan_insurance_enterprise_user",
+      "pingan_insurance_enterprise_policy",
+      "pingan_insurance_enterprise_claim",
+      "pingan_insurance_enterprise_risk_assessment",
+      "pingan_insurance_enterprise_health_service",
+      "pingan_insurance_enterprise_finance",
+      "pingan_insurance_enterprise_legal",
+      "pingan_insurance_enterprise_assistant"
+    ]
+  },
+  "会话域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_session"
+    ]
+  },
+  "保单域": {
+    "tables": 8,
+    "names": [
+      "pingan_insurance_policy_master",
+      "pingan_insurance_policy_risk_detail",
+      "pingan_insurance_policy_vehicle_detail",
+      "pingan_insurance_policy_insured",
+      "pingan_insurance_policy_endorsement",
+      "pingan_insurance_policy_upload_log",
+      "pingan_insurance_policy_renewal",
+      "pingan_insurance_policy_query_log"
+    ]
+  },
+  "保费域": {
+    "tables": 2,
+    "names": [
+      "pingan_insurance_premium_payment",
+      "pingan_insurance_premium_reconciliation"
+    ]
+  },
+  "其他": {
+    "tables": 29,
+    "names": [
+      "pingan_insurance_device",
+      "pingan_insurance_nonauto_policy",
+      "pingan_insurance_health_policy",
+      "pingan_insurance_pet_policy",
+      "pingan_insurance_property_policy",
+      "pingan_insurance_travel_policy",
+      "pingan_insurance_reinsurance",
+      "pingan_insurance_medical_advance",
+      "pingan_insurance_labor_fee_standard",
+      "pingan_insurance_invite_relation",
+      "pingan_insurance_outbound_call_task",
+      "pingan_insurance_violation_query_log",
+      "pingan_insurance_order_item",
+      "pingan_insurance_smart_inspection",
+      "pingan_insurance_gov_insurance_product",
+      "pingan_insurance_gov_insurance_policy",
+      "pingan_insurance_public_welfare_points",
+      "pingan_insurance_road_improvement_project",
+      "pingan_insurance_system_config",
+      "pingan_insurance_dict",
+      "pingan_insurance_region",
+      "pingan_insurance_org",
+      "pingan_insurance_subsidy_record",
+      "pingan_insurance_financial_report",
+      "pingan_insurance_shopping_cart",
+      "pingan_insurance_fleet_management",
+      "pingan_insurance_employee_benefit",
+      "pingan_insurance_welfare_entitlement",
+      "pingan_insurance_safe_driving_score"
+    ]
+  },
+  "农险域": {
+    "tables": 2,
+    "names": [
+      "pingan_insurance_agricultural_product",
+      "pingan_insurance_agricultural_policy"
+    ]
+  },
+  "反欺诈域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_anti_fraud_graph"
+    ]
+  },
+  "合规域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_compliance_report"
+    ]
+  },
+  "商城域": {
+    "tables": 2,
+    "names": [
+      "pingan_insurance_mall_product",
+      "pingan_insurance_mall_order"
+    ]
+  },
+  "商家域": {
+    "tables": 7,
+    "names": [
+      "pingan_insurance_merchant",
+      "pingan_insurance_merchant_product",
+      "pingan_insurance_merchant_score",
+      "pingan_insurance_merchant_complaint",
+      "pingan_insurance_merchant_qualification",
+      "pingan_insurance_merchant_region",
+      "pingan_insurance_merchant_service_type"
+    ]
+  },
+  "定价域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_price_factor"
+    ]
+  },
+  "客服域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_complaint_record"
+    ]
+  },
+  "查勘域": {
+    "tables": 3,
+    "names": [
+      "pingan_insurance_survey_task",
+      "pingan_insurance_surveyor",
+      "pingan_insurance_surveyor_location"
+    ]
+  },
+  "核保域": {
+    "tables": 2,
+    "names": [
+      "pingan_insurance_underwriting_rule",
+      "pingan_insurance_underwriting_log"
+    ]
+  },
+  "消息域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_inbox_message"
+    ]
+  },
+  "灾害域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_disaster_warning"
+    ]
+  },
+  "理赔域": {
+    "tables": 11,
+    "names": [
+      "pingan_insurance_claim_report",
+      "pingan_insurance_claim_vehicle",
+      "pingan_insurance_claim_injury",
+      "pingan_insurance_damage_photo",
+      "pingan_insurance_damage_assessment",
+      "pingan_insurance_damage_part_master",
+      "pingan_insurance_claim_approval",
+      "pingan_insurance_claim_payment",
+      "pingan_insurance_claim_fast_payment",
+      "pingan_insurance_claim_anti_fraud",
+      "pingan_insurance_claim_progress_query_log"
+    ]
+  },
+  "用户域": {
+    "tables": 9,
+    "names": [
+      "pingan_insurance_user",
+      "pingan_insurance_user_auth",
+      "pingan_insurance_user_profile",
+      "pingan_insurance_user_vehicle",
+      "pingan_insurance_user_risk_score",
+      "pingan_insurance_user_coupon",
+      "pingan_insurance_user_address",
+      "pingan_insurance_user_behavior_log",
+      "pingan_insurance_user_feedback"
+    ]
+  },
+  "直播域": {
+    "tables": 4,
+    "names": [
+      "pingan_insurance_live_room",
+      "pingan_insurance_live_product",
+      "pingan_insurance_live_realtime_data",
+      "pingan_insurance_live_order"
+    ]
+  },
+  "社交域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_share_record"
+    ]
+  },
+  "积分域": {
+    "tables": 3,
+    "names": [
+      "pingan_insurance_points_account",
+      "pingan_insurance_points_transaction",
+      "pingan_insurance_points_exchange_order"
+    ]
+  },
+  "系统域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_data_audit_log"
+    ]
+  },
+  "营销域": {
+    "tables": 2,
+    "names": [
+      "pingan_insurance_campaign_master",
+      "pingan_insurance_campaign_participation"
+    ]
+  },
+  "触达域": {
+    "tables": 5,
+    "names": [
+      "pingan_insurance_push_task",
+      "pingan_insurance_push_record",
+      "pingan_insurance_wechat_follower",
+      "pingan_insurance_wechat_interaction",
+      "pingan_insurance_call_record"
+    ]
+  },
+  "车服务域": {
+    "tables": 12,
+    "names": [
+      "pingan_insurance_service_order",
+      "pingan_insurance_fuel_order",
+      "pingan_insurance_fuel_station",
+      "pingan_insurance_charge_order",
+      "pingan_insurance_charge_pile",
+      "pingan_insurance_car_wash_order",
+      "pingan_insurance_car_wash_shop",
+      "pingan_insurance_designated_driver_order",
+      "pingan_insurance_maintenance_order",
+      "pingan_insurance_rescue_order",
+      "pingan_insurance_move_car_request",
+      "pingan_insurance_service_guarantee"
+    ]
+  },
+  "运营域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_signin_log"
+    ]
+  },
+  "道路安全域": {
+    "tables": 1,
+    "names": [
+      "pingan_insurance_blackspot_road"
+    ]
+  },
+  "风控域": {
+    "tables": 2,
+    "names": [
+      "pingan_insurance_blacklist",
+      "pingan_insurance_risk_hidden_danger"
+    ]
+  }
+}

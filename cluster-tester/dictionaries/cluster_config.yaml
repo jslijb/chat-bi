@@ -1,0 +1,51 @@
+# 集群测试配置
+# cluster-tester使用此配置连接Hadoop/Spark集群
+
+cluster:
+  # SSH连接配置
+  ssh:
+    host: "localhost"
+    port: 22
+    user: "hadoop"
+    key_file: "~/.ssh/id_rsa"
+
+  # HDFS配置
+  hdfs:
+    namenode: "hdfs://localhost:8020"
+    webhdfs_port: 9870
+    paimon_warehouse: "/paimon_warehouse"
+
+  # Spark配置
+  spark:
+    home: "/opt/spark"
+    master: "yarn"
+    deploy_mode: "client"
+    default_queue: "default"
+    default_executor_memory: "4g"
+    default_executor_cores: 2
+    default_num_executors: 4
+
+  # YARN配置
+  yarn:
+    resource_manager: "http://localhost:8088"
+    idle_threshold_percent: 60  # 可用资源>60%视为空闲
+
+  # OpenClaw配置
+  openclaw:
+    cron_dir: "~/.openclaw/cron"
+    log_dir: "~/.openclaw/logs"
+
+# 测试环境配置
+test:
+  # 测试数据库（与生产隔离）
+  test_catalog: "paimon"
+  test_database_prefix: "test_"
+
+  # 测试数据量限制
+  max_test_rows: 10000
+
+  # 测试超时（秒）
+  timeout_seconds: 300
+
+  # 测试结果保留天数
+  result_retention_days: 7

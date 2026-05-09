@@ -1,0 +1,24 @@
+{
+  "template_id": "anomaly_detection",
+  "template_type": "analysis",
+  "name": "异常检测分析",
+  "description": "指标异常波动检测，基于统计方法识别异常点",
+  "version": "1.0",
+  "dimensions": [
+    {"name": "metric_name", "label": "指标名称", "type": "string"},
+    {"name": "detect_date", "label": "检测日期", "type": "string", "format": "yyyy-MM-dd"}
+  ],
+  "metrics": [
+    {"name": "actual_value", "label": "实际值", "type": "decimal"},
+    {"name": "expected_value", "label": "预期值", "type": "decimal"},
+    {"name": "deviation_score", "label": "偏离分数", "type": "decimal"}
+  ],
+  "params": [
+    {"name": "detection_method", "label": "检测方法", "type": "string", "enum": ["z_score", "iqr", "mad"], "default": "z_score"},
+    {"name": "threshold", "label": "异常阈值", "type": "decimal", "default": 2.0},
+    {"name": "lookback_days", "label": "回看天数", "type": "int", "default": 30}
+  ],
+  "features": {"anomaly_chart": true, "alert": true, "root_cause_hint": true},
+  "storage_engine_hint": "ADS",
+  "render_config": {"chart_type": "line_with_anomaly", "anomaly_marker": true, "threshold_line": true}
+}

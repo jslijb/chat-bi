@@ -1,0 +1,254 @@
+{
+  "forward": {
+    "pingan_insurance_user_vehicle": {
+      "user_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_user_address": {
+      "user_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_mall_order": {
+      "shipping_address_id": "pingan_insurance_user_address",
+      "user_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_policy_master": {
+      "agent_id": "pingan_insurance_agent",
+      "product_code": "pingan_insurance_product_definition"
+    },
+    "pingan_insurance_policy_renewal": {
+      "作为原保单或新保单": "pingan_insurance_policy_master"
+    },
+    "pingan_insurance_nonauto_policy": {
+      "policy_no": "pingan_insurance_policy_master"
+    },
+    "pingan_insurance_premium_payment": {
+      "policy_no": "pingan_insurance_policy_master"
+    },
+    "pingan_insurance_claim_report": {
+      "policy_no": "pingan_insurance_policy_master"
+    },
+    "pingan_insurance_survey_task": {
+      "claim_no": "pingan_insurance_claim_report",
+      "surveyor_id": "pingan_insurance_surveyor"
+    },
+    "pingan_insurance_damage_assessment": {
+      "claim_no": "pingan_insurance_claim_report"
+    },
+    "pingan_insurance_service_order": {
+      "user_id": "pingan_insurance_user",
+      "coupon_id": "pingan_insurance_user_coupon"
+    },
+    "pingan_insurance_charge_pile": {
+      "station_id": "pingan_insurance_fuel_station"
+    },
+    "pingan_insurance_shopping_cart": {
+      "user_id": "pingan_insurance_user",
+      "product_id": "pingan_insurance_mall_product"
+    },
+    "pingan_insurance_points_exchange_order": {
+      "user_id": "pingan_insurance_user",
+      "product_id": "pingan_insurance_mall_product"
+    },
+    "pingan_insurance_campaign_participation": {
+      "user_id": "pingan_insurance_user",
+      "campaign_id": "pingan_insurance_campaign_master"
+    },
+    "pingan_insurance_user_coupon": {
+      "user_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_points_transaction": {
+      "user_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_signin_log": {
+      "user_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_share_record": {
+      "user_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_push_record": {
+      "task_id": "pingan_insurance_push_task",
+      "user_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_inbox_message": {
+      "user_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_outbound_call_task": {
+      "user_id": "pingan_insurance_user",
+      "campaign_id": "pingan_insurance_campaign_master"
+    },
+    "pingan_insurance_live_product": {
+      "room_id": "pingan_insurance_live_room",
+      "product_id": "pingan_insurance_mall_product"
+    },
+    "pingan_insurance_live_order": {
+      "user_id": "pingan_insurance_user",
+      "room_id": "pingan_insurance_live_room",
+      "product_id": "pingan_insurance_mall_product"
+    },
+    "pingan_insurance_enterprise_policy": {
+      "policy_no": "pingan_insurance_policy_master",
+      "enterprise_id": "pingan_insurance_enterprise"
+    },
+    "pingan_insurance_enterprise_claim": {
+      "claim_no": "pingan_insurance_claim_report",
+      "enterprise_id": "pingan_insurance_enterprise"
+    },
+    "pingan_insurance_enterprise_risk_assessment": {
+      "enterprise_id": "pingan_insurance_enterprise"
+    },
+    "pingan_insurance_disaster_warning": {
+      "enterprise_id": "pingan_insurance_enterprise"
+    },
+    "pingan_insurance_smart_inspection": {
+      "enterprise_id": "pingan_insurance_enterprise"
+    },
+    "pingan_insurance_enterprise_health_service": {
+      "enterprise_id": "pingan_insurance_enterprise"
+    },
+    "pingan_insurance_enterprise_finance": {
+      "enterprise_id": "pingan_insurance_enterprise"
+    },
+    "pingan_insurance_enterprise_legal": {
+      "enterprise_id": "pingan_insurance_enterprise"
+    },
+    "pingan_insurance_enterprise_assistant": {
+      "enterprise_id": "pingan_insurance_enterprise"
+    },
+    "pingan_insurance_fleet_management": {
+      "enterprise_id": "pingan_insurance_enterprise",
+      "vehicle_id": "pingan_insurance_user_vehicle",
+      "driver_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_employee_benefit": {
+      "enterprise_id": "pingan_insurance_enterprise",
+      "employee_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_agent_performance": {
+      "agent_id": "pingan_insurance_agent"
+    },
+    "pingan_insurance_agent_tool_log": {
+      "agent_id": "pingan_insurance_agent"
+    },
+    "pingan_insurance_gov_insurance_policy": {
+      "policy_no": "pingan_insurance_policy_master",
+      "user_id": "pingan_insurance_user",
+      "product_code": "pingan_insurance_gov_insurance_product"
+    },
+    "pingan_insurance_public_welfare_points": {
+      "user_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_road_improvement_project": {
+      "road_id": "pingan_insurance_blackspot_road"
+    },
+    "pingan_insurance_agricultural_policy": {
+      "policy_no": "pingan_insurance_policy_master"
+    },
+    "pingan_insurance_complaint_record": {
+      "user_id": "pingan_insurance_user"
+    },
+    "pingan_insurance_user_behavior_log": {
+      "user_id": "pingan_insurance_user",
+      "device_id": "pingan_insurance_device"
+    }
+  },
+  "reverse": {
+    "pingan_insurance_user": [
+      "pingan_insurance_user_vehicle",
+      "pingan_insurance_user_address",
+      "pingan_insurance_mall_order",
+      "pingan_insurance_service_order",
+      "pingan_insurance_shopping_cart",
+      "pingan_insurance_points_exchange_order",
+      "pingan_insurance_campaign_participation",
+      "pingan_insurance_user_coupon",
+      "pingan_insurance_points_transaction",
+      "pingan_insurance_signin_log",
+      "pingan_insurance_share_record",
+      "pingan_insurance_push_record",
+      "pingan_insurance_inbox_message",
+      "pingan_insurance_outbound_call_task",
+      "pingan_insurance_live_order",
+      "pingan_insurance_fleet_management",
+      "pingan_insurance_employee_benefit",
+      "pingan_insurance_gov_insurance_policy",
+      "pingan_insurance_public_welfare_points",
+      "pingan_insurance_complaint_record",
+      "pingan_insurance_user_behavior_log"
+    ],
+    "pingan_insurance_user_address": [
+      "pingan_insurance_mall_order"
+    ],
+    "pingan_insurance_agent": [
+      "pingan_insurance_policy_master",
+      "pingan_insurance_agent_performance",
+      "pingan_insurance_agent_tool_log"
+    ],
+    "pingan_insurance_product_definition": [
+      "pingan_insurance_policy_master"
+    ],
+    "pingan_insurance_policy_master": [
+      "pingan_insurance_policy_renewal",
+      "pingan_insurance_nonauto_policy",
+      "pingan_insurance_premium_payment",
+      "pingan_insurance_claim_report",
+      "pingan_insurance_enterprise_policy",
+      "pingan_insurance_gov_insurance_policy",
+      "pingan_insurance_agricultural_policy"
+    ],
+    "pingan_insurance_claim_report": [
+      "pingan_insurance_survey_task",
+      "pingan_insurance_damage_assessment",
+      "pingan_insurance_enterprise_claim"
+    ],
+    "pingan_insurance_surveyor": [
+      "pingan_insurance_survey_task"
+    ],
+    "pingan_insurance_user_coupon": [
+      "pingan_insurance_service_order"
+    ],
+    "pingan_insurance_fuel_station": [
+      "pingan_insurance_charge_pile"
+    ],
+    "pingan_insurance_mall_product": [
+      "pingan_insurance_shopping_cart",
+      "pingan_insurance_points_exchange_order",
+      "pingan_insurance_live_product",
+      "pingan_insurance_live_order"
+    ],
+    "pingan_insurance_campaign_master": [
+      "pingan_insurance_campaign_participation",
+      "pingan_insurance_outbound_call_task"
+    ],
+    "pingan_insurance_push_task": [
+      "pingan_insurance_push_record"
+    ],
+    "pingan_insurance_live_room": [
+      "pingan_insurance_live_product",
+      "pingan_insurance_live_order"
+    ],
+    "pingan_insurance_enterprise": [
+      "pingan_insurance_enterprise_policy",
+      "pingan_insurance_enterprise_claim",
+      "pingan_insurance_enterprise_risk_assessment",
+      "pingan_insurance_disaster_warning",
+      "pingan_insurance_smart_inspection",
+      "pingan_insurance_enterprise_health_service",
+      "pingan_insurance_enterprise_finance",
+      "pingan_insurance_enterprise_legal",
+      "pingan_insurance_enterprise_assistant",
+      "pingan_insurance_fleet_management",
+      "pingan_insurance_employee_benefit"
+    ],
+    "pingan_insurance_user_vehicle": [
+      "pingan_insurance_fleet_management"
+    ],
+    "pingan_insurance_gov_insurance_product": [
+      "pingan_insurance_gov_insurance_policy"
+    ],
+    "pingan_insurance_blackspot_road": [
+      "pingan_insurance_road_improvement_project"
+    ],
+    "pingan_insurance_device": [
+      "pingan_insurance_user_behavior_log"
+    ]
+  }
+}

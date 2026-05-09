@@ -1,0 +1,56 @@
+# EXPLAIN验证配置
+# sql-validator使用此配置控制EXPLAIN验证行为
+
+explain:
+  # 执行模式：dry_run（仅EXPLAIN不执行）或 verify（EXPLAIN+小数据量验证）
+  mode: dry_run
+
+  # 超时设置（秒）
+  timeout_seconds: 30
+
+  # 重试次数
+  max_retries: 2
+
+  # 重试间隔（秒）
+  retry_interval: 5
+
+  # 最大结果行数（验证模式时限制）
+  max_result_rows: 100
+
+validation_rules:
+  # 必须通过的规则
+  - rule_id: V-001
+    name: 语法检查
+    description: EXPLAIN不报语法错误
+    severity: critical
+
+  - rule_id: V-002
+    name: 表存在性检查
+    description: SQL中引用的所有表必须存在
+    severity: critical
+
+  - rule_id: V-003
+    name: 字段存在性检查
+    description: SQL中引用的所有字段必须存在于对应表中
+    severity: critical
+
+  - rule_id: V-004
+    name: 无SELECT星号
+    description: 禁止SELECT *，必须显式列出字段
+    severity: warning
+
+  - rule_id: V-005
+    name: 分区裁剪检查
+    description: WHERE条件必须包含分区字段过滤
+    severity: warning
+
+  - rule_id: V-006
+    name: 数据倾斜预警
+    description: GROUP BY字段基数过大时预警
+    severity: info
+
+# Spark配置（EXPLAIN执行时使用）
+spark_defaults:
+  spark.sql.adaptive.enabled: "true"
+  spark.sql.adaptive.coalescePartitions.enabled: "true"
+  spark.sql.shuffle.partitions: "10"

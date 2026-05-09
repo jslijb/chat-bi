@@ -1,0 +1,215 @@
+# ==============================================================================
+# 业务配置模板（可安全上传到 Gitee）
+# ==============================================================================
+#
+# 本文件使用 ${VAR_NAME} 环境变量占位符，所有敏感信息（Token、密码等）
+# 均通过环境变量注入，不会明文存储在此文件中。
+#
+# ✅ 安全：本文件可以直接上传到 Git/Gitee，不包含任何密钥
+#
+# 部署步骤:
+#   1. 将此文件上传到 ~/.openclaw/config.yaml（或保持当前位置）
+#   2. 在服务器上设置环境变量（见下方列表或使用 .env 文件）
+#   3. Python 脚本加载时会自动替换 ${VAR} 为实际值
+#
+# 环境变量设置方式：
+#   PowerShell:  $env:GITEE_TOKEN="gitee_xxxxxxxxxxxxxxxx"
+#   Bash:       export GITEE_TOKEN="gitee_xxxxxxxxxxxxxxxx"
+#
+# 或者创建 ~/.openclaw/.env 文件（一行一个）：
+#   export HADOOP_NAMENODE=hdfs://192.168.1.10:8020
+#   export GITEE_TOKEN=gitee_xxxxxxxxxxxxxxxx
+# 然后在 shell profile 中 source ~/.openclaw/.env
+#
+# 必须设置的环境变量:
+#
+#   变量名             | 用途                  | 敏感 | 示例
+#   -------------------|-----------------------|:---:|----------------------------------
+#   HADOOP_NAMENODE    | HDFS NameNode 地址     | 否  | hdfs://192.168.1.10:8020
+#   SPARK_VERSION      | Spark 版本号           | 否  | 3.3.2
+#   GITEE_REPO         | Gitee 仓库地址         | 否  | https://gitee.com/公司/仓库.git
+#   GITEE_TOKEN        | Gitee 私人令牌         | ⚠️是 | gitee_xxxxxxxxxxxxxxxx
+
+version: "1.0"
+
+# ==================== Hadoop + Spark 配置 ====================
+hadoop:
+  # 默认使用的集群名称
+  default_cluster: prod
+  
+  clusters:
+    prod:
+      name: "生产环境"
+      
+      # Spark 配置
+      spark:
+        # Spark 主节点：yarn 或 spark://host:7077
+        master: "yarn"
+        
+        # YARN 队列名（问管理员）
+        queue: "default"
+        
+        # 部署模式：client 或 cluster
+        deploy-mode: "cluster"
+        
+        # Spark 版本号（用于兼容性检查，从环境变量读取）
+        version: "${SPARK_VERSION}"
+        
+        # Driver 内存
+        driver-memory: "2g"
+        
+        # Executor 内存
+        executor-memory: "4g"
+        
+        # Executor 核心数
+        executor-cores: 2
+        
+      # HDFS 配置
+      hdfs:
+        # NameNode 地址（问管理员，或使用环境变量）
+        namenode: "${HADOOP_NAMENODE}"
+        
+      # SQL 执行引擎：spark 或 hive
+      sql-engine: "spark"
+      
+      # 可选：Kerberos 认证配置（如果开了 Kerberos）
+      # security:
+      #   kerberos:
+      #     enabled: true
+      #     principal: "bi_etl@COMPANY.COM"
+      #     keytab: "/etc/security/keytabs/bi_etl.keytab"
+
+# ==================== Git 配置（Gitee） ====================
+git:
+  # 仓库地址（Gitee，从环境变量读取）
+  remote:
+    origin: "${GITEE_REPO}"
+    
+  # 主分支名称（代码最终合并到这里）
+  default_branch: "master"
+  
+  # 合并策略：
+  # - squash：压缩多次提交为一次（推荐，master 历史干净）
+  # - merge：保留所有提交历史
+  merge_strategy: "squash"
+  
+  # 认证配置
+  auth:
+    # 认证类型：token 或 ssh
+    type: "token"
+    
+    # Token 值（建议使用环境变量，避免明文存储）
+    # 设置环境变量：$env:GITEE_TOKEN="你的token" (PowerShell)
+    token: "${GITEE_TOKEN}"
+    
+    # 如果使用 SSH，则配置以下两项
+    # type: "ssh"
+    # key_path: "~/.ssh/id_rsa"
+
+  # 分支命名规则（适配你的版本流程）
+  branch:
+    # 版本分支前缀
+    prefix: "v"
+    
+    # 从哪个分支检出
+    base: "master"
+    
+    # 修复版本后缀
+    hotfix_suffix: "_replay"
+    
+  # PR/MR 配置
+  pull_request:
+    # 是否自动创建 PR
+    auto_create: true
+    
+    # PR 标题模板
+    title_template: "版本 {version} 代码变更"
+    
+    # PR 描述模板
+    description_template: |
+      ## 变更内容
+      {change_summary}
+      
+      ## 验证状态
+      - [x] SQL EXPLAIN 验证通过
+      
+      ## 合并说明
+      由 OpenClaw Skill 自动创建
+
+# ==================== Skill 配置 ====================
+skills:
+  # Skill 目录路径
+  directory: "~/.openclaw/skill"
+  
+  # 是否自动重新加载修改的 Skill
+  auto_reload: true
+  
+  # 是否启用 Skill 链式执行
+  chain_execution: true
+
+# ==================== 超时配置（秒） ====================
+timeouts:
+  bi-requirement-parser: 300        # 5分钟
+  requirement-diff-analyzer: 300    # 5分钟
+  code-updater: 600                 # 10分钟
+  sql-validator: 1800               # 30分钟（Hadoop EXPLAIN 可能较慢）
+  git-merger: 604800                # 7天（等待人工确认）
+  scheduler-updater: 300            # 5分钟
+
+# ==================== 版本管理配置 ====================
+version_management:
+  # 版本号格式：v{major}.{minor}.{patch}
+  version_pattern: "v{major}.{minor}.{patch}"
+  
+  # 自动递增规则：patch（第三位）
+  auto_increment: "patch"
+  
+  # 修复版本命名后缀
+  hotfix_suffix: "_replay"
+  
+  # 合并配置
+  merge:
+    # 是否自动合并（false = 等待人工确认）
+    auto_merge: false
+    
+    # 建议合并时间（凌晨）
+    merge_time: "02:00"
+    
+    # 是否需要人工审批
+    require_approval: true
+
+# ==================== 日志配置 ====================
+logging:
+  # 日志级别：debug, info, warn, error
+  level: "info"
+  
+  # 日志文件路径
+  file: "~/.openclaw/logs/openclaw.log"
+  
+  # 控制台输出
+  console: true
+
+# ==================== Embedding 配置（SQL 知识库 + 数据字典 RAG） ====================
+# Embedding 模型配置统一在 kb_config.yaml 中管理
+
+# ==================== 监控配置（可选） ====================
+# 监控的是 OpenClaw 自身的运行状态，不是 Hadoop 集群。
+# 开启后 OpenClaw 会在指定端口暴露 Prometheus 格式的指标，
+# 可用 Grafana 接入查看 Skill 执行情况。
+#
+# 监控的指标包括：
+#   - Skill 执行次数 / 成功率 / 耗时
+#   - Skill 链执行状态（正在等待、已完成、失败）
+#   - Git 操作次数（提交、合并、冲突）
+#   - SQL 验证次数 / 通过率 / 失败率
+#
+# 使用方式：
+#   1. 取消下方注释启用
+#   2. 用 Prometheus 抓取 http://localhost:9090/metrics
+#   3. 在 Grafana 中导入仪表盘查看
+#
+# monitoring:
+#   enabled: true
+#   prometheus:
+#     port: 9090
+#     path: "/metrics"

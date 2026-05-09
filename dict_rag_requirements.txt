@@ -1,0 +1,23 @@
+# ==============================================================================
+# dict_rag_requirements.txt — 数据字典 RAG 索引构建所需 Python 依赖
+# ==============================================================================
+#
+# 【使用方式】
+#   构建索引（本地 Windows/Mac）:
+#     pip install -r dict_rag_requirements.txt
+#
+#   服务器检索（轻量，不需要重新下载模型）:
+#     pip install faiss-cpu numpy sentence-transformers
+#
+# ==============================================================================
+
+# --- 核心依赖 ---
+faiss-cpu>=1.7.0        # FAISS 向量检索（CPU 版，无需 GPU）
+numpy>=1.24.0           # 数组运算
+pyyaml>=6.0             # YAML 解析
+
+# --- Embedding 模型（自动从魔塔/HuggingFace 下载）---
+sentence-transformers>=2.2.0   # 加载 BGE 模型
+
+# --- 魔塔社区镜像（国内高速，推荐）---
+modelscope>=1.9.0              # 魔塔 SDK，加速模型下载

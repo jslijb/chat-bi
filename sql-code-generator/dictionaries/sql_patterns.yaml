@@ -1,0 +1,193 @@
+# SQL 常用模式库
+
+本文件收录 Spark SQL 开发中常用的函数、表达式和代码模式，供 sql-code-generator Skill 参考。
+
+## 聚合模式
+
+### 基础聚合
+```sql
+-- 求总和（NULL安全）
+SUM(COALESCE(amount, 0)) AS total_amount
+
+-- 去重计数
+COUNT(DISTINCT user_id) AS unique_users
+
+-- 平均值（除零保护）
+ROUND(AVG(COALESCE(score, 0)), 2) AS avg_score
+
+-- 最大/最小值
+MAX(event_time)  AS latest_time
+MIN(event_time)  AS earliest_time
+```
+
+### 条件聚合
+```sql
+-- 条件计数 (CASE WHEN + COUNT)
+COUNT(CASE WHEN status = '1' THEN 1 END)     AS success_cnt
+COUNT(CASE WHEN status = '0' THEN 1 END)     AS fail_cnt
+
+-- 条件求和
+SUM(CASE WHEN type = 'NEW' THEN amount ELSE 0 END)  AS new_amount
+SUM(CASE WHEN type = 'RENEW' THEN amount ELSE 0 END) AS renew_amount
+
+-- 多条件复合
+SUM(CASE 
+    WHEN region = 'EAST' AND product = 'A' THEN sales 
+    ELSE 0 
+END) AS east_product_a_sales
+```
+
+## 时间处理模式
+
+### 日期格式化与转换
+```sql
+-- 字符串 → 日期
+TO_DATE('2026-04-23', 'yyyy-MM-dd')
+DATE('2026-04-23')
+
+-- 日期 → 字符串
+DATE_FORMAT(dt, 'yyyy-MM')          -- 年月: 2026-04
+DATE_FORMAT(dt, 'yyyy-MM-dd')       -- 完整日期
+DATE_FORMAT(dt, 'yyyy-MM-dd HH:mm:ss') -- 含时间
+
+-- 提取日期成分
+YEAR(dt), MONTH(dt), DAY(dt), QUARTER(dt)
+WEEKOFYEAR(dt)                       -- 年中第几周
+
+-- 日期运算
+DATE_ADD(dt, 7)                      -- 加7天
+DATE_SUB(dt, 1)                     -- 减1天(昨天)
+DATEDIFF(end_dt, start_dt)           -- 天数差
+```
+
+### 常用时间窗口
+```sql
+-- 昨天到今天
+WHERE dt >= DATE_SUB(CURRENT_DATE(), 1)
+  AND dt <= CURRENT_DATE()
+
+-- 最近30天
+WHERE dt >= DATE_SUB(CURRENT_DATE(), 30)
+
+-- 当月1日至今
+WHERE dt >= DATE_TRUNC('month', CURRENT_DATE())
+
+-- 最近12个月(含当月)
+WHERE dt >= DATE_SUB(DATE_TRUNC('month', CURRENT_DATE()), 12 * 30)
+```
+
+## 窗口函数模式
+
+### 排名
+```sql
+RANK() OVER (ORDER BY sales DESC)              -- 有并列时跳号: 1,2,2,4
+DENSE_RANK() OVER (ORDER BY sales DESC)        -- 不跳号: 1,2,2,3
+ROW_NUMBER() OVER (PARTITION BY grp ORDER BY id) -- 不重复行号
+
+-- 分组内排名
+RANK() OVER (PARTITION BY channel_code ORDER BY premium DESC)
+    AS channel_rank
+```
+
+### 偏移（环比/同比）
+```sql
+-- 环比（上期值）
+LAG(amount, 1) OVER (
+    PARTITION BY channel_code ORDER BY month_key
+) AS prev_month_amt
+
+-- 同比（去年同期）
+LAG(amount, 12) OVER (
+    PARTITION BY channel_code ORDER BY month_key
+) AS same_period_last_year
+
+-- 首次出现 / 最后一次出现
+FIRST_VALUE(status) OVER (
+    PARTITION BY user_id ORDER BY event_time ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+) AS first_status
+```
+
+### 累计聚合
+```sql
+-- 累计求和
+SUM(amount) OVER (
+    ORDER BY date_key ROWS UNBOUNDED PRECEDING
+) AS cumulative_sum
+
+-- 移动平均（7日均线）
+AVG(amount) OVER (
+    ORDER BY date_key ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+) AS ma_7day
+
+-- 分组累计
+SUM(sales) OVER (
+    PARTITION BY region ORDER BY quarter
+    ROWS UNBOUNDED PRECEDING
+) AS region_cumulative
+```
+
+## JOIN 模式
+
+### 标准关联
+```sql
+-- 主表保留所有行 → LEFT JOIN
+FROM main_table m
+LEFT JOIN dim_table d ON m.dim_key = d.key
+
+-- 精确匹配 → INNER JOIN（性能更好）
+FROM fact f
+INNER JOIN dim d ON f.id = d.id
+
+-- 仅找不匹配的记录（排除已匹配）
+FROM table_a a
+LEFT JOIN table_b b ON a.id = b.id
+WHERE b.id IS NULL
+```
+
+### 广播提示（小表优化）
+```sql
+SELECT /*+ BROADCAST(dim_channel) */ *
+FROM large_fact_table f
+INNER JOIN dim_channel c ON f.channel_id = c.channel_id
+
+-- 或通过参数控制
+SET spark.sql.autoBroadcastJoinThreshold = 10485760;  -- 10MB以下自动广播
+```
+
+## NULL 处理模式
+
+### 基础 NULL 安全
+```sql
+-- 默认替换
+COALESCE(field, 0)           -- 数值默认为0
+COALESCE(field, '')          -- 字符串默认为空
+COALESCE(field, 'UNKNOWN')   -- 枚举类字段给默认值
+NVL(field, default_value)    -- COALESCE 的简写(2参数版本)
+
+-- 除零保护
+CASE WHEN divisor != 0 THEN dividend / divisor ELSE 0 END
+-- 或
+dividend / NULLIF(divisor, 0)   -- 除数为0则返回NULL
+```
+
+## 数据质量检查模式
+
+```sql
+-- 主键去重检查（应有唯一约束）
+SELECT policy_id, COUNT(*) AS cnt
+FROM ods_policy_info
+GROUP BY policy_id HAVING cnt > 1
+
+-- 空率统计
+SELECT
+    COUNT(*)                          AS total_rows,
+    COUNT(channel_code)               AS channel_not_null,
+    ROUND(100.0 * (1 - COUNT(channel_code) / COUNT(*)), 2)  AS channel_null_pct
+FROM target_table
+
+-- 数值范围异常检测
+SELECT *
+FROM target_table
+WHERE premium < 0                    -- 负保费异常
+   OR age > 150                      -- 年龄超常
+```

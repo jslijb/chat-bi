@@ -1,0 +1,21 @@
+{
+  "template_id": "rank_top_n",
+  "template_type": "report",
+  "name": "排名TopN报表",
+  "description": "按维度排名取Top N，支持多指标排序",
+  "version": "1.0",
+  "dimensions": [
+    {"name": "rank_dim", "label": "排名维度", "type": "string"}
+  ],
+  "metrics": [
+    {"name": "sort_metric", "label": "排序指标", "type": "decimal", "aggregation": "SUM"},
+    {"name": "display_metric", "label": "展示指标", "type": "decimal", "aggregation": "SUM", "optional": true}
+  ],
+  "params": [
+    {"name": "top_n", "label": "TopN数量", "type": "int", "default": 10},
+    {"name": "sort_order", "label": "排序方向", "type": "string", "enum": ["DESC", "ASC"], "default": "DESC"}
+  ],
+  "features": {"drill_down": true, "percentage": true},
+  "storage_engine_hint": "ADS",
+  "render_config": {"chart_type": "bar", "x_axis": "rank_dim", "y_axis": "sort_metric", "limit": "top_n"}
+}

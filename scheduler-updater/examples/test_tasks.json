@@ -1,0 +1,6 @@
+[
+    {"task_id": "dim_channel_etl", "sql_file": "hdfs:///cx_dim_safe/dim/dim_channel.sql"},
+    {"task_id": "dwd_policy_premium_daily_etl", "sql_file": "hdfs:///cx_dwd_safe/dwd/dwd_policy_premium_daily.sql"},
+    {"task_id": "dws_policy_premium_daily_etl", "sql_file": "hdfs:///cx_dws_safe/dws/dws_policy_premium_daily.sql"},
+    {"task_id": "ads_channel_premium_report_etl", "sql_file": "hdfs:///cx_ads_safe/ads/ads_channel_premium_report.sql"}
+]

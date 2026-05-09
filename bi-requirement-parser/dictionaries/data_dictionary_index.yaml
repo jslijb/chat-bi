@@ -1,0 +1,221 @@
+# 数据字典索引 - 按需加载 data_dictionary_tables/{table_name}.yaml
+# 表数量: 128
+# 根据用户需求匹配表名/注释关键词，加载对应表文件获取列定义
+
+## 产品域 (1张表)
+
+- pingan_insurance_product_definition (9列) 保险产品定义表
+
+## 代理人域 (4张表)
+
+- pingan_insurance_agent (9列) 代理人信息表
+- pingan_insurance_agent_customer (6列) 代理人-客户关系表
+- pingan_insurance_agent_performance (7列) 代理人业绩表
+- pingan_insurance_agent_tool_log (6列) 代理人展业工具日志
+
+## 企业域 (9张表)
+
+- pingan_insurance_enterprise (12列) 企业客户主表
+- pingan_insurance_enterprise_user (7列) 企业-用户关联表
+- pingan_insurance_enterprise_policy (5列) 企业保单扩展表
+- pingan_insurance_enterprise_claim (4列) 企业理赔扩展表
+- pingan_insurance_enterprise_risk_assessment (6列) 企业风险评估表
+- pingan_insurance_enterprise_health_service (6列) 企业健康服务表
+- pingan_insurance_enterprise_finance (6列) 企业财税服务表
+- pingan_insurance_enterprise_legal (7列) 企业法律服务表
+- pingan_insurance_enterprise_assistant (6列) 企业助手服务表
+
+## 会话域 (1张表)
+
+- pingan_insurance_session (5列) 用户会话表
+
+## 保单域 (8张表)
+
+- pingan_insurance_policy_master (16列) 保单主表
+- pingan_insurance_policy_risk_detail (10列) 险种明细表
+- pingan_insurance_policy_vehicle_detail (6列) 车险车辆信息表
+- pingan_insurance_policy_insured (7列) 被保险人信息表
+- pingan_insurance_policy_endorsement (10列) 批改记录表
+- pingan_insurance_policy_upload_log (7列) 中保信上传日志表
+- pingan_insurance_policy_renewal (6列) 续保记录表
+- pingan_insurance_policy_query_log (5列) 保单查询日志
+
+## 保费域 (2张表)
+
+- pingan_insurance_premium_payment (8列) 保费支付记录表
+- pingan_insurance_premium_reconciliation (9列) 保费对账表
+
+## 其他 (29张表)
+
+- pingan_insurance_device (7列) 用户设备信息表
+- pingan_insurance_nonauto_policy (8列) 非车险保单扩展表
+- pingan_insurance_health_policy (6列) 健康险专有表
+- pingan_insurance_pet_policy (8列) 宠物险专有表
+- pingan_insurance_property_policy (6列) 家财险专有表
+- pingan_insurance_travel_policy (7列) 旅行险专有表
+- pingan_insurance_reinsurance (6列) 再保记录表
+- pingan_insurance_medical_advance (7列) 医疗垫付记录表
+- pingan_insurance_labor_fee_standard (5列) 工时费标准表
+- pingan_insurance_invite_relation (9列) 邀请关系表
+- pingan_insurance_outbound_call_task (8列) 外呼任务表
+- pingan_insurance_violation_query_log (6列) 违章查询日志表
+- pingan_insurance_order_item (6列) 订单商品明细表
+- pingan_insurance_smart_inspection (6列) 智慧巡检记录表
+- pingan_insurance_gov_insurance_product (7列) 惠民保产品表
+- pingan_insurance_gov_insurance_policy (6列) 惠民保单表
+- pingan_insurance_public_welfare_points (6列) 公益积分表
+- pingan_insurance_road_improvement_project (8列) 路段改造项目表
+- pingan_insurance_system_config (4列) 系统参数配置表
+- pingan_insurance_dict (6列) 数据字典表
+- pingan_insurance_region (6列) 行政区划表
+- pingan_insurance_org (6列) 组织机构表
+- pingan_insurance_subsidy_record (7列) 补贴记录表
+- pingan_insurance_financial_report (6列) 财务报告表
+- pingan_insurance_shopping_cart (5列) 购物车表
+- pingan_insurance_fleet_management (6列) 车队管理表
+- pingan_insurance_employee_benefit (8列) 员工福利表
+- pingan_insurance_welfare_entitlement (7列) 公益权益表
+- pingan_insurance_safe_driving_score (7列) 安全驾驶评分表
+
+## 农险域 (2张表)
+
+- pingan_insurance_agricultural_product (4列) 助农产品表
+- pingan_insurance_agricultural_policy (6列) 政策性农险保单扩展表
+
+## 反欺诈域 (1张表)
+
+- pingan_insurance_anti_fraud_graph (4列) 反欺诈图数据表（节点）
+
+## 合规域 (1张表)
+
+- pingan_insurance_compliance_report (6列) 监管报表表
+
+## 商城域 (2张表)
+
+- pingan_insurance_mall_product (9列) 商品表
+- pingan_insurance_mall_order (8列) 商城订单表
+
+## 商家域 (7张表)
+
+- pingan_insurance_merchant (8列) 商家表
+- pingan_insurance_merchant_product (5列) 商家商品关联表
+- pingan_insurance_merchant_score (8列) 商家评分表
+- pingan_insurance_merchant_complaint (8列) 商家投诉表
+- pingan_insurance_merchant_qualification (7列) 商家资质表
+- pingan_insurance_merchant_region (6列) 商家区域覆盖表
+- pingan_insurance_merchant_service_type (5列) 商家服务类型表
+
+## 定价域 (1张表)
+
+- pingan_insurance_price_factor (7列) 定价因子配置表
+
+## 客服域 (1张表)
+
+- pingan_insurance_complaint_record (9列) 消费者投诉表
+
+## 查勘域 (3张表)
+
+- pingan_insurance_survey_task (9列) 查勘任务表
+- pingan_insurance_surveyor (7列) 查勘员信息表
+- pingan_insurance_surveyor_location (4列) 查勘员实时位置表
+
+## 核保域 (2张表)
+
+- pingan_insurance_underwriting_rule (9列) 核保规则表
+- pingan_insurance_underwriting_log (5列) 核保日志表
+
+## 消息域 (1张表)
+
+- pingan_insurance_inbox_message (7列) 站内信表
+
+## 灾害域 (1张表)
+
+- pingan_insurance_disaster_warning (6列) 灾害预警表
+
+## 理赔域 (11张表)
+
+- pingan_insurance_claim_report (11列) 报案主表
+- pingan_insurance_claim_vehicle (7列) 车险理赔车辆信息表
+- pingan_insurance_claim_injury (9列) 人伤案件信息表
+- pingan_insurance_damage_photo (10列) 受损照片表
+- pingan_insurance_damage_assessment (12列) 定损表
+- pingan_insurance_damage_part_master (7列) 配件价格库表
+- pingan_insurance_claim_approval (8列) 核赔审批表
+- pingan_insurance_claim_payment (9列) 赔款支付表
+- pingan_insurance_claim_fast_payment (6列) 三免信用赔表
+- pingan_insurance_claim_anti_fraud (7列) 反欺诈关系表
+- pingan_insurance_claim_progress_query_log (5列) 理赔进度查询日志
+
+## 用户域 (9张表)
+
+- pingan_insurance_user (14列) 个人用户主表
+- pingan_insurance_user_auth (10列) 用户认证信息表
+- pingan_insurance_user_profile (10列) 用户扩展资料表
+- pingan_insurance_user_vehicle (15列) 用户车辆档案表
+- pingan_insurance_user_risk_score (6列) 用户风险评分表（历史记录）
+- pingan_insurance_user_coupon (12列) 用户优惠券表
+- pingan_insurance_user_address (10列) 用户收货地址表
+- pingan_insurance_user_behavior_log (9列) 用户行为埋点表
+- pingan_insurance_user_feedback (7列) 用户反馈表
+
+## 直播域 (4张表)
+
+- pingan_insurance_live_room (9列) 直播间表
+- pingan_insurance_live_product (7列) 直播商品关联表
+- pingan_insurance_live_realtime_data (8列) 直播实时数据表（快照）
+- pingan_insurance_live_order (7列) 直播订单表
+
+## 社交域 (1张表)
+
+- pingan_insurance_share_record (7列) 分享记录表
+
+## 积分域 (3张表)
+
+- pingan_insurance_points_account (8列) 积分账户表
+- pingan_insurance_points_transaction (10列) 积分流水表
+- pingan_insurance_points_exchange_order (7列) 积分兑换订单表
+
+## 系统域 (1张表)
+
+- pingan_insurance_data_audit_log (8列) 数据审计日志表
+
+## 营销域 (2张表)
+
+- pingan_insurance_campaign_master (9列) 活动主表
+- pingan_insurance_campaign_participation (6列) 活动参与记录表
+
+## 触达域 (5张表)
+
+- pingan_insurance_push_task (8列) 推送任务表
+- pingan_insurance_push_record (6列) 推送记录表
+- pingan_insurance_wechat_follower (6列) 公众号粉丝表
+- pingan_insurance_wechat_interaction (5列) 公众号互动表
+- pingan_insurance_call_record (7列) 通话记录表
+
+## 车服务域 (12张表)
+
+- pingan_insurance_service_order (11列) 服务订单主表
+- pingan_insurance_fuel_order (8列) 加油订单表
+- pingan_insurance_fuel_station (6列) 加油站表
+- pingan_insurance_charge_order (7列) 充电订单表
+- pingan_insurance_charge_pile (6列) 充电桩表
+- pingan_insurance_car_wash_order (5列) 洗车订单表
+- pingan_insurance_car_wash_shop (6列) 洗车店表
+- pingan_insurance_designated_driver_order (7列) 代驾订单表
+- pingan_insurance_maintenance_order (5列) 保养订单表
+- pingan_insurance_rescue_order (6列) 救援订单表
+- pingan_insurance_move_car_request (7列) 一键挪车请求表
+- pingan_insurance_service_guarantee (7列) 服务保障记录表
+
+## 运营域 (1张表)
+
+- pingan_insurance_signin_log (5列) 签到记录表
+
+## 道路安全域 (1张表)
+
+- pingan_insurance_blackspot_road (8列) 隐患路段表
+
+## 风控域 (2张表)
+
+- pingan_insurance_blacklist (9列) 黑名单表
+- pingan_insurance_risk_hidden_danger (8列) 风险隐患表

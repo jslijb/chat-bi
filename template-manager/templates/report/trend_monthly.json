@@ -1,0 +1,30 @@
+{
+  "template_id": "trend_monthly",
+  "template_type": "report",
+  "name": "月度趋势报表",
+  "description": "按月查看核心指标变化趋势，支持多指标叠加对比",
+  "version": "1.0",
+  "dimensions": [
+    {"name": "month_key", "label": "月份", "type": "string", "format": "yyyy-MM"},
+    {"name": "category", "label": "分类维度", "type": "string", "optional": true}
+  ],
+  "metrics": [
+    {"name": "primary_metric", "label": "主指标", "type": "decimal", "aggregation": "SUM"},
+    {"name": "secondary_metric", "label": "辅助指标", "type": "decimal", "aggregation": "SUM", "optional": true},
+    {"name": "count_metric", "label": "计数指标", "type": "bigint", "aggregation": "COUNT_DISTINCT", "optional": true}
+  ],
+  "features": {
+    "yoy_comparison": true,
+    "mom_comparison": true,
+    "trend_line": true,
+    "drill_down": false
+  },
+  "storage_engine_hint": "ADS",
+  "sql_pattern": "SELECT {dim_month}, {dim_category}, {metrics}, LAG({primary_metric}, 1) OVER (PARTITION BY {dim_category} ORDER BY {dim_month}) AS last_month FROM {source_table} GROUP BY {dim_month}, {dim_category}",
+  "render_config": {
+    "chart_type": "line",
+    "x_axis": "month_key",
+    "y_axis": ["primary_metric", "secondary_metric"],
+    "legend": "category"
+  }
+}

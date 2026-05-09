@@ -1,0 +1,1731 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-04-26T10:45:38Z",
+  "lineage": {
+    "paimon.cx_ods_safe.pingan_insurance_user": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_user_auth": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_user_profile": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_user_vehicle": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_user_risk_score": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_enterprise": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_user": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_agent": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_agent_customer": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_blacklist": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_session": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_device": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_product_definition": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_price_factor": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_underwriting_rule": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_policy_master": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_agent",
+        "paimon.cx_ods_safe.pingan_insurance_product_definition"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_policy_risk_detail": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_policy_vehicle_detail": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_policy_insured": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_policy_endorsement": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_nonauto_policy": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_policy_master"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_health_policy": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_pet_policy": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_property_policy": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_travel_policy": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_underwriting_log": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_reinsurance": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_policy_upload_log": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_premium_payment": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_policy_master"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_premium_reconciliation": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_claim_report": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_policy_master"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_claim_vehicle": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_claim_injury": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_medical_advance": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_survey_task": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_claim_report",
+        "paimon.cx_ods_safe.pingan_insurance_surveyor"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_surveyor": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_surveyor_location": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_damage_photo": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_damage_assessment": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_claim_report"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_damage_part_master": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_labor_fee_standard": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_claim_approval": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_claim_payment": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_claim_fast_payment": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_claim_anti_fraud": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_campaign_master": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_campaign_participation": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user",
+        "paimon.cx_ods_safe.pingan_insurance_campaign_master"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_user_coupon": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_points_account": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_points_transaction": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_signin_log": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_invite_relation": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_push_task": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_push_record": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_push_task",
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_inbox_message": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_wechat_follower": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_wechat_interaction": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_outbound_call_task": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user",
+        "paimon.cx_ods_safe.pingan_insurance_campaign_master"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_call_record": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_share_record": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_live_room": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_live_product": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_live_room",
+        "paimon.cx_ods_safe.pingan_insurance_mall_product"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_live_realtime_data": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_live_order": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user",
+        "paimon.cx_ods_safe.pingan_insurance_live_room",
+        "paimon.cx_ods_safe.pingan_insurance_mall_product"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_service_order": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user",
+        "paimon.cx_ods_safe.pingan_insurance_user_coupon"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_fuel_order": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_fuel_station": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_charge_order": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_charge_pile": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_fuel_station"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_car_wash_order": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_car_wash_shop": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_designated_driver_order": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_maintenance_order": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_rescue_order": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_violation_query_log": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_move_car_request": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_mall_product": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_mall_order": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user_address",
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_order_item": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_points_exchange_order": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user",
+        "paimon.cx_ods_safe.pingan_insurance_mall_product"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_agricultural_product": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_merchant": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_merchant_product": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_user_address": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_policy": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_policy_master",
+        "paimon.cx_ods_safe.pingan_insurance_enterprise"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_claim": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_claim_report",
+        "paimon.cx_ods_safe.pingan_insurance_enterprise"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_risk_assessment": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_enterprise"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_disaster_warning": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_enterprise"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_smart_inspection": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_enterprise"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_health_service": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_enterprise"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_finance": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_enterprise"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_merchant_score": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_merchant_complaint": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_merchant_qualification": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_gov_insurance_product": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_gov_insurance_policy": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_policy_master",
+        "paimon.cx_ods_safe.pingan_insurance_user",
+        "paimon.cx_ods_safe.pingan_insurance_gov_insurance_product"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_public_welfare_points": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_blackspot_road": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_road_improvement_project": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_blackspot_road"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_agricultural_policy": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_policy_master"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_compliance_report": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_data_audit_log": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_complaint_record": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_anti_fraud_graph": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_system_config": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_dict": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_region": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_org": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_user_behavior_log": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user",
+        "paimon.cx_ods_safe.pingan_insurance_device"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_agent_performance": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_agent"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_agent_tool_log": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_agent"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_policy_renewal": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_policy_master"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_subsidy_record": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_financial_report": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_shopping_cart": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_user",
+        "paimon.cx_ods_safe.pingan_insurance_mall_product"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_user_feedback": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_legal": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_enterprise"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_assistant": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_enterprise"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_fleet_management": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_enterprise",
+        "paimon.cx_ods_safe.pingan_insurance_user_vehicle",
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_employee_benefit": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [
+        "paimon.cx_ods_safe.pingan_insurance_enterprise",
+        "paimon.cx_ods_safe.pingan_insurance_user"
+      ],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_service_guarantee": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_merchant_region": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_merchant_service_type": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_welfare_entitlement": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_safe_driving_score": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_risk_hidden_danger": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_claim_progress_query_log": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    },
+    "paimon.cx_ods_safe.pingan_insurance_policy_query_log": {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "catalog": "paimon",
+      "upstream": [],
+      "downstream": [],
+      "etl_script": "",
+      "schedule_task": "",
+      "related_requirements": [],
+      "confidence": "confirmed"
+    }
+  },
+  "reverse_index": {
+    "paimon.cx_ods_safe.pingan_insurance_user": [
+      "paimon.cx_ods_safe.pingan_insurance_user_vehicle",
+      "paimon.cx_ods_safe.pingan_insurance_user_address",
+      "paimon.cx_ods_safe.pingan_insurance_mall_order",
+      "paimon.cx_ods_safe.pingan_insurance_service_order",
+      "paimon.cx_ods_safe.pingan_insurance_shopping_cart",
+      "paimon.cx_ods_safe.pingan_insurance_points_exchange_order",
+      "paimon.cx_ods_safe.pingan_insurance_campaign_participation",
+      "paimon.cx_ods_safe.pingan_insurance_user_coupon",
+      "paimon.cx_ods_safe.pingan_insurance_points_transaction",
+      "paimon.cx_ods_safe.pingan_insurance_signin_log",
+      "paimon.cx_ods_safe.pingan_insurance_share_record",
+      "paimon.cx_ods_safe.pingan_insurance_push_record",
+      "paimon.cx_ods_safe.pingan_insurance_inbox_message",
+      "paimon.cx_ods_safe.pingan_insurance_outbound_call_task",
+      "paimon.cx_ods_safe.pingan_insurance_live_order",
+      "paimon.cx_ods_safe.pingan_insurance_fleet_management",
+      "paimon.cx_ods_safe.pingan_insurance_employee_benefit",
+      "paimon.cx_ods_safe.pingan_insurance_gov_insurance_policy",
+      "paimon.cx_ods_safe.pingan_insurance_public_welfare_points",
+      "paimon.cx_ods_safe.pingan_insurance_complaint_record",
+      "paimon.cx_ods_safe.pingan_insurance_user_behavior_log"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_user_auth": [],
+    "paimon.cx_ods_safe.pingan_insurance_user_profile": [],
+    "paimon.cx_ods_safe.pingan_insurance_user_vehicle": [
+      "paimon.cx_ods_safe.pingan_insurance_fleet_management"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_user_risk_score": [],
+    "paimon.cx_ods_safe.pingan_insurance_enterprise": [
+      "paimon.cx_ods_safe.pingan_insurance_enterprise_policy",
+      "paimon.cx_ods_safe.pingan_insurance_enterprise_claim",
+      "paimon.cx_ods_safe.pingan_insurance_enterprise_risk_assessment",
+      "paimon.cx_ods_safe.pingan_insurance_disaster_warning",
+      "paimon.cx_ods_safe.pingan_insurance_smart_inspection",
+      "paimon.cx_ods_safe.pingan_insurance_enterprise_health_service",
+      "paimon.cx_ods_safe.pingan_insurance_enterprise_finance",
+      "paimon.cx_ods_safe.pingan_insurance_enterprise_legal",
+      "paimon.cx_ods_safe.pingan_insurance_enterprise_assistant",
+      "paimon.cx_ods_safe.pingan_insurance_fleet_management",
+      "paimon.cx_ods_safe.pingan_insurance_employee_benefit"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_user": [],
+    "paimon.cx_ods_safe.pingan_insurance_agent": [
+      "paimon.cx_ods_safe.pingan_insurance_policy_master",
+      "paimon.cx_ods_safe.pingan_insurance_agent_performance",
+      "paimon.cx_ods_safe.pingan_insurance_agent_tool_log"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_agent_customer": [],
+    "paimon.cx_ods_safe.pingan_insurance_blacklist": [],
+    "paimon.cx_ods_safe.pingan_insurance_session": [],
+    "paimon.cx_ods_safe.pingan_insurance_device": [
+      "paimon.cx_ods_safe.pingan_insurance_user_behavior_log"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_product_definition": [
+      "paimon.cx_ods_safe.pingan_insurance_policy_master"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_price_factor": [],
+    "paimon.cx_ods_safe.pingan_insurance_underwriting_rule": [],
+    "paimon.cx_ods_safe.pingan_insurance_policy_master": [
+      "paimon.cx_ods_safe.pingan_insurance_policy_renewal",
+      "paimon.cx_ods_safe.pingan_insurance_nonauto_policy",
+      "paimon.cx_ods_safe.pingan_insurance_premium_payment",
+      "paimon.cx_ods_safe.pingan_insurance_claim_report",
+      "paimon.cx_ods_safe.pingan_insurance_enterprise_policy",
+      "paimon.cx_ods_safe.pingan_insurance_gov_insurance_policy",
+      "paimon.cx_ods_safe.pingan_insurance_agricultural_policy"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_policy_risk_detail": [],
+    "paimon.cx_ods_safe.pingan_insurance_policy_vehicle_detail": [],
+    "paimon.cx_ods_safe.pingan_insurance_policy_insured": [],
+    "paimon.cx_ods_safe.pingan_insurance_policy_endorsement": [],
+    "paimon.cx_ods_safe.pingan_insurance_nonauto_policy": [],
+    "paimon.cx_ods_safe.pingan_insurance_health_policy": [],
+    "paimon.cx_ods_safe.pingan_insurance_pet_policy": [],
+    "paimon.cx_ods_safe.pingan_insurance_property_policy": [],
+    "paimon.cx_ods_safe.pingan_insurance_travel_policy": [],
+    "paimon.cx_ods_safe.pingan_insurance_underwriting_log": [],
+    "paimon.cx_ods_safe.pingan_insurance_reinsurance": [],
+    "paimon.cx_ods_safe.pingan_insurance_policy_upload_log": [],
+    "paimon.cx_ods_safe.pingan_insurance_premium_payment": [],
+    "paimon.cx_ods_safe.pingan_insurance_premium_reconciliation": [],
+    "paimon.cx_ods_safe.pingan_insurance_claim_report": [
+      "paimon.cx_ods_safe.pingan_insurance_survey_task",
+      "paimon.cx_ods_safe.pingan_insurance_damage_assessment",
+      "paimon.cx_ods_safe.pingan_insurance_enterprise_claim"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_claim_vehicle": [],
+    "paimon.cx_ods_safe.pingan_insurance_claim_injury": [],
+    "paimon.cx_ods_safe.pingan_insurance_medical_advance": [],
+    "paimon.cx_ods_safe.pingan_insurance_survey_task": [],
+    "paimon.cx_ods_safe.pingan_insurance_surveyor": [
+      "paimon.cx_ods_safe.pingan_insurance_survey_task"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_surveyor_location": [],
+    "paimon.cx_ods_safe.pingan_insurance_damage_photo": [],
+    "paimon.cx_ods_safe.pingan_insurance_damage_assessment": [],
+    "paimon.cx_ods_safe.pingan_insurance_damage_part_master": [],
+    "paimon.cx_ods_safe.pingan_insurance_labor_fee_standard": [],
+    "paimon.cx_ods_safe.pingan_insurance_claim_approval": [],
+    "paimon.cx_ods_safe.pingan_insurance_claim_payment": [],
+    "paimon.cx_ods_safe.pingan_insurance_claim_fast_payment": [],
+    "paimon.cx_ods_safe.pingan_insurance_claim_anti_fraud": [],
+    "paimon.cx_ods_safe.pingan_insurance_campaign_master": [
+      "paimon.cx_ods_safe.pingan_insurance_campaign_participation",
+      "paimon.cx_ods_safe.pingan_insurance_outbound_call_task"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_campaign_participation": [],
+    "paimon.cx_ods_safe.pingan_insurance_user_coupon": [
+      "paimon.cx_ods_safe.pingan_insurance_service_order"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_points_account": [],
+    "paimon.cx_ods_safe.pingan_insurance_points_transaction": [],
+    "paimon.cx_ods_safe.pingan_insurance_signin_log": [],
+    "paimon.cx_ods_safe.pingan_insurance_invite_relation": [],
+    "paimon.cx_ods_safe.pingan_insurance_push_task": [
+      "paimon.cx_ods_safe.pingan_insurance_push_record"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_push_record": [],
+    "paimon.cx_ods_safe.pingan_insurance_inbox_message": [],
+    "paimon.cx_ods_safe.pingan_insurance_wechat_follower": [],
+    "paimon.cx_ods_safe.pingan_insurance_wechat_interaction": [],
+    "paimon.cx_ods_safe.pingan_insurance_outbound_call_task": [],
+    "paimon.cx_ods_safe.pingan_insurance_call_record": [],
+    "paimon.cx_ods_safe.pingan_insurance_share_record": [],
+    "paimon.cx_ods_safe.pingan_insurance_live_room": [
+      "paimon.cx_ods_safe.pingan_insurance_live_product",
+      "paimon.cx_ods_safe.pingan_insurance_live_order"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_live_product": [],
+    "paimon.cx_ods_safe.pingan_insurance_live_realtime_data": [],
+    "paimon.cx_ods_safe.pingan_insurance_live_order": [],
+    "paimon.cx_ods_safe.pingan_insurance_service_order": [],
+    "paimon.cx_ods_safe.pingan_insurance_fuel_order": [],
+    "paimon.cx_ods_safe.pingan_insurance_fuel_station": [
+      "paimon.cx_ods_safe.pingan_insurance_charge_pile"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_charge_order": [],
+    "paimon.cx_ods_safe.pingan_insurance_charge_pile": [],
+    "paimon.cx_ods_safe.pingan_insurance_car_wash_order": [],
+    "paimon.cx_ods_safe.pingan_insurance_car_wash_shop": [],
+    "paimon.cx_ods_safe.pingan_insurance_designated_driver_order": [],
+    "paimon.cx_ods_safe.pingan_insurance_maintenance_order": [],
+    "paimon.cx_ods_safe.pingan_insurance_rescue_order": [],
+    "paimon.cx_ods_safe.pingan_insurance_violation_query_log": [],
+    "paimon.cx_ods_safe.pingan_insurance_move_car_request": [],
+    "paimon.cx_ods_safe.pingan_insurance_mall_product": [
+      "paimon.cx_ods_safe.pingan_insurance_shopping_cart",
+      "paimon.cx_ods_safe.pingan_insurance_points_exchange_order",
+      "paimon.cx_ods_safe.pingan_insurance_live_product",
+      "paimon.cx_ods_safe.pingan_insurance_live_order"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_mall_order": [],
+    "paimon.cx_ods_safe.pingan_insurance_order_item": [],
+    "paimon.cx_ods_safe.pingan_insurance_points_exchange_order": [],
+    "paimon.cx_ods_safe.pingan_insurance_agricultural_product": [],
+    "paimon.cx_ods_safe.pingan_insurance_merchant": [],
+    "paimon.cx_ods_safe.pingan_insurance_merchant_product": [],
+    "paimon.cx_ods_safe.pingan_insurance_user_address": [
+      "paimon.cx_ods_safe.pingan_insurance_mall_order"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_policy": [],
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_claim": [],
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_risk_assessment": [],
+    "paimon.cx_ods_safe.pingan_insurance_disaster_warning": [],
+    "paimon.cx_ods_safe.pingan_insurance_smart_inspection": [],
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_health_service": [],
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_finance": [],
+    "paimon.cx_ods_safe.pingan_insurance_merchant_score": [],
+    "paimon.cx_ods_safe.pingan_insurance_merchant_complaint": [],
+    "paimon.cx_ods_safe.pingan_insurance_merchant_qualification": [],
+    "paimon.cx_ods_safe.pingan_insurance_gov_insurance_product": [
+      "paimon.cx_ods_safe.pingan_insurance_gov_insurance_policy"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_gov_insurance_policy": [],
+    "paimon.cx_ods_safe.pingan_insurance_public_welfare_points": [],
+    "paimon.cx_ods_safe.pingan_insurance_blackspot_road": [
+      "paimon.cx_ods_safe.pingan_insurance_road_improvement_project"
+    ],
+    "paimon.cx_ods_safe.pingan_insurance_road_improvement_project": [],
+    "paimon.cx_ods_safe.pingan_insurance_agricultural_policy": [],
+    "paimon.cx_ods_safe.pingan_insurance_compliance_report": [],
+    "paimon.cx_ods_safe.pingan_insurance_data_audit_log": [],
+    "paimon.cx_ods_safe.pingan_insurance_complaint_record": [],
+    "paimon.cx_ods_safe.pingan_insurance_anti_fraud_graph": [],
+    "paimon.cx_ods_safe.pingan_insurance_system_config": [],
+    "paimon.cx_ods_safe.pingan_insurance_dict": [],
+    "paimon.cx_ods_safe.pingan_insurance_region": [],
+    "paimon.cx_ods_safe.pingan_insurance_org": [],
+    "paimon.cx_ods_safe.pingan_insurance_user_behavior_log": [],
+    "paimon.cx_ods_safe.pingan_insurance_agent_performance": [],
+    "paimon.cx_ods_safe.pingan_insurance_agent_tool_log": [],
+    "paimon.cx_ods_safe.pingan_insurance_policy_renewal": [],
+    "paimon.cx_ods_safe.pingan_insurance_subsidy_record": [],
+    "paimon.cx_ods_safe.pingan_insurance_financial_report": [],
+    "paimon.cx_ods_safe.pingan_insurance_shopping_cart": [],
+    "paimon.cx_ods_safe.pingan_insurance_user_feedback": [],
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_legal": [],
+    "paimon.cx_ods_safe.pingan_insurance_enterprise_assistant": [],
+    "paimon.cx_ods_safe.pingan_insurance_fleet_management": [],
+    "paimon.cx_ods_safe.pingan_insurance_employee_benefit": [],
+    "paimon.cx_ods_safe.pingan_insurance_service_guarantee": [],
+    "paimon.cx_ods_safe.pingan_insurance_merchant_region": [],
+    "paimon.cx_ods_safe.pingan_insurance_merchant_service_type": [],
+    "paimon.cx_ods_safe.pingan_insurance_welfare_entitlement": [],
+    "paimon.cx_ods_safe.pingan_insurance_safe_driving_score": [],
+    "paimon.cx_ods_safe.pingan_insurance_risk_hidden_danger": [],
+    "paimon.cx_ods_safe.pingan_insurance_claim_progress_query_log": [],
+    "paimon.cx_ods_safe.pingan_insurance_policy_query_log": []
+  }
+}

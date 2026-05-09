@@ -1,0 +1,19 @@
+{
+  "template_id": "cohort_retention",
+  "template_type": "analysis",
+  "name": "队列留存分析",
+  "description": "用户/保单留存率分析，按队列跟踪留存趋势",
+  "version": "1.0",
+  "dimensions": [
+    {"name": "cohort_date", "label": "队列日期", "type": "string", "format": "yyyy-MM"},
+    {"name": "retention_period", "label": "留存期数", "type": "int"}
+  ],
+  "metrics": [
+    {"name": "cohort_size", "label": "队列规模", "type": "bigint"},
+    {"name": "retained_count", "label": "留存数", "type": "bigint"},
+    {"name": "retention_rate", "label": "留存率", "type": "decimal", "derived": true}
+  ],
+  "features": {"cohort_chart": true, "retention_curve": true, "export": true},
+  "storage_engine_hint": "ADS",
+  "render_config": {"chart_type": "cohort_heatmap", "x_axis": "retention_period", "y_axis": "cohort_date", "value_field": "retention_rate"}
+}

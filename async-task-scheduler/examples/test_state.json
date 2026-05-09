@@ -1,0 +1,35 @@
+{
+  "mode": "auto",
+  "paused_types": [
+    "score_calc"
+  ],
+  "tasks": {
+    "ae7050da-5300-48d6-bb4b-87a0e5efb129": {
+      "task_id": "ae7050da-5300-48d6-bb4b-87a0e5efb129",
+      "task_type": "index_rebuild",
+      "status": "pending",
+      "priority": 1,
+      "payload": {},
+      "created_at": "2026-04-26T11:49:04Z",
+      "started_at": null,
+      "completed_at": null,
+      "error_msg": null,
+      "retry_count": 0,
+      "trigger_mode": "manual"
+    },
+    "4f05101f-768f-4308-a19b-c5320d00791b": {
+      "task_id": "4f05101f-768f-4308-a19b-c5320d00791b",
+      "task_type": "dwp_cleanup",
+      "status": "pending",
+      "priority": 5,
+      "payload": {},
+      "created_at": "2026-04-26T11:50:04Z",
+      "started_at": null,
+      "completed_at": null,
+      "error_msg": null,
+      "retry_count": 0,
+      "trigger_mode": "manual"
+    }
+  },
+  "cluster_idle": false
+}

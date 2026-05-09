@@ -1,0 +1,383 @@
+基于 ODS 层的 128 张表，ER 图
+---
+
+## 一、用户与客户域（约 14 张表）
+
+### 核心表及关系
+- **`pingan_insurance_user`**（主表）  
+  - 1:N → `pingan_insurance_user_auth`（通过 `user_id`）  
+  - 1:N → `pingan_insurance_user_profile`（通过 `user_id`）  
+  - 1:N → `pingan_insurance_user_vehicle`（通过 `user_id`）  
+  - 1:N → `pingan_insurance_user_risk_score`（通过 `user_id`）  
+  - 1:N → `pingan_insurance_device`（通过 `user_id`）  
+  - 1:N → `pingan_insurance_session`（通过 `user_id`）  
+  - 1:N → `pingan_insurance_user_address`（通过 `user_id`）  
+  - 1:N → `pingan_insurance_agent_customer`（作为客户，`user_id`）  
+  - 1:N → `pingan_insurance_enterprise_user`（作为员工，`user_id`）  
+  - 1:N → `pingan_insurance_blacklist`（`target_type=1`，`target_id=user_id`）
+
+- **`pingan_insurance_enterprise`**（企业主表）  
+  - 1:N → `pingan_insurance_enterprise_user`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_enterprise_policy`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_enterprise_claim`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_enterprise_risk_assessment`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_disaster_warning`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_smart_inspection`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_enterprise_health_service`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_enterprise_finance`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_enterprise_legal`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_enterprise_assistant`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_fleet_management`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_employee_benefit`（通过 `enterprise_id`）  
+  - 1:N → `pingan_insurance_blacklist`（`target_type=3`，`target_id=enterprise_id`）
+
+- **`pingan_insurance_agent`**（代理人）  
+  - 1:N → `pingan_insurance_agent_customer`（通过 `agent_id`）  
+  - 1:N → `pingan_insurance_agent_performance`（通过 `agent_id`）  
+  - 1:N → `pingan_insurance_agent_tool_log`（通过 `agent_id`）  
+  - N:1 → `pingan_insurance_user`（`agent.user_id` 引用 `user.user_id`）  
+  - N:1 → `pingan_insurance_org`（`agent.org_id`）
+
+- **`pingan_insurance_user_vehicle`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - 1:N → `pingan_insurance_policy_master`（作为车险保单的 `vehicle_id`）  
+  - 1:N → `pingan_insurance_claim_vehicle`（通过 `vehicle_id`）  
+  - 1:N → `pingan_insurance_safe_driving_score`（通过 `vehicle_id`）  
+  - 1:N → `pingan_insurance_fleet_management`（通过 `vehicle_id`）  
+  - 1:N → `pingan_insurance_policy_vehicle_detail`（通过 `vehicle_id`）
+
+- **`pingan_insurance_user_address`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - 1:N → `pingan_insurance_mall_order`（`shipping_address_id`）
+
+- **`pingan_insurance_blacklist`**  
+  - 多态关联：`target_type` + `target_id` 指向 `user`、`user_vehicle`、`enterprise`
+
+---
+
+## 二、保单域（约 22 张表）
+
+### 核心表及关系
+- **`pingan_insurance_policy_master`**（保单主表）  
+  - N:1 → `pingan_insurance_user`（投保人 `user_id`）  
+  - N:1 → `pingan_insurance_user_vehicle`（`vehicle_id`，可为空）  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`，可为空）  
+  - N:1 → `pingan_insurance_agent`（`agent_id`）  
+  - N:1 → `pingan_insurance_product_definition`（`product_code`）  
+  - 1:N → `pingan_insurance_policy_risk_detail`（通过 `policy_no`）  
+  - 1:N → `pingan_insurance_policy_vehicle_detail`（通过 `policy_no`）  
+  - 1:N → `pingan_insurance_policy_insured`（通过 `policy_no`）  
+  - 1:N → `pingan_insurance_policy_endorsement`（通过 `policy_no`）  
+  - 1:N → `pingan_insurance_policy_upload_log`（通过 `policy_no`）  
+  - 1:N → `pingan_insurance_premium_payment`（通过 `policy_no`）  
+  - 1:N → `pingan_insurance_reinsurance`（通过 `policy_no`）  
+  - 1:N → `pingan_insurance_underwriting_log`（通过 `policy_no`）  
+  - 1:N → `pingan_insurance_nonauto_policy`（通过 `policy_no`，1:1 扩展）  
+  - 1:N → `pingan_insurance_claim_report`（通过 `policy_no`）  
+  - 1:N → `pingan_insurance_enterprise_policy`（通过 `policy_no`，1:1 扩展）  
+  - 1:N → `pingan_insurance_policy_renewal`（作为原保单或新保单）  
+  - 1:N → `pingan_insurance_subsidy_record`（通过 `policy_no`）  
+  - 1:N → `pingan_insurance_gov_insurance_policy`（通过 `policy_no`）  
+  - 1:N → `pingan_insurance_agricultural_policy`（通过 `policy_no`，1:1 扩展）  
+  - 1:N → `pingan_insurance_policy_query_log`（通过 `policy_no`）
+
+- **`pingan_insurance_nonauto_policy`**  
+  - N:1 → `pingan_insurance_policy_master`（`policy_no`）  
+  - 1:1 → `pingan_insurance_health_policy`（通过 `policy_no`）  
+  - 1:1 → `pingan_insurance_pet_policy`（通过 `policy_no`）  
+  - 1:1 → `pingan_insurance_property_policy`（通过 `policy_no`）  
+  - 1:1 → `pingan_insurance_travel_policy`（通过 `policy_no`）
+
+- **`pingan_insurance_product_definition`**  
+  - 1:N → `pingan_insurance_price_factor`（通过 `product_code`）  
+  - 1:N → `pingan_insurance_underwriting_rule`（通过 `product_code`）  
+  - 1:N → `pingan_insurance_policy_master`（通过 `product_code`）
+
+- **`pingan_insurance_premium_payment`**  
+  - N:1 → `pingan_insurance_policy_master`（`policy_no`）  
+  - 1:1 → `pingan_insurance_premium_reconciliation`（通过 `payment_id`）
+
+---
+
+## 三、理赔域（约 18 张表）
+
+### 核心表及关系
+- **`pingan_insurance_claim_report`**（报案主表）  
+  - N:1 → `pingan_insurance_policy_master`（`policy_no`）  
+  - N:1 → `pingan_insurance_user`（报案人 `user_id`）  
+  - 1:1 → `pingan_insurance_claim_vehicle`（通过 `claim_no`）  
+  - 1:N → `pingan_insurance_claim_injury`（通过 `claim_no`）  
+  - 1:N → `pingan_insurance_medical_advance`（通过 `claim_no`）  
+  - 1:1 → `pingan_insurance_survey_task`（通过 `claim_no`）  
+  - 1:N → `pingan_insurance_damage_photo`（通过 `claim_no`）  
+  - 1:N → `pingan_insurance_damage_assessment`（通过 `claim_no`）  
+  - 1:N → `pingan_insurance_claim_approval`（通过 `claim_no`）  
+  - 1:N → `pingan_insurance_claim_payment`（通过 `claim_no`）  
+  - 1:1 → `pingan_insurance_claim_fast_payment`（通过 `claim_no`）  
+  - 1:N → `pingan_insurance_claim_anti_fraud`（通过 `claim_no`）  
+  - 1:N → `pingan_insurance_enterprise_claim`（通过 `claim_no`，1:1 扩展）  
+  - 1:N → `pingan_insurance_claim_progress_query_log`（通过 `claim_no`）
+
+- **`pingan_insurance_survey_task`**  
+  - N:1 → `pingan_insurance_claim_report`（`claim_no`）  
+  - N:1 → `pingan_insurance_surveyor`（`surveyor_id`）
+
+- **`pingan_insurance_damage_assessment`**  
+  - N:1 → `pingan_insurance_claim_report`（`claim_no`）  
+  - 1:N → `pingan_insurance_dim_loss_item`（实际上 ODS 中没有 `dim_loss_item`，但有 `damage_part_master`？注意 ODS 中定损项目明细存储在 `dim_loss_item`？但建表语句中给出了 `dim_loss_item`，实际缺失。不过 `damage_assessment` 本身包含部件编码，不单独拆分明细，设计时可认为一对多关系通过 `damage_part_master` 间接关联？更准确：`damage_assessment` 直接包含 `damage_part_code`，引用 `damage_part_master.part_code`）
+
+- **`pingan_insurance_damage_part_master`**（配件价格库，静态）  
+  - 1:N → `pingan_insurance_damage_assessment`（通过 `part_code`）
+
+- **`pingan_insurance_surveyor`**  
+  - 1:N → `pingan_insurance_survey_task`（通过 `surveyor_id`）  
+  - 1:N → `pingan_insurance_surveyor_location`（通过 `surveyor_id`）
+
+---
+
+## 四、车服务域（约 12 张表）
+
+### 核心表及关系
+- **`pingan_insurance_service_order`**（服务订单主表）  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_user_coupon`（`coupon_id`，可为空）  
+  - 1:1 → `pingan_insurance_fuel_order`（通过 `order_no`）  
+  - 1:1 → `pingan_insurance_charge_order`（通过 `order_no`）  
+  - 1:1 → `pingan_insurance_car_wash_order`（通过 `order_no`）  
+  - 1:1 → `pingan_insurance_designated_driver_order`（通过 `order_no`）  
+  - 1:1 → `pingan_insurance_maintenance_order`（通过 `order_no`）  
+  - 1:1 → `pingan_insurance_rescue_order`（通过 `order_no`）  
+  - 1:N → `pingan_insurance_service_guarantee`（通过 `order_no`）
+
+- **`pingan_insurance_fuel_station`**（加油站）  
+  - 1:N → `pingan_insurance_fuel_order`（通过 `station_id`）
+
+- **`pingan_insurance_car_wash_shop`**  
+  - 1:N → `pingan_insurance_car_wash_order`（通过 `shop_id`）
+
+- **`pingan_insurance_charge_pile`**  
+  - N:1 → `pingan_insurance_fuel_station`（`station_id`）  
+  - 1:N → `pingan_insurance_charge_order`（通过 `pile_id`）
+
+---
+
+## 五、商城域（约 10 张表）
+
+### 核心表及关系
+- **`pingan_insurance_mall_order`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_user_address`（`shipping_address_id`）  
+  - 1:N → `pingan_insurance_order_item`（通过 `order_no`）  
+  - 1:N → `pingan_insurance_points_exchange_order`（积分兑换订单，但后者独立）
+
+- **`pingan_insurance_mall_product`**  
+  - 1:N → `pingan_insurance_order_item`（通过 `product_id`）  
+  - 1:N → `pingan_insurance_points_exchange_order`（通过 `product_id`）  
+  - 1:N → `pingan_insurance_shopping_cart`（通过 `product_id`）  
+  - 1:N → `pingan_insurance_merchant_product`（通过 `product_id`）  
+  - 1:1 → `pingan_insurance_agricultural_product`（通过 `product_id`，助农产品扩展）
+
+- **`pingan_insurance_merchant`**（商家）  
+  - 1:N → `pingan_insurance_merchant_product`（通过 `merchant_id`）  
+  - 1:N → `pingan_insurance_merchant_region`（通过 `merchant_id`）  
+  - 1:N → `pingan_insurance_merchant_service_type`（通过 `merchant_id`）  
+  - 1:N → `pingan_insurance_merchant_score`（通过 `merchant_id`）  
+  - 1:N → `pingan_insurance_merchant_complaint`（通过 `merchant_id`）  
+  - 1:N → `pingan_insurance_merchant_qualification`（通过 `merchant_id`）  
+  - 1:N → `pingan_insurance_service_order` 中的 `supplier_id`（间接关联）
+
+- **`pingan_insurance_shopping_cart`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_mall_product`（`product_id`）
+
+- **`pingan_insurance_points_exchange_order`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_mall_product`（`product_id`）
+
+---
+
+## 六、运营域（约 20 张表）
+
+### 核心表及关系
+- **`pingan_insurance_campaign_master`**（活动）  
+  - 1:N → `pingan_insurance_campaign_participation`（通过 `campaign_id`）  
+  - 1:N → `pingan_insurance_outbound_call_task`（通过 `campaign_id`）
+
+- **`pingan_insurance_campaign_participation`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_campaign_master`（`campaign_id`）
+
+- **`pingan_insurance_user_coupon`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - 1:N → `pingan_insurance_service_order`（`coupon_id`）  
+  - 1:N → `pingan_insurance_shopping_cart`（优惠券使用记录，但购物车不直接关联，实际可能通过订单使用）
+
+- **`pingan_insurance_points_account`**  
+  - 1:1 → `pingan_insurance_user`（`user_id`，主键即外键）  
+  - 1:N → `pingan_insurance_points_transaction`（通过 `user_id`）
+
+- **`pingan_insurance_points_transaction`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_points_account`（`user_id`）
+
+- **`pingan_insurance_signin_log`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）
+
+- **`pingan_insurance_invite_relation`**  
+  - N:1 → `pingan_insurance_user`（作为邀请人 `inviter_user_id`）  
+  - N:1 → `pingan_insurance_user`（作为被邀请人 `invitee_user_id`）
+
+- **`pingan_insurance_share_record`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）
+
+- **`pingan_insurance_push_task`**  
+  - 1:N → `pingan_insurance_push_record`（通过 `task_id`）
+
+- **`pingan_insurance_push_record`**  
+  - N:1 → `pingan_insurance_push_task`（`task_id`）  
+  - N:1 → `pingan_insurance_user`（`user_id`）
+
+- **`pingan_insurance_inbox_message`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）
+
+- **`pingan_insurance_wechat_follower`**  
+  - N:1 → `pingan_insurance_user`（`user_id`，可为空）  
+  - 1:N → `pingan_insurance_wechat_interaction`（通过 `openid`）
+
+- **`pingan_insurance_outbound_call_task`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_campaign_master`（`campaign_id`）  
+  - 1:1 → `pingan_insurance_call_record`（通过 `call_task_id`）
+
+- **`pingan_insurance_live_room`**  
+  - 1:N → `pingan_insurance_live_view`（通过 `room_id`）  
+  - 1:N → `pingan_insurance_live_product`（通过 `room_id`）  
+  - 1:N → `pingan_insurance_live_realtime_data`（通过 `room_id`）  
+  - 1:N → `pingan_insurance_live_order`（通过 `room_id`）
+
+- **`pingan_insurance_live_view`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_live_room`（`room_id`）
+
+- **`pingan_insurance_live_product`**  
+  - N:1 → `pingan_insurance_live_room`（`room_id`）  
+  - N:1 → `pingan_insurance_mall_product`（`product_id`）
+
+- **`pingan_insurance_live_order`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_live_room`（`room_id`）  
+  - N:1 → `pingan_insurance_mall_product`（`product_id`）
+
+---
+
+## 七、B端企业域（约 15 张表）
+
+### 核心表及关系
+- **`pingan_insurance_enterprise_policy`**  
+  - N:1 → `pingan_insurance_policy_master`（`policy_no`）  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`）
+
+- **`pingan_insurance_enterprise_claim`**  
+  - N:1 → `pingan_insurance_claim_report`（`claim_no`）  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`）
+
+- **`pingan_insurance_enterprise_risk_assessment`**  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`）
+
+- **`pingan_insurance_disaster_warning`**  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`）
+
+- **`pingan_insurance_smart_inspection`**  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`）
+
+- **`pingan_insurance_enterprise_health_service`**  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`）
+
+- **`pingan_insurance_enterprise_finance`**  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`）
+
+- **`pingan_insurance_enterprise_legal`**  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`）
+
+- **`pingan_insurance_enterprise_assistant`**  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`）
+
+- **`pingan_insurance_fleet_management`**  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`）  
+  - N:1 → `pingan_insurance_user_vehicle`（`vehicle_id`）  
+  - N:1 → `pingan_insurance_user`（`driver_id`）
+
+- **`pingan_insurance_employee_benefit`**  
+  - N:1 → `pingan_insurance_enterprise`（`enterprise_id`）  
+  - N:1 → `pingan_insurance_user`（`employee_id`）
+
+- **`pingan_insurance_agent_performance`**  
+  - N:1 → `pingan_insurance_agent`（`agent_id`）
+
+- **`pingan_insurance_agent_tool_log`**  
+  - N:1 → `pingan_insurance_agent`（`agent_id`）
+
+---
+
+## 八、G端惠民与公益域（约 8 张表）
+
+### 核心表及关系
+- **`pingan_insurance_gov_insurance_product`**  
+  - 1:N → `pingan_insurance_gov_insurance_policy`（通过 `product_code`）
+
+- **`pingan_insurance_gov_insurance_policy`**  
+  - N:1 → `pingan_insurance_policy_master`（`policy_no`）  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_gov_insurance_product`（`product_code`）
+
+- **`pingan_insurance_public_welfare_points`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）
+
+- **`pingan_insurance_blackspot_road`**  
+  - 1:N → `pingan_insurance_road_improvement_project`（通过 `road_id`）
+
+- **`pingan_insurance_road_improvement_project`**  
+  - N:1 → `pingan_insurance_blackspot_road`（`road_id`）
+
+- **`pingan_insurance_agricultural_policy`**  
+  - N:1 → `pingan_insurance_policy_master`（`policy_no`）
+
+---
+
+## 九、监管与合规域（约 6 张表）
+
+### 核心表及关系
+- **`pingan_insurance_compliance_report`**（独立，无外键）
+
+- **`pingan_insurance_data_audit_log`**  
+  - 可关联 `operator_id`（指向员工或用户，但无强制外键）
+
+- **`pingan_insurance_complaint_record`**  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_policy_master`（`policy_no`，可为空）  
+  - N:1 → `pingan_insurance_claim_report`（`claim_no`，可为空）
+
+- **`pingan_insurance_anti_fraud_graph`**  
+  - 节点类型多态，可关联 `user`、`user_vehicle`、`merchant`、`surveyor` 等
+
+- **`pingan_insurance_system_config`**（独立）
+
+---
+
+## 十、公共域（约 4 张表）
+
+- **`pingan_insurance_dict`**（独立，被其他表作为枚举值引用，但无外键约束）
+
+- **`pingan_insurance_region`**（行政区划）  
+  - 自关联：`parent_id` → `pingan_insurance_region_id`  
+  - 被 `user_address`、`merchant_region` 等表引用（但未建外键）
+
+- **`pingan_insurance_org`**（组织机构）  
+  - 自关联：`parent_id` → `pingan_insurance_org_id`  
+  - 被 `agent`、`surveyor` 等表引用
+
+- **`pingan_insurance_user_behavior_log`**（埋点）  
+  - N:1 → `pingan_insurance_user`（`user_id`）  
+  - N:1 → `pingan_insurance_device`（`device_id`）
+
+---

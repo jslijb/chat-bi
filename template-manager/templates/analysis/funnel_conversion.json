@@ -1,0 +1,20 @@
+{
+  "template_id": "funnel_conversion",
+  "template_type": "analysis",
+  "name": "漏斗转化分析",
+  "description": "多步骤转化率分析，识别转化瓶颈",
+  "version": "1.0",
+  "dimensions": [{"name": "funnel_step", "label": "漏斗步骤", "type": "string"}],
+  "metrics": [
+    {"name": "step_count", "label": "步骤人数/数", "type": "bigint"},
+    {"name": "conversion_rate", "label": "转化率", "type": "decimal", "derived": true},
+    {"name": "drop_off_rate", "label": "流失率", "type": "decimal", "derived": true}
+  ],
+  "params": [
+    {"name": "steps", "label": "漏斗步骤定义", "type": "array", "required": true},
+    {"name": "time_window", "label": "转化时间窗口(天)", "type": "int", "default": 30}
+  ],
+  "features": {"funnel_chart": true, "step_comparison": true, "time_window_analysis": true},
+  "storage_engine_hint": "ADS",
+  "render_config": {"chart_type": "funnel", "value_field": "step_count", "rate_field": "conversion_rate"}
+}

@@ -1,0 +1,20 @@
+{
+  "template_id": "detail_drill",
+  "template_type": "report",
+  "name": "明细下钻报表",
+  "description": "从汇总层下钻到明细层，支持多级下钻",
+  "version": "1.0",
+  "dimensions": [
+    {"name": "level_1", "label": "一级维度", "type": "string"},
+    {"name": "level_2", "label": "二级维度", "type": "string", "optional": true},
+    {"name": "level_3", "label": "三级维度", "type": "string", "optional": true}
+  ],
+  "metrics": [
+    {"name": "amount", "label": "金额", "type": "decimal", "aggregation": "SUM"},
+    {"name": "count", "label": "数量", "type": "bigint", "aggregation": "COUNT"},
+    {"name": "avg_value", "label": "均值", "type": "decimal", "aggregation": "AVG", "optional": true}
+  ],
+  "features": {"drill_down": true, "drill_levels": 3, "breadcrumb": true, "export": true},
+  "storage_engine_hint": "Doris",
+  "render_config": {"chart_type": "table", "drill_config": [{"level": 1, "dim": "level_1"}, {"level": 2, "dim": "level_2"}, {"level": 3, "dim": "level_3"}]}
+}

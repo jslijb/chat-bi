@@ -1,0 +1,12 @@
+{
+  "target_layer": "ADS",
+  "build_batches": [
+    {
+      "layer": "ODS",
+      "database": "cx_ods_safe",
+      "hdfs_path": "/cx_ods_safe/ods/",
+      "table_count": 128,
+      "parallel": true
+    }
+  ]
+}

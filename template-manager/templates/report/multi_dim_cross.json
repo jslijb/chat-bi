@@ -1,0 +1,18 @@
+{
+  "template_id": "multi_dim_cross",
+  "template_type": "report",
+  "name": "多维交叉报表",
+  "description": "多维度交叉分析，支持行列转置和条件格式",
+  "version": "1.0",
+  "dimensions": [
+    {"name": "row_dim", "label": "行维度", "type": "string"},
+    {"name": "col_dim", "label": "列维度", "type": "string"},
+    {"name": "filter_dim", "label": "筛选维度", "type": "string", "optional": true}
+  ],
+  "metrics": [
+    {"name": "cross_value", "label": "交叉值", "type": "decimal", "aggregation": "SUM"}
+  ],
+  "features": {"pivot": true, "transpose": true, "conditional_format": true, "subtotal": true},
+  "storage_engine_hint": "Doris",
+  "render_config": {"chart_type": "pivot_table", "row_field": "row_dim", "col_field": "col_dim", "value_field": "cross_value"}
+}

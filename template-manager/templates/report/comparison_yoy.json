@@ -1,0 +1,23 @@
+{
+  "template_id": "comparison_yoy",
+  "template_type": "report",
+  "name": "同比环比报表",
+  "description": "当期与同期对比，计算同比/环比增长率",
+  "version": "1.0",
+  "dimensions": [
+    {"name": "period", "label": "对比周期", "type": "string"},
+    {"name": "category", "label": "分类维度", "type": "string", "optional": true}
+  ],
+  "metrics": [
+    {"name": "current_value", "label": "当期值", "type": "decimal"},
+    {"name": "yoy_value", "label": "同期值", "type": "decimal"},
+    {"name": "mom_value", "label": "上期值", "type": "decimal"}
+  ],
+  "derived_metrics": [
+    {"name": "yoy_rate", "formula": "(current_value - yoy_value) / NULLIF(yoy_value, 0)", "label": "同比增长率"},
+    {"name": "mom_rate", "formula": "(current_value - mom_value) / NULLIF(mom_value, 0)", "label": "环比增长率"}
+  ],
+  "features": {"yoy_comparison": true, "mom_comparison": true, "color_coding": true},
+  "storage_engine_hint": "ADS",
+  "render_config": {"chart_type": "table", "highlight": ["yoy_rate", "mom_rate"]}
+}

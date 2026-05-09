@@ -1,0 +1,2345 @@
+[
+  {
+    "table": "pingan_insurance_agent",
+    "domain": "代理人域",
+    "comment": "代理人信息表",
+    "column_count": 9,
+    "columns": [
+      "agent_id",
+      "user_id",
+      "agent_code",
+      "level",
+      "org_id",
+      "hire_date",
+      "status",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_agent.yaml",
+    "chunk_text": "表: pingan_insurance_agent (代理人信息表) | 域: 代理人域 | 字段: agent_id(代理人ID), user_id(关联用户ID), agent_code(代理人编号), level(职级：1-普通，2-主管，3-经理), org_id(所属机构ID), hire_date(入职日期), status(状态：1-在职，0-离职), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_agent_customer",
+    "domain": "代理人域",
+    "comment": "代理人-客户关系表",
+    "column_count": 6,
+    "columns": [
+      "rel_id",
+      "agent_id",
+      "user_id",
+      "bind_time",
+      "unbind_time",
+      "source"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_agent_customer.yaml",
+    "chunk_text": "表: pingan_insurance_agent_customer (代理人-客户关系表) | 域: 代理人域 | 字段: rel_id(关系ID), agent_id(代理人ID), user_id(客户用户ID), bind_time(绑定时间), unbind_time(解绑时间), source(绑定来源)"
+  },
+  {
+    "table": "pingan_insurance_agent_performance",
+    "domain": "代理人域",
+    "comment": "代理人业绩表",
+    "column_count": 7,
+    "columns": [
+      "performance_id",
+      "agent_id",
+      "stat_date",
+      "policy_count",
+      "premium_total",
+      "commission_total",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_agent_performance.yaml",
+    "chunk_text": "表: pingan_insurance_agent_performance (代理人业绩表) | 域: 代理人域 | 字段: performance_id(业绩ID), agent_id(代理人ID), stat_date(统计日期), policy_count(出单数量), premium_total(总保费（分）), commission_total(总佣金（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_agent_tool_log",
+    "domain": "代理人域",
+    "comment": "代理人展业工具日志",
+    "column_count": 6,
+    "columns": [
+      "log_id",
+      "agent_id",
+      "tool_type",
+      "target_id",
+      "operate_time",
+      "etl_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_agent_tool_log.yaml",
+    "chunk_text": "表: pingan_insurance_agent_tool_log (代理人展业工具日志) | 域: 代理人域 | 字段: log_id(日志ID), agent_id(代理人ID), tool_type(工具类型(1-展业码 2-分享链接 3-APP)), target_id(目标对象ID(保单号/活动ID等)), operate_time(操作时间), etl_time(ETL时间)"
+  },
+  {
+    "table": "pingan_insurance_agricultural_policy",
+    "domain": "农险域",
+    "comment": "政策性农险保单扩展表",
+    "column_count": 6,
+    "columns": [
+      "policy_no",
+      "farmer_name",
+      "crop_type",
+      "insured_area",
+      "subsidy_rate",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_agricultural_policy.yaml",
+    "chunk_text": "表: pingan_insurance_agricultural_policy (政策性农险保单扩展表) | 域: 农险域 | 字段: policy_no(保单号), farmer_name(农户姓名), crop_type(作物类型), insured_area(投保面积（亩）), subsidy_rate(补贴比例（%）), create_time(创建时间) | 枚举: crop_type: 水稻"
+  },
+  {
+    "table": "pingan_insurance_agricultural_product",
+    "domain": "农险域",
+    "comment": "助农产品表",
+    "column_count": 4,
+    "columns": [
+      "product_id",
+      "origin",
+      "farmer_info",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_agricultural_product.yaml",
+    "chunk_text": "表: pingan_insurance_agricultural_product (助农产品表) | 域: 农险域 | 字段: product_id(商品ID), origin(产地), farmer_info(农户信息), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_anti_fraud_graph",
+    "domain": "反欺诈域",
+    "comment": "反欺诈图数据表（节点）",
+    "column_count": 4,
+    "columns": [
+      "node_id",
+      "node_type",
+      "node_properties_json",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_anti_fraud_graph.yaml",
+    "chunk_text": "表: pingan_insurance_anti_fraud_graph (反欺诈图数据表（节点）) | 域: 反欺诈域 | 字段: node_id(节点ID), node_type(节点类型：1-用户，2-车辆，3-修理厂，4-查勘员), node_properties_json(节点属性), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_blacklist",
+    "domain": "风控域",
+    "comment": "黑名单表",
+    "column_count": 9,
+    "columns": [
+      "id",
+      "target_type",
+      "target_id",
+      "reason",
+      "operator",
+      "add_time",
+      "expire_time",
+      "status",
+      "remove_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_blacklist.yaml",
+    "chunk_text": "表: pingan_insurance_blacklist (黑名单表) | 域: 风控域 | 字段: id(ID), target_type(对象类型：1-用户，2-车辆，3-企业), target_id(对象ID（user_id/vehicle_id/enterprise_id）), reason(列入原因), operator(操作人), add_time(列入时间), expire_time(过期时间（NULL表示永久）), status(状态：1-生效，0-已解除), remove_time(解除时间)"
+  },
+  {
+    "table": "pingan_insurance_blackspot_road",
+    "domain": "道路安全域",
+    "comment": "隐患路段表",
+    "column_count": 8,
+    "columns": [
+      "road_id",
+      "road_name",
+      "location_gps",
+      "risk_type",
+      "accident_count",
+      "improvement_status",
+      "donation_amount",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_blackspot_road.yaml",
+    "chunk_text": "表: pingan_insurance_blackspot_road (隐患路段表) | 域: 道路安全域 | 字段: road_id(路段ID), road_name(路段名称), location_gps(经纬度), risk_type(风险类型（弯道盲区/行人横穿等）), accident_count(历史事故数量), improvement_status(改造状态：0-待改造，1-改造中，2-已完成), donation_amount(平安捐赠金额（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_call_record",
+    "domain": "触达域",
+    "comment": "通话记录表",
+    "column_count": 7,
+    "columns": [
+      "call_id",
+      "call_task_id",
+      "start_time",
+      "end_time",
+      "duration",
+      "recording_url",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_call_record.yaml",
+    "chunk_text": "表: pingan_insurance_call_record (通话记录表) | 域: 触达域 | 字段: call_id(通话记录ID), call_task_id(外呼任务ID), start_time(开始时间), end_time(结束时间), duration(通话时长（秒）), recording_url(录音文件URL), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_campaign_master",
+    "domain": "营销域",
+    "comment": "活动主表",
+    "column_count": 9,
+    "columns": [
+      "campaign_id",
+      "campaign_name",
+      "campaign_type",
+      "start_time",
+      "end_time",
+      "budget",
+      "status",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_campaign_master.yaml",
+    "chunk_text": "表: pingan_insurance_campaign_master (活动主表) | 域: 营销域 | 字段: campaign_id(活动ID), campaign_name(活动名称), campaign_type(活动类型：1-节日营销，2-裂变活动，3-直播活动，4-签到活动), start_time(开始时间), end_time(结束时间), budget(预算（分）), status(状态：1-未开始，2-进行中，3-已结束，4-已取消), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_campaign_participation",
+    "domain": "营销域",
+    "comment": "活动参与记录表",
+    "column_count": 6,
+    "columns": [
+      "participation_id",
+      "user_id",
+      "campaign_id",
+      "participation_time",
+      "reward_status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_campaign_participation.yaml",
+    "chunk_text": "表: pingan_insurance_campaign_participation (活动参与记录表) | 域: 营销域 | 字段: participation_id(参与记录ID), user_id(用户ID), campaign_id(活动ID), participation_time(参与时间), reward_status(奖励状态：0-未发放，1-已发放), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_car_wash_order",
+    "domain": "车服务域",
+    "comment": "洗车订单表",
+    "column_count": 5,
+    "columns": [
+      "order_no",
+      "shop_id",
+      "wash_type",
+      "price",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_car_wash_order.yaml",
+    "chunk_text": "表: pingan_insurance_car_wash_order (洗车订单表) | 域: 车服务域 | 字段: order_no(订单号), shop_id(洗车店ID), wash_type(洗车类型：1-普洗，2-精洗), price(价格（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_car_wash_shop",
+    "domain": "车服务域",
+    "comment": "洗车店表",
+    "column_count": 6,
+    "columns": [
+      "shop_id",
+      "shop_name",
+      "address",
+      "gps",
+      "price_standard",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_car_wash_shop.yaml",
+    "chunk_text": "表: pingan_insurance_car_wash_shop (洗车店表) | 域: 车服务域 | 字段: shop_id(洗车店ID), shop_name(店铺名称), address(地址), gps(经纬度), price_standard(价格标准（普洗/精洗价格）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_charge_order",
+    "domain": "车服务域",
+    "comment": "充电订单表",
+    "column_count": 7,
+    "columns": [
+      "order_no",
+      "pile_id",
+      "charge_start",
+      "charge_end",
+      "power",
+      "total_fee",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_charge_order.yaml",
+    "chunk_text": "表: pingan_insurance_charge_order (充电订单表) | 域: 车服务域 | 字段: order_no(订单号), pile_id(充电桩ID), charge_start(开始充电时间), charge_end(结束充电时间), power(充电量（度）), total_fee(总费用（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_charge_pile",
+    "domain": "车服务域",
+    "comment": "充电桩表",
+    "column_count": 6,
+    "columns": [
+      "pile_id",
+      "station_id",
+      "pile_type",
+      "power",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_charge_pile.yaml",
+    "chunk_text": "表: pingan_insurance_charge_pile (充电桩表) | 域: 车服务域 | 字段: pile_id(充电桩ID), station_id(所属场站ID), pile_type(桩类型（快充/慢充）), power(功率（kW）), status(状态：1-空闲，2-使用中，3-故障), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_claim_anti_fraud",
+    "domain": "理赔域",
+    "comment": "反欺诈关系表",
+    "column_count": 7,
+    "columns": [
+      "fraud_id",
+      "claim_no",
+      "related_entity_type",
+      "related_entity_id",
+      "relationship_graph",
+      "fraud_score",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_claim_anti_fraud.yaml",
+    "chunk_text": "表: pingan_insurance_claim_anti_fraud (反欺诈关系表) | 域: 理赔域 | 字段: fraud_id(欺诈分析ID), claim_no(理赔单号), related_entity_type(关联实体类型：1-用户，2-车辆，3-修理厂，4-查勘员), related_entity_id(关联实体ID), relationship_graph(关系图谱（节点关系）), fraud_score(欺诈评分), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_claim_approval",
+    "domain": "理赔域",
+    "comment": "核赔审批表",
+    "column_count": 8,
+    "columns": [
+      "approval_id",
+      "claim_no",
+      "approver_id",
+      "approval_amount",
+      "approval_time",
+      "approval_result",
+      "remark",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_claim_approval.yaml",
+    "chunk_text": "表: pingan_insurance_claim_approval (核赔审批表) | 域: 理赔域 | 字段: approval_id(审批ID), claim_no(理赔单号), approver_id(审批人ID), approval_amount(审批金额（分）), approval_time(审批时间), approval_result(结果：1-通过，2-驳回), remark(备注), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_claim_fast_payment",
+    "domain": "理赔域",
+    "comment": "三免信用赔表",
+    "column_count": 6,
+    "columns": [
+      "fast_pay_id",
+      "claim_no",
+      "user_id",
+      "eligible_score",
+      "payment_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_claim_fast_payment.yaml",
+    "chunk_text": "表: pingan_insurance_claim_fast_payment (三免信用赔表) | 域: 理赔域 | 字段: fast_pay_id(快速赔案ID), claim_no(理赔单号), user_id(用户ID), eligible_score(符合条件时的安驾分), payment_time(赔付时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_claim_injury",
+    "domain": "理赔域",
+    "comment": "人伤案件信息表",
+    "column_count": 9,
+    "columns": [
+      "id",
+      "claim_no",
+      "injured_person_name",
+      "injured_type",
+      "injury_desc",
+      "hospital_name",
+      "hospitalization_days",
+      "disability_level",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_claim_injury.yaml",
+    "chunk_text": "表: pingan_insurance_claim_injury (人伤案件信息表) | 域: 理赔域 | 字段: id(ID), claim_no(理赔单号), injured_person_name(伤者姓名), injured_type(伤者类型：1-驾驶员，2-乘客，3-第三方), injury_desc(伤情描述), hospital_name(就诊医院), hospitalization_days(住院天数), disability_level(伤残等级（1-10级）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_claim_payment",
+    "domain": "理赔域",
+    "comment": "赔款支付表",
+    "column_count": 9,
+    "columns": [
+      "payment_id",
+      "claim_no",
+      "payee_type",
+      "payee_account",
+      "amount",
+      "payment_time",
+      "transaction_id",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_claim_payment.yaml",
+    "chunk_text": "表: pingan_insurance_claim_payment (赔款支付表) | 域: 理赔域 | 字段: payment_id(支付ID), claim_no(理赔单号), payee_type(收款方类型：1-车主，2-修理厂，3-医院), payee_account(收款账号), amount(支付金额（分）), payment_time(支付时间), transaction_id(交易流水号), status(状态：1-成功，2-失败), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_claim_progress_query_log",
+    "domain": "理赔域",
+    "comment": "理赔进度查询日志",
+    "column_count": 5,
+    "columns": [
+      "query_id",
+      "user_id",
+      "claim_no",
+      "query_time",
+      "result"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_claim_progress_query_log.yaml",
+    "chunk_text": "表: pingan_insurance_claim_progress_query_log (理赔进度查询日志) | 域: 理赔域 | 字段: query_id(查询ID), user_id(用户ID), claim_no(理赔单号), query_time(查询时间), result(查询结果快照)"
+  },
+  {
+    "table": "pingan_insurance_claim_report",
+    "domain": "理赔域",
+    "comment": "报案主表",
+    "column_count": 11,
+    "columns": [
+      "claim_no",
+      "policy_no",
+      "user_id",
+      "accident_date",
+      "accident_location",
+      "accident_desc",
+      "report_channel",
+      "claim_status",
+      "is_deleted",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_claim_report.yaml",
+    "chunk_text": "表: pingan_insurance_claim_report (报案主表) | 域: 理赔域 | 字段: claim_no(理赔单号), policy_no(保单号), user_id(报案人用户ID), accident_date(出险时间), accident_location(出险地点), accident_desc(事故描述), report_channel(报案渠道：1-95511，2-APP，3-微信，4-代理人), claim_status(理赔状态：1-已报案，2-查勘中，3-定损中，4-核赔中，5-已结案，6-拒赔), is_deleted(逻辑删除标记), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_claim_vehicle",
+    "domain": "理赔域",
+    "comment": "车险理赔车辆信息表",
+    "column_count": 7,
+    "columns": [
+      "id",
+      "claim_no",
+      "vehicle_id",
+      "driver_name",
+      "driver_license",
+      "accident_type",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_claim_vehicle.yaml",
+    "chunk_text": "表: pingan_insurance_claim_vehicle (车险理赔车辆信息表) | 域: 理赔域 | 字段: id(ID), claim_no(理赔单号), vehicle_id(车辆ID), driver_name(驾驶员姓名), driver_license(驾驶证号), accident_type(事故类型), create_time(创建时间) | 枚举: accident_type: 电影"
+  },
+  {
+    "table": "pingan_insurance_complaint_record",
+    "domain": "客服域",
+    "comment": "消费者投诉表",
+    "column_count": 9,
+    "columns": [
+      "complaint_id",
+      "user_id",
+      "policy_no",
+      "claim_no",
+      "complaint_content",
+      "handle_result",
+      "close_time",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_complaint_record.yaml",
+    "chunk_text": "表: pingan_insurance_complaint_record (消费者投诉表) | 域: 客服域 | 字段: complaint_id(投诉ID), user_id(投诉用户ID), policy_no(关联保单号), claim_no(关联理赔单号), complaint_content(投诉内容), handle_result(处理结果), close_time(结案时间), status(状态：0-待处理，1-处理中，2-已结案), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_compliance_report",
+    "domain": "合规域",
+    "comment": "监管报表表",
+    "column_count": 6,
+    "columns": [
+      "report_id",
+      "report_type",
+      "report_date",
+      "file_url",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_compliance_report.yaml",
+    "chunk_text": "表: pingan_insurance_compliance_report (监管报表表) | 域: 合规域 | 字段: report_id(报表ID), report_type(报表类型（如偿付能力报告）), report_date(报表日期), file_url(文件URL), status(状态：1-已生成，2-已报送), create_time(创建时间) | 枚举: report_type: 偿付能力/资产负债"
+  },
+  {
+    "table": "pingan_insurance_damage_assessment",
+    "domain": "理赔域",
+    "comment": "定损表",
+    "column_count": 12,
+    "columns": [
+      "assessment_id",
+      "claim_no",
+      "damage_part_code",
+      "repair_type",
+      "part_price",
+      "labor_fee",
+      "estimated_amount",
+      "manual_adjust_amount",
+      "actual_amount",
+      "is_auto_settled",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_damage_assessment.yaml",
+    "chunk_text": "表: pingan_insurance_damage_assessment (定损表) | 域: 理赔域 | 字段: assessment_id(定损单号), claim_no(理赔单号), damage_part_code(受损部件编码), repair_type(维修类型：1-换件，2-维修), part_price(配件价格（分）), labor_fee(工时费（分）), estimated_amount(AI预估金额（分）), manual_adjust_amount(人工调整金额（分）), actual_amount(核赔确认金额（分）), is_auto_settled(是否自动核赔), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_damage_part_master",
+    "domain": "理赔域",
+    "comment": "配件价格库表",
+    "column_count": 7,
+    "columns": [
+      "part_code",
+      "part_name",
+      "brand",
+      "price",
+      "effective_date",
+      "expiry_date",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_damage_part_master.yaml",
+    "chunk_text": "表: pingan_insurance_damage_part_master (配件价格库表) | 域: 理赔域 | 字段: part_code(配件编码), part_name(配件名称), brand(品牌), price(价格（分）), effective_date(生效日期), expiry_date(失效日期), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_damage_photo",
+    "domain": "理赔域",
+    "comment": "受损照片表",
+    "column_count": 10,
+    "columns": [
+      "photo_id",
+      "claim_no",
+      "photo_type",
+      "photo_url",
+      "upload_time",
+      "ai_damage_part",
+      "ai_damage_level",
+      "ai_model_version",
+      "is_manual_review",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_damage_photo.yaml",
+    "chunk_text": "表: pingan_insurance_damage_photo (受损照片表) | 域: 理赔域 | 字段: photo_id(照片ID), claim_no(理赔单号), photo_type(照片类型：1-全景，2-部件特写，3-证件), photo_url(OSS存储路径), upload_time(上传时间), ai_damage_part(AI识别受损部件), ai_damage_level(AI损伤程度（1-5）), ai_model_version(AI模型版本), is_manual_review(是否人工复核), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_data_audit_log",
+    "domain": "系统域",
+    "comment": "数据审计日志表",
+    "column_count": 8,
+    "columns": [
+      "log_id",
+      "operator_id",
+      "operation_type",
+      "table_name",
+      "record_id",
+      "before_json",
+      "after_json",
+      "operation_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_data_audit_log.yaml",
+    "chunk_text": "表: pingan_insurance_data_audit_log (数据审计日志表) | 域: 系统域 | 字段: log_id(日志ID), operator_id(操作人ID), operation_type(操作类型：1-INSERT，2-UPDATE，3-DELETE), table_name(表名), record_id(记录主键), before_json(修改前JSON), after_json(修改后JSON), operation_time(操作时间)"
+  },
+  {
+    "table": "pingan_insurance_designated_driver_order",
+    "domain": "车服务域",
+    "comment": "代驾订单表",
+    "column_count": 7,
+    "columns": [
+      "order_no",
+      "start_gps",
+      "end_gps",
+      "distance",
+      "duration",
+      "fee",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_designated_driver_order.yaml",
+    "chunk_text": "表: pingan_insurance_designated_driver_order (代驾订单表) | 域: 车服务域 | 字段: order_no(订单号), start_gps(起点经纬度), end_gps(终点经纬度), distance(距离（米）), duration(预估时长（分钟）), fee(费用（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_device",
+    "domain": "其他",
+    "comment": "用户设备信息表",
+    "column_count": 7,
+    "columns": [
+      "device_id",
+      "user_id",
+      "os_type",
+      "app_version",
+      "push_token",
+      "last_active_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_device.yaml",
+    "chunk_text": "表: pingan_insurance_device (用户设备信息表) | 域: 其他 | 字段: device_id(设备唯一标识), user_id(用户ID（未登录可为空）), os_type(操作系统：iOS/Android), app_version(APP版本号), push_token(推送Token), last_active_time(最后活跃时间), create_time(首次记录时间)"
+  },
+  {
+    "table": "pingan_insurance_dict",
+    "domain": "其他",
+    "comment": "数据字典表",
+    "column_count": 6,
+    "columns": [
+      "dict_id",
+      "dict_type",
+      "dict_key",
+      "dict_value",
+      "sort_order",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_dict.yaml",
+    "chunk_text": "表: pingan_insurance_dict (数据字典表) | 域: 其他 | 字段: dict_id(字典ID), dict_type(字典类型), dict_key(字典键), dict_value(字典值), sort_order(排序), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_disaster_warning",
+    "domain": "灾害域",
+    "comment": "灾害预警表",
+    "column_count": 6,
+    "columns": [
+      "warning_id",
+      "enterprise_id",
+      "warning_type",
+      "warning_content",
+      "push_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_disaster_warning.yaml",
+    "chunk_text": "表: pingan_insurance_disaster_warning (灾害预警表) | 域: 灾害域 | 字段: warning_id(预警ID), enterprise_id(企业ID), warning_type(预警类型：1-台风，2-暴雨，3-火灾，4-地震), warning_content(预警内容), push_time(推送时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_employee_benefit",
+    "domain": "其他",
+    "comment": "员工福利表",
+    "column_count": 8,
+    "columns": [
+      "benefit_id",
+      "enterprise_id",
+      "employee_id",
+      "benefit_type",
+      "benefit_amount",
+      "benefit_time",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_employee_benefit.yaml",
+    "chunk_text": "表: pingan_insurance_employee_benefit (员工福利表) | 域: 其他 | 字段: benefit_id(福利ID), enterprise_id(企业ID), employee_id(员工用户ID), benefit_type(福利类型(健康/体检/卡券)), benefit_amount(福利金额（分）), benefit_time(发放时间), status(状态(1-有效 0-已使用)), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_enterprise",
+    "domain": "企业域",
+    "comment": "企业客户主表",
+    "column_count": 12,
+    "columns": [
+      "enterprise_id",
+      "name",
+      "credit_code",
+      "legal_person",
+      "contact_phone",
+      "contact_person",
+      "address",
+      "industry",
+      "status",
+      "is_deleted",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_enterprise.yaml",
+    "chunk_text": "表: pingan_insurance_enterprise (企业客户主表) | 域: 企业域 | 字段: enterprise_id(企业ID), name(企业名称), credit_code(统一社会信用代码), legal_person(法定代表人), contact_phone(联系电话), contact_person(联系人), address(注册地址), industry(所属行业), status(状态：0-冻结，1-正常), is_deleted(逻辑删除标记), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_enterprise_assistant",
+    "domain": "企业域",
+    "comment": "企业助手服务表",
+    "column_count": 6,
+    "columns": [
+      "service_id",
+      "enterprise_id",
+      "service_type",
+      "request_time",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_enterprise_assistant.yaml",
+    "chunk_text": "表: pingan_insurance_enterprise_assistant (企业助手服务表) | 域: 企业域 | 字段: service_id(服务ID), enterprise_id(企业ID), service_type(服务类型(企业培训/年检代办)), request_time(请求时间), status(状态(1-处理中 2-已完成)), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_enterprise_claim",
+    "domain": "企业域",
+    "comment": "企业理赔扩展表",
+    "column_count": 4,
+    "columns": [
+      "claim_no",
+      "enterprise_id",
+      "claim_type",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_enterprise_claim.yaml",
+    "chunk_text": "表: pingan_insurance_enterprise_claim (企业理赔扩展表) | 域: 企业域 | 字段: claim_no(理赔单号), enterprise_id(企业ID), claim_type(理赔类型), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_enterprise_finance",
+    "domain": "企业域",
+    "comment": "企业财税服务表",
+    "column_count": 6,
+    "columns": [
+      "finance_id",
+      "enterprise_id",
+      "service_type",
+      "request_time",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_enterprise_finance.yaml",
+    "chunk_text": "表: pingan_insurance_enterprise_finance (企业财税服务表) | 域: 企业域 | 字段: finance_id(服务ID), enterprise_id(企业ID), service_type(服务类型：1-财税咨询，2-财务工具), request_time(请求时间), status(状态：1-处理中，2-已完成), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_enterprise_health_service",
+    "domain": "企业域",
+    "comment": "企业健康服务表",
+    "column_count": 6,
+    "columns": [
+      "service_id",
+      "enterprise_id",
+      "service_type",
+      "service_date",
+      "employee_count",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_enterprise_health_service.yaml",
+    "chunk_text": "表: pingan_insurance_enterprise_health_service (企业健康服务表) | 域: 企业域 | 字段: service_id(服务ID), enterprise_id(企业ID), service_type(服务类型：1-在线问诊，2-体检预约，3-健康课堂), service_date(服务日期), employee_count(参与员工数), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_enterprise_legal",
+    "domain": "企业域",
+    "comment": "企业法律服务表",
+    "column_count": 7,
+    "columns": [
+      "service_id",
+      "enterprise_id",
+      "request_time",
+      "service_type",
+      "status",
+      "result",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_enterprise_legal.yaml",
+    "chunk_text": "表: pingan_insurance_enterprise_legal (企业法律服务表) | 域: 企业域 | 字段: service_id(服务ID), enterprise_id(企业ID), request_time(请求时间), service_type(服务类型(法律咨询/找律师)), status(状态(1-处理中 2-已完成)), result(处理结果), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_enterprise_policy",
+    "domain": "企业域",
+    "comment": "企业保单扩展表",
+    "column_count": 5,
+    "columns": [
+      "policy_no",
+      "enterprise_id",
+      "employee_count",
+      "industry",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_enterprise_policy.yaml",
+    "chunk_text": "表: pingan_insurance_enterprise_policy (企业保单扩展表) | 域: 企业域 | 字段: policy_no(保单号), enterprise_id(企业ID), employee_count(雇员数量), industry(行业), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_enterprise_risk_assessment",
+    "domain": "企业域",
+    "comment": "企业风险评估表",
+    "column_count": 6,
+    "columns": [
+      "assessment_id",
+      "enterprise_id",
+      "risk_score",
+      "report_url",
+      "assessment_date",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_enterprise_risk_assessment.yaml",
+    "chunk_text": "表: pingan_insurance_enterprise_risk_assessment (企业风险评估表) | 域: 企业域 | 字段: assessment_id(评估ID), enterprise_id(企业ID), risk_score(风险评分), report_url(评估报告URL), assessment_date(评估日期), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_enterprise_user",
+    "domain": "企业域",
+    "comment": "企业-用户关联表",
+    "column_count": 7,
+    "columns": [
+      "rel_id",
+      "enterprise_id",
+      "user_id",
+      "role",
+      "bind_time",
+      "unbind_time",
+      "status"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_enterprise_user.yaml",
+    "chunk_text": "表: pingan_insurance_enterprise_user (企业-用户关联表) | 域: 企业域 | 字段: rel_id(关联ID), enterprise_id(企业ID), user_id(用户ID), role(角色：1-管理员，2-员工，3-经办人), bind_time(绑定时间), unbind_time(解绑时间), status(状态：1-生效，0-失效)"
+  },
+  {
+    "table": "pingan_insurance_financial_report",
+    "domain": "其他",
+    "comment": "财务报告表",
+    "column_count": 6,
+    "columns": [
+      "report_id",
+      "report_type",
+      "report_date",
+      "file_url",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_financial_report.yaml",
+    "chunk_text": "表: pingan_insurance_financial_report (财务报告表) | 域: 其他 | 字段: report_id(报告ID), report_type(报告类型(偿付能力/资产负债)), report_date(报告日期), file_url(文件路径), status(状态(1-已生成 2-已报送)), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_fleet_management",
+    "domain": "其他",
+    "comment": "车队管理表",
+    "column_count": 6,
+    "columns": [
+      "fleet_id",
+      "enterprise_id",
+      "vehicle_id",
+      "driver_id",
+      "add_time",
+      "remove_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_fleet_management.yaml",
+    "chunk_text": "表: pingan_insurance_fleet_management (车队管理表) | 域: 其他 | 字段: fleet_id(车队ID), enterprise_id(企业ID), vehicle_id(车辆ID), driver_id(驾驶员ID(关联用户)), add_time(添加时间), remove_time(移除时间)"
+  },
+  {
+    "table": "pingan_insurance_fuel_order",
+    "domain": "车服务域",
+    "comment": "加油订单表",
+    "column_count": 8,
+    "columns": [
+      "order_no",
+      "station_id",
+      "fuel_type",
+      "liter",
+      "unit_price",
+      "total_price",
+      "discount",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_fuel_order.yaml",
+    "chunk_text": "表: pingan_insurance_fuel_order (加油订单表) | 域: 车服务域 | 字段: order_no(订单号), station_id(加油站ID), fuel_type(油品类型（92#/95#/98#）), liter(加油量（升）), unit_price(单价（分）), total_price(总价（分）), discount(优惠金额（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_fuel_station",
+    "domain": "车服务域",
+    "comment": "加油站表",
+    "column_count": 6,
+    "columns": [
+      "station_id",
+      "station_name",
+      "address",
+      "gps",
+      "brand",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_fuel_station.yaml",
+    "chunk_text": "表: pingan_insurance_fuel_station (加油站表) | 域: 车服务域 | 字段: station_id(加油站ID), station_name(加油站名称), address(地址), gps(经纬度), brand(品牌（中石化/中石油/其他）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_gov_insurance_policy",
+    "domain": "其他",
+    "comment": "惠民保单表",
+    "column_count": 6,
+    "columns": [
+      "policy_no",
+      "user_id",
+      "product_code",
+      "subsidy_amount",
+      "self_pay_amount",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_gov_insurance_policy.yaml",
+    "chunk_text": "表: pingan_insurance_gov_insurance_policy (惠民保单表) | 域: 其他 | 字段: policy_no(保单号), user_id(用户ID), product_code(产品代码), subsidy_amount(补贴金额（分）), self_pay_amount(个人自付金额（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_gov_insurance_product",
+    "domain": "其他",
+    "comment": "惠民保产品表",
+    "column_count": 7,
+    "columns": [
+      "product_code",
+      "product_name",
+      "region",
+      "coverage",
+      "premium_subsidy",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_gov_insurance_product.yaml",
+    "chunk_text": "表: pingan_insurance_gov_insurance_product (惠民保产品表) | 域: 其他 | 字段: product_code(产品代码), product_name(产品名称), region(地区（省/市）), coverage(保障范围), premium_subsidy(政府补贴金额（分）), status(状态：1-在售，0-停售), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_health_policy",
+    "domain": "其他",
+    "comment": "健康险专有表",
+    "column_count": 6,
+    "columns": [
+      "id",
+      "policy_no",
+      "health_questions_json",
+      "underwriting_result",
+      "waiting_period",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_health_policy.yaml",
+    "chunk_text": "表: pingan_insurance_health_policy (健康险专有表) | 域: 其他 | 字段: id(ID), policy_no(保单号), health_questions_json(健康问卷答案), underwriting_result(核保结论：标准体/加费/除外/拒保), waiting_period(等待期（天）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_inbox_message",
+    "domain": "消息域",
+    "comment": "站内信表",
+    "column_count": 7,
+    "columns": [
+      "msg_id",
+      "user_id",
+      "msg_title",
+      "msg_content",
+      "is_read",
+      "read_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_inbox_message.yaml",
+    "chunk_text": "表: pingan_insurance_inbox_message (站内信表) | 域: 消息域 | 字段: msg_id(消息ID), user_id(用户ID), msg_title(标题), msg_content(内容), is_read(是否已读), read_time(阅读时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_invite_relation",
+    "domain": "其他",
+    "comment": "邀请关系表",
+    "column_count": 9,
+    "columns": [
+      "invite_id",
+      "inviter_user_id",
+      "invitee_user_id",
+      "invite_channel",
+      "invite_time",
+      "is_registered",
+      "is_purchased",
+      "reward_status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_invite_relation.yaml",
+    "chunk_text": "表: pingan_insurance_invite_relation (邀请关系表) | 域: 其他 | 字段: invite_id(邀请ID), inviter_user_id(邀请人用户ID), invitee_user_id(被邀请人用户ID), invite_channel(邀请渠道（微信/朋友圈/QQ）), invite_time(邀请时间), is_registered(是否已注册), is_purchased(是否已完成首购), reward_status(奖励状态：0-未发放，1-已发放), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_labor_fee_standard",
+    "domain": "其他",
+    "comment": "工时费标准表",
+    "column_count": 5,
+    "columns": [
+      "standard_id",
+      "city_code",
+      "repair_type",
+      "labor_fee",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_labor_fee_standard.yaml",
+    "chunk_text": "表: pingan_insurance_labor_fee_standard (工时费标准表) | 域: 其他 | 字段: standard_id(标准ID), city_code(城市代码), repair_type(维修类型（如钣金、喷漆）), labor_fee(工时费（分）), create_time(创建时间) | 枚举: repair_type: 喷漆/钣金"
+  },
+  {
+    "table": "pingan_insurance_live_order",
+    "domain": "直播域",
+    "comment": "直播订单表",
+    "column_count": 7,
+    "columns": [
+      "order_id",
+      "room_id",
+      "user_id",
+      "product_id",
+      "order_amount",
+      "pay_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_live_order.yaml",
+    "chunk_text": "表: pingan_insurance_live_order (直播订单表) | 域: 直播域 | 字段: order_id(订单ID), room_id(直播间ID), user_id(用户ID), product_id(商品ID), order_amount(订单金额（分）), pay_time(支付时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_live_product",
+    "domain": "直播域",
+    "comment": "直播商品关联表",
+    "column_count": 7,
+    "columns": [
+      "live_product_id",
+      "room_id",
+      "product_id",
+      "live_price",
+      "stock",
+      "sold_count",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_live_product.yaml",
+    "chunk_text": "表: pingan_insurance_live_product (直播商品关联表) | 域: 直播域 | 字段: live_product_id(直播商品ID), room_id(直播间ID), product_id(商品ID（关联商城商品）), live_price(直播价（分）), stock(直播专享库存), sold_count(已售数量), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_live_realtime_data",
+    "domain": "直播域",
+    "comment": "直播实时数据表（快照）",
+    "column_count": 8,
+    "columns": [
+      "data_id",
+      "room_id",
+      "stat_time",
+      "current_viewers",
+      "accum_viewers",
+      "order_count",
+      "pay_amount",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_live_realtime_data.yaml",
+    "chunk_text": "表: pingan_insurance_live_realtime_data (直播实时数据表（快照）) | 域: 直播域 | 字段: data_id(数据ID), room_id(直播间ID), stat_time(统计时间（秒级）), current_viewers(当前在线人数), accum_viewers(累计观看人次), order_count(累计下单数), pay_amount(累计支付金额（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_live_room",
+    "domain": "直播域",
+    "comment": "直播间表",
+    "column_count": 9,
+    "columns": [
+      "room_id",
+      "room_name",
+      "anchor",
+      "start_time",
+      "end_time",
+      "status",
+      "total_viewers",
+      "peak_viewers",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_live_room.yaml",
+    "chunk_text": "表: pingan_insurance_live_room (直播间表) | 域: 直播域 | 字段: room_id(直播间ID), room_name(直播间名称), anchor(主播), start_time(开始时间), end_time(结束时间), status(状态：1-预约中，2-直播中，3-已结束), total_viewers(累计观看人次), peak_viewers(峰值在线人数), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_maintenance_order",
+    "domain": "车服务域",
+    "comment": "保养订单表",
+    "column_count": 5,
+    "columns": [
+      "order_no",
+      "shop_id",
+      "service_items",
+      "cost",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_maintenance_order.yaml",
+    "chunk_text": "表: pingan_insurance_maintenance_order (保养订单表) | 域: 车服务域 | 字段: order_no(订单号), shop_id(保养店ID), service_items(服务项目列表), cost(费用（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_mall_order",
+    "domain": "商城域",
+    "comment": "商城订单表",
+    "column_count": 8,
+    "columns": [
+      "order_no",
+      "user_id",
+      "total_amount",
+      "pay_amount",
+      "points_used",
+      "order_status",
+      "pay_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_mall_order.yaml",
+    "chunk_text": "表: pingan_insurance_mall_order (商城订单表) | 域: 商城域 | 字段: order_no(订单号), user_id(用户ID), total_amount(总金额（分）), pay_amount(实付金额（分）), points_used(使用的积分), order_status(状态：1-待支付，2-已支付，3-已发货，4-已完成，5-已取消), pay_time(支付时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_mall_product",
+    "domain": "商城域",
+    "comment": "商品表",
+    "column_count": 9,
+    "columns": [
+      "product_id",
+      "product_name",
+      "category",
+      "price",
+      "points_price",
+      "stock",
+      "status",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_mall_product.yaml",
+    "chunk_text": "表: pingan_insurance_mall_product (商品表) | 域: 商城域 | 字段: product_id(商品ID), product_name(商品名称), category(分类：1-车品，2-食品，3-家居，4-卡券), price(售价（分）), points_price(积分兑换价格), stock(库存), status(状态：1-上架，0-下架), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_medical_advance",
+    "domain": "其他",
+    "comment": "医疗垫付记录表",
+    "column_count": 7,
+    "columns": [
+      "advance_id",
+      "claim_no",
+      "amount",
+      "hospital_name",
+      "advance_time",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_medical_advance.yaml",
+    "chunk_text": "表: pingan_insurance_medical_advance (医疗垫付记录表) | 域: 其他 | 字段: advance_id(垫付ID), claim_no(理赔单号), amount(垫付金额（分）), hospital_name(垫付医院), advance_time(垫付时间), status(状态：1-已垫付，2-已结算，3-已核销), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_merchant",
+    "domain": "商家域",
+    "comment": "商家表",
+    "column_count": 8,
+    "columns": [
+      "merchant_id",
+      "merchant_name",
+      "merchant_type",
+      "contact_phone",
+      "address",
+      "status",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_merchant.yaml",
+    "chunk_text": "表: pingan_insurance_merchant (商家表) | 域: 商家域 | 字段: merchant_id(商家ID), merchant_name(商家名称), merchant_type(类型：1-洗车店，2-保养店，3-加油站，4-代驾公司，5-体检机构，6-家政公司), contact_phone(联系电话), address(地址), status(状态：1-正常，0-冻结), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_merchant_complaint",
+    "domain": "商家域",
+    "comment": "商家投诉表",
+    "column_count": 8,
+    "columns": [
+      "complaint_id",
+      "merchant_id",
+      "user_id",
+      "complaint_content",
+      "complaint_time",
+      "handle_status",
+      "handle_result",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_merchant_complaint.yaml",
+    "chunk_text": "表: pingan_insurance_merchant_complaint (商家投诉表) | 域: 商家域 | 字段: complaint_id(投诉ID), merchant_id(商家ID), user_id(投诉用户ID), complaint_content(投诉内容), complaint_time(投诉时间), handle_status(处理状态：0-未处理，1-处理中，2-已处理), handle_result(处理结果), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_merchant_product",
+    "domain": "商家域",
+    "comment": "商家商品关联表",
+    "column_count": 5,
+    "columns": [
+      "merchant_product_id",
+      "merchant_id",
+      "product_id",
+      "supply_price",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_merchant_product.yaml",
+    "chunk_text": "表: pingan_insurance_merchant_product (商家商品关联表) | 域: 商家域 | 字段: merchant_product_id(关联ID), merchant_id(商家ID), product_id(商品ID), supply_price(供货价（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_merchant_qualification",
+    "domain": "商家域",
+    "comment": "商家资质表",
+    "column_count": 7,
+    "columns": [
+      "qual_id",
+      "merchant_id",
+      "cert_type",
+      "cert_no",
+      "cert_image",
+      "expire_date",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_merchant_qualification.yaml",
+    "chunk_text": "表: pingan_insurance_merchant_qualification (商家资质表) | 域: 商家域 | 字段: qual_id(资质ID), merchant_id(商家ID), cert_type(证件类型（营业执照/行业许可证）), cert_no(证件编号), cert_image(证件图片URL), expire_date(有效期), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_merchant_region",
+    "domain": "商家域",
+    "comment": "商家区域覆盖表",
+    "column_count": 6,
+    "columns": [
+      "region_id",
+      "merchant_id",
+      "province",
+      "city",
+      "district",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_merchant_region.yaml",
+    "chunk_text": "表: pingan_insurance_merchant_region (商家区域覆盖表) | 域: 商家域 | 字段: region_id(区域ID), merchant_id(商家ID), province(省), city(市), district(区), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_merchant_score",
+    "domain": "商家域",
+    "comment": "商家评分表",
+    "column_count": 8,
+    "columns": [
+      "merchant_id",
+      "total_orders",
+      "completion_rate",
+      "avg_rating",
+      "complaint_count",
+      "on_time_rate",
+      "score_level",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_merchant_score.yaml",
+    "chunk_text": "表: pingan_insurance_merchant_score (商家评分表) | 域: 商家域 | 字段: merchant_id(商家ID), total_orders(总服务单数), completion_rate(履约率（%）), avg_rating(用户平均评分(1-5)), complaint_count(投诉数量), on_time_rate(准时率（%）), score_level(评分等级：S/A/B/C/D), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_merchant_service_type",
+    "domain": "商家域",
+    "comment": "商家服务类型表",
+    "column_count": 5,
+    "columns": [
+      "type_id",
+      "merchant_id",
+      "service_type",
+      "price_standard",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_merchant_service_type.yaml",
+    "chunk_text": "表: pingan_insurance_merchant_service_type (商家服务类型表) | 域: 商家域 | 字段: type_id(类型ID), merchant_id(商家ID), service_type(服务类型(1-洗车 2-保养 3-加油...)), price_standard(价格标准), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_move_car_request",
+    "domain": "车服务域",
+    "comment": "一键挪车请求表",
+    "column_count": 7,
+    "columns": [
+      "request_id",
+      "user_id",
+      "target_plate",
+      "location",
+      "request_time",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_move_car_request.yaml",
+    "chunk_text": "表: pingan_insurance_move_car_request (一键挪车请求表) | 域: 车服务域 | 字段: request_id(请求ID), user_id(请求用户ID), target_plate(目标车牌), location(位置), request_time(请求时间), status(状态：0-待处理，1-已通知，2-已取消), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_nonauto_policy",
+    "domain": "其他",
+    "comment": "非车险保单扩展表",
+    "column_count": 8,
+    "columns": [
+      "id",
+      "policy_no",
+      "policy_type",
+      "health_condition",
+      "property_address",
+      "travel_destination",
+      "pet_id",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_nonauto_policy.yaml",
+    "chunk_text": "表: pingan_insurance_nonauto_policy (非车险保单扩展表) | 域: 其他 | 字段: id(ID), policy_no(保单号), policy_type(险种类别：1-健康险，2-家财险，3-旅行险，4-宠物险，5-意外险), health_condition(健康告知条件（健康险）), property_address(房产地址（家财险）), travel_destination(旅行目的地（旅行险）), pet_id(宠物ID（宠物险）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_order_item",
+    "domain": "其他",
+    "comment": "订单商品明细表",
+    "column_count": 6,
+    "columns": [
+      "item_id",
+      "order_no",
+      "product_id",
+      "quantity",
+      "price",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_order_item.yaml",
+    "chunk_text": "表: pingan_insurance_order_item (订单商品明细表) | 域: 其他 | 字段: item_id(明细ID), order_no(订单号), product_id(商品ID), quantity(数量), price(单价（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_org",
+    "domain": "其他",
+    "comment": "组织机构表",
+    "column_count": 6,
+    "columns": [
+      "org_id",
+      "parent_id",
+      "org_name",
+      "org_code",
+      "org_type",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_org.yaml",
+    "chunk_text": "表: pingan_insurance_org (组织机构表) | 域: 其他 | 字段: org_id(机构ID), parent_id(上级机构ID), org_name(机构名称), org_code(机构代码), org_type(机构类型：1-总公司，2-分公司，3-支公司，4-营销服务部), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_outbound_call_task",
+    "domain": "其他",
+    "comment": "外呼任务表",
+    "column_count": 8,
+    "columns": [
+      "call_task_id",
+      "campaign_id",
+      "user_id",
+      "scheduled_time",
+      "call_status",
+      "call_result",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_outbound_call_task.yaml",
+    "chunk_text": "表: pingan_insurance_outbound_call_task (外呼任务表) | 域: 其他 | 字段: call_task_id(外呼任务ID), campaign_id(关联活动ID), user_id(用户ID), scheduled_time(计划外呼时间), call_status(状态：0-待呼叫，1-呼叫中，2-已接通，3-未接通，4-失败), call_result(通话结果), create_time(创建时间), update_time(更新时间) | 枚举: call_result: 接通"
+  },
+  {
+    "table": "pingan_insurance_pet_policy",
+    "domain": "其他",
+    "comment": "宠物险专有表",
+    "column_count": 8,
+    "columns": [
+      "id",
+      "policy_no",
+      "pet_id",
+      "pet_name",
+      "pet_species",
+      "pet_age",
+      "microchip_no",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_pet_policy.yaml",
+    "chunk_text": "表: pingan_insurance_pet_policy (宠物险专有表) | 域: 其他 | 字段: id(ID), policy_no(保单号), pet_id(宠物ID), pet_name(宠物名称), pet_species(宠物种类), pet_age(年龄), microchip_no(芯片编号), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_points_account",
+    "domain": "积分域",
+    "comment": "积分账户表",
+    "column_count": 8,
+    "columns": [
+      "user_id",
+      "total_points",
+      "available_points",
+      "frozen_points",
+      "total_consumed",
+      "version",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_points_account.yaml",
+    "chunk_text": "表: pingan_insurance_points_account (积分账户表) | 域: 积分域 | 字段: user_id(用户ID), total_points(累计获取积分), available_points(可用积分), frozen_points(冻结积分), total_consumed(累计消费积分), version(乐观锁版本号), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_points_exchange_order",
+    "domain": "积分域",
+    "comment": "积分兑换订单表",
+    "column_count": 7,
+    "columns": [
+      "exchange_id",
+      "user_id",
+      "product_id",
+      "points_used",
+      "order_status",
+      "exchange_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_points_exchange_order.yaml",
+    "chunk_text": "表: pingan_insurance_points_exchange_order (积分兑换订单表) | 域: 积分域 | 字段: exchange_id(兑换ID), user_id(用户ID), product_id(商品ID), points_used(使用积分), order_status(状态：1-待发货，2-已发货，3-已完成), exchange_time(兑换时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_points_transaction",
+    "domain": "积分域",
+    "comment": "积分流水表",
+    "column_count": 10,
+    "columns": [
+      "trans_id",
+      "user_id",
+      "trans_type",
+      "points_amount",
+      "source_type",
+      "source_id",
+      "balance_before",
+      "balance_after",
+      "expire_date",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_points_transaction.yaml",
+    "chunk_text": "表: pingan_insurance_points_transaction (积分流水表) | 域: 积分域 | 字段: trans_id(流水ID), user_id(用户ID), trans_type(类型：1-获取，2-消费，3-过期，4-冻结，5-解冻), points_amount(变动积分数量), source_type(来源类型：SIGNIN/PURCHASE/SERVICE/ACTIVITY), source_id(来源单号：订单号/活动ID), balance_before(变动前余额), balance_after(变动后余额), expire_date(积分过期日期), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_policy_endorsement",
+    "domain": "保单域",
+    "comment": "批改记录表",
+    "column_count": 10,
+    "columns": [
+      "endorsement_no",
+      "policy_no",
+      "endorsement_type",
+      "before_json",
+      "after_json",
+      "effective_date",
+      "status",
+      "apply_time",
+      "approve_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_policy_endorsement.yaml",
+    "chunk_text": "表: pingan_insurance_policy_endorsement (批改记录表) | 域: 保单域 | 字段: endorsement_no(批单号), policy_no(保单号), endorsement_type(批改类型：1-增加险种，2-减少险种，3-变更保额，4-过户，5-车牌变更), before_json(批改前快照), after_json(批改后快照), effective_date(生效日期), status(状态：1-已申请，2-已生效，3-已作废), apply_time(申请时间), approve_time(审核时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_policy_insured",
+    "domain": "保单域",
+    "comment": "被保险人信息表",
+    "column_count": 7,
+    "columns": [
+      "id",
+      "policy_no",
+      "insured_name",
+      "insured_id_type",
+      "insured_id_no",
+      "relation_to_applicant",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_policy_insured.yaml",
+    "chunk_text": "表: pingan_insurance_policy_insured (被保险人信息表) | 域: 保单域 | 字段: id(ID), policy_no(保单号), insured_name(被保险人姓名), insured_id_type(证件类型), insured_id_no(证件号码), relation_to_applicant(与投保人关系：1-本人，2-配偶，3-子女，4-父母), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_policy_master",
+    "domain": "保单域",
+    "comment": "保单主表",
+    "column_count": 16,
+    "columns": [
+      "policy_no",
+      "user_id",
+      "vehicle_id",
+      "enterprise_id",
+      "product_code",
+      "premium_total",
+      "effective_date",
+      "expiry_date",
+      "policy_status",
+      "issue_date",
+      "underwriter",
+      "channel",
+      "agent_id",
+      "is_deleted",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_policy_master.yaml",
+    "chunk_text": "表: pingan_insurance_policy_master (保单主表) | 域: 保单域 | 字段: policy_no(保单号), user_id(投保人用户ID), vehicle_id(车辆ID（车险必填）), enterprise_id(企业ID（企业保单）), product_code(产品代码), premium_total(总保费（分）), effective_date(起保日期), expiry_date(终保日期), policy_status(保单状态：1-有效，2-已终止，3-已过期，4-待生效), issue_date(出单日期), underwriter(承保人), channel(销售渠道), agent_id(代理人ID), is_deleted(逻辑删除标记), create_time(创建时间), update_time(更新时间) | 枚举: channel: AGENT/APP/OFFLINE"
+  },
+  {
+    "table": "pingan_insurance_policy_query_log",
+    "domain": "保单域",
+    "comment": "保单查询日志",
+    "column_count": 5,
+    "columns": [
+      "query_id",
+      "user_id",
+      "policy_no",
+      "query_time",
+      "result"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_policy_query_log.yaml",
+    "chunk_text": "表: pingan_insurance_policy_query_log (保单查询日志) | 域: 保单域 | 字段: query_id(查询ID), user_id(用户ID), policy_no(保单号), query_time(查询时间), result(查询结果快照)"
+  },
+  {
+    "table": "pingan_insurance_policy_renewal",
+    "domain": "保单域",
+    "comment": "续保记录表",
+    "column_count": 6,
+    "columns": [
+      "renewal_id",
+      "original_policy_no",
+      "new_policy_no",
+      "renewal_date",
+      "renewal_channel",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_policy_renewal.yaml",
+    "chunk_text": "表: pingan_insurance_policy_renewal (续保记录表) | 域: 保单域 | 字段: renewal_id(续保ID), original_policy_no(原保单号), new_policy_no(新保单号), renewal_date(续保日期), renewal_channel(续保渠道), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_policy_risk_detail",
+    "domain": "保单域",
+    "comment": "险种明细表",
+    "column_count": 10,
+    "columns": [
+      "id",
+      "policy_no",
+      "risk_code",
+      "risk_name",
+      "premium",
+      "limit_amount",
+      "deductible",
+      "status",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_policy_risk_detail.yaml",
+    "chunk_text": "表: pingan_insurance_policy_risk_detail (险种明细表) | 域: 保单域 | 字段: id(ID), policy_no(保单号), risk_code(险种代码), risk_name(险种名称), premium(保费（分）), limit_amount(保额（分）), deductible(免赔额（分）), status(状态：1-有效，0-失效), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_policy_upload_log",
+    "domain": "保单域",
+    "comment": "中保信上传日志表",
+    "column_count": 7,
+    "columns": [
+      "log_id",
+      "policy_no",
+      "upload_time",
+      "upload_status",
+      "response_msg",
+      "retry_count",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_policy_upload_log.yaml",
+    "chunk_text": "表: pingan_insurance_policy_upload_log (中保信上传日志表) | 域: 保单域 | 字段: log_id(日志ID), policy_no(保单号), upload_time(上传时间), upload_status(状态：1-成功，2-失败，3-重试中), response_msg(响应信息), retry_count(重试次数), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_policy_vehicle_detail",
+    "domain": "保单域",
+    "comment": "车险车辆信息表",
+    "column_count": 6,
+    "columns": [
+      "id",
+      "policy_no",
+      "vehicle_id",
+      "ncd_coefficient",
+      "risk_score",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_policy_vehicle_detail.yaml",
+    "chunk_text": "表: pingan_insurance_policy_vehicle_detail (车险车辆信息表) | 域: 保单域 | 字段: id(ID), policy_no(保单号), vehicle_id(车辆ID), ncd_coefficient(NCD系数), risk_score(平安内部风险评分), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_premium_payment",
+    "domain": "保费域",
+    "comment": "保费支付记录表",
+    "column_count": 8,
+    "columns": [
+      "payment_id",
+      "policy_no",
+      "amount",
+      "payment_channel",
+      "transaction_id",
+      "payment_time",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_premium_payment.yaml",
+    "chunk_text": "表: pingan_insurance_premium_payment (保费支付记录表) | 域: 保费域 | 字段: payment_id(支付ID), policy_no(保单号), amount(支付金额（分）), payment_channel(支付渠道：1-微信，2-支付宝，3-银行卡，4-积分抵扣), transaction_id(支付平台交易号), payment_time(支付时间), status(状态：1-成功，2-失败，3-退款), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_premium_reconciliation",
+    "domain": "保费域",
+    "comment": "保费对账表",
+    "column_count": 9,
+    "columns": [
+      "reconciliation_id",
+      "payment_id",
+      "channel_bill_file",
+      "channel_amount",
+      "diff_amount",
+      "reconcile_status",
+      "reconcile_time",
+      "remark",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_premium_reconciliation.yaml",
+    "chunk_text": "表: pingan_insurance_premium_reconciliation (保费对账表) | 域: 保费域 | 字段: reconciliation_id(对账ID), payment_id(支付ID), channel_bill_file(渠道账单文件路径), channel_amount(渠道清算金额（分）), diff_amount(差异金额（分，正数为我方多，负数为渠道多）), reconcile_status(对账状态：1-平账，2-我方长款，3-渠道长款，4-待处理), reconcile_time(对账时间), remark(备注), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_price_factor",
+    "domain": "定价域",
+    "comment": "定价因子配置表",
+    "column_count": 7,
+    "columns": [
+      "factor_id",
+      "product_code",
+      "factor_name",
+      "factor_type",
+      "factor_values",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_price_factor.yaml",
+    "chunk_text": "表: pingan_insurance_price_factor (定价因子配置表) | 域: 定价域 | 字段: factor_id(因子ID), product_code(产品代码), factor_name(因子名称（如NCD系数、年龄系数）), factor_type(因子类型：1-连续，2-离散), factor_values(因子取值范围/映射), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_product_definition",
+    "domain": "产品域",
+    "comment": "保险产品定义表",
+    "column_count": 9,
+    "columns": [
+      "product_code",
+      "product_name",
+      "product_type",
+      "risk_list_json",
+      "price_formula",
+      "description",
+      "status",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_product_definition.yaml",
+    "chunk_text": "表: pingan_insurance_product_definition (保险产品定义表) | 域: 产品域 | 字段: product_code(产品代码), product_name(产品名称), product_type(产品类型：1-车险，2-健康险，3-家财险，4-旅行险，5-宠物险，6-意外险), risk_list_json(所含险种列表JSON), price_formula(定价公式（表达式）), description(产品说明), status(状态：1-在售，0-停售), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_property_policy",
+    "domain": "其他",
+    "comment": "家财险专有表",
+    "column_count": 6,
+    "columns": [
+      "id",
+      "policy_no",
+      "property_address",
+      "building_area",
+      "construction_type",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_property_policy.yaml",
+    "chunk_text": "表: pingan_insurance_property_policy (家财险专有表) | 域: 其他 | 字段: id(ID), policy_no(保单号), property_address(房产地址), building_area(建筑面积（平方米）), construction_type(建筑结构), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_public_welfare_points",
+    "domain": "其他",
+    "comment": "公益积分表",
+    "column_count": 6,
+    "columns": [
+      "welfare_id",
+      "user_id",
+      "points",
+      "source",
+      "convert_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_public_welfare_points.yaml",
+    "chunk_text": "表: pingan_insurance_public_welfare_points (公益积分表) | 域: 其他 | 字段: welfare_id(公益ID), user_id(用户ID), points(公益积分), source(来源：1-安全驾驶，2-公益活动), convert_time(转化时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_push_record",
+    "domain": "触达域",
+    "comment": "推送记录表",
+    "column_count": 6,
+    "columns": [
+      "record_id",
+      "task_id",
+      "user_id",
+      "send_time",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_push_record.yaml",
+    "chunk_text": "表: pingan_insurance_push_record (推送记录表) | 域: 触达域 | 字段: record_id(记录ID), task_id(任务ID), user_id(用户ID), send_time(发送时间), status(状态：1-成功，2-失败), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_push_task",
+    "domain": "触达域",
+    "comment": "推送任务表",
+    "column_count": 8,
+    "columns": [
+      "task_id",
+      "task_name",
+      "target_user_segment",
+      "push_content",
+      "send_time",
+      "status",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_push_task.yaml",
+    "chunk_text": "表: pingan_insurance_push_task (推送任务表) | 域: 触达域 | 字段: task_id(任务ID), task_name(任务名称), target_user_segment(目标用户分群（JSON条件）), push_content(推送内容), send_time(计划发送时间), status(状态：1-待发送，2-发送中，3-已发送，4-已取消), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_region",
+    "domain": "其他",
+    "comment": "行政区划表",
+    "column_count": 6,
+    "columns": [
+      "region_id",
+      "parent_id",
+      "region_name",
+      "region_code",
+      "level",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_region.yaml",
+    "chunk_text": "表: pingan_insurance_region (行政区划表) | 域: 其他 | 字段: region_id(区域ID), parent_id(上级区域ID), region_name(区域名称), region_code(区域代码（行政区划代码）), level(层级：1-省，2-市，3-区县), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_reinsurance",
+    "domain": "其他",
+    "comment": "再保记录表",
+    "column_count": 6,
+    "columns": [
+      "reinsurance_id",
+      "policy_no",
+      "ceding_company",
+      "ceding_percentage",
+      "ceded_premium",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_reinsurance.yaml",
+    "chunk_text": "表: pingan_insurance_reinsurance (再保记录表) | 域: 其他 | 字段: reinsurance_id(再保记录ID), policy_no(保单号), ceding_company(分出公司), ceding_percentage(分出比例（%）), ceded_premium(分出保费（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_rescue_order",
+    "domain": "车服务域",
+    "comment": "救援订单表",
+    "column_count": 6,
+    "columns": [
+      "order_no",
+      "rescue_type",
+      "location",
+      "rescue_time_arrive",
+      "fee",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_rescue_order.yaml",
+    "chunk_text": "表: pingan_insurance_rescue_order (救援订单表) | 域: 车服务域 | 字段: order_no(订单号), rescue_type(救援类型：1-拖车，2-搭电，3-换胎，4-送油), location(救援地点), rescue_time_arrive(到达时间), fee(费用（分）), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_risk_hidden_danger",
+    "domain": "风控域",
+    "comment": "风险隐患表",
+    "column_count": 8,
+    "columns": [
+      "danger_id",
+      "enterprise_id",
+      "danger_type",
+      "description",
+      "discovery_date",
+      "fix_date",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_risk_hidden_danger.yaml",
+    "chunk_text": "表: pingan_insurance_risk_hidden_danger (风险隐患表) | 域: 风控域 | 字段: danger_id(隐患ID), enterprise_id(企业ID), danger_type(隐患类型), description(描述), discovery_date(发现日期), fix_date(整改日期), status(状态(0-未整改 1-已整改)), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_road_improvement_project",
+    "domain": "其他",
+    "comment": "路段改造项目表",
+    "column_count": 8,
+    "columns": [
+      "project_id",
+      "road_id",
+      "project_name",
+      "start_date",
+      "end_date",
+      "budget",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_road_improvement_project.yaml",
+    "chunk_text": "表: pingan_insurance_road_improvement_project (路段改造项目表) | 域: 其他 | 字段: project_id(项目ID), road_id(路段ID), project_name(项目名称), start_date(开始日期), end_date(结束日期), budget(预算（分）), status(状态：1-进行中，2-已完成，3-暂停), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_safe_driving_score",
+    "domain": "其他",
+    "comment": "安全驾驶评分表",
+    "column_count": 7,
+    "columns": [
+      "score_id",
+      "user_id",
+      "vehicle_id",
+      "score_date",
+      "score",
+      "model_version",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_safe_driving_score.yaml",
+    "chunk_text": "表: pingan_insurance_safe_driving_score (安全驾驶评分表) | 域: 其他 | 字段: score_id(评分ID), user_id(用户ID), vehicle_id(车辆ID), score_date(评分日期), score(评分(0-100)), model_version(模型版本), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_service_guarantee",
+    "domain": "车服务域",
+    "comment": "服务保障记录表",
+    "column_count": 7,
+    "columns": [
+      "guarantee_id",
+      "service_order_no",
+      "guarantee_type",
+      "trigger_time",
+      "compensation_amount",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_service_guarantee.yaml",
+    "chunk_text": "表: pingan_insurance_service_guarantee (服务保障记录表) | 域: 车服务域 | 字段: guarantee_id(保障ID), service_order_no(服务订单号), guarantee_type(保障类型(洗车重洗/代驾补偿)), trigger_time(触发时间), compensation_amount(补偿金额（分）), status(状态(1-待处理 2-已处理)), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_service_order",
+    "domain": "车服务域",
+    "comment": "服务订单主表",
+    "column_count": 11,
+    "columns": [
+      "order_no",
+      "user_id",
+      "service_type",
+      "order_status",
+      "total_amount",
+      "pay_amount",
+      "coupon_id",
+      "points_used",
+      "create_time",
+      "pay_time",
+      "complete_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_service_order.yaml",
+    "chunk_text": "表: pingan_insurance_service_order (服务订单主表) | 域: 车服务域 | 字段: order_no(订单号), user_id(用户ID), service_type(服务类型：1-加油，2-充电，3-洗车，4-代驾，5-保养，6-救援), order_status(订单状态：1-待支付，2-已支付，3-服务中，4-已完成，5-已取消), total_amount(总金额（分）), pay_amount(实付金额（分）), coupon_id(使用的优惠券ID), points_used(使用的积分), create_time(创建时间), pay_time(支付时间), complete_time(完成时间)"
+  },
+  {
+    "table": "pingan_insurance_session",
+    "domain": "会话域",
+    "comment": "用户会话表",
+    "column_count": 5,
+    "columns": [
+      "session_id",
+      "user_id",
+      "token",
+      "expire_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_session.yaml",
+    "chunk_text": "表: pingan_insurance_session (用户会话表) | 域: 会话域 | 字段: session_id(会话ID), user_id(用户ID), token(认证Token), expire_time(过期时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_share_record",
+    "domain": "社交域",
+    "comment": "分享记录表",
+    "column_count": 7,
+    "columns": [
+      "share_id",
+      "user_id",
+      "share_type",
+      "target_page",
+      "share_channel",
+      "share_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_share_record.yaml",
+    "chunk_text": "表: pingan_insurance_share_record (分享记录表) | 域: 社交域 | 字段: share_id(分享ID), user_id(分享用户ID), share_type(分享类型：1-活动，2-商品，3-文章), target_page(目标页面), share_channel(分享渠道：微信/朋友圈/QQ), share_time(分享时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_shopping_cart",
+    "domain": "其他",
+    "comment": "购物车表",
+    "column_count": 5,
+    "columns": [
+      "cart_id",
+      "user_id",
+      "product_id",
+      "quantity",
+      "add_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_shopping_cart.yaml",
+    "chunk_text": "表: pingan_insurance_shopping_cart (购物车表) | 域: 其他 | 字段: cart_id(购物车ID), user_id(用户ID), product_id(商品ID), quantity(数量), add_time(加入时间)"
+  },
+  {
+    "table": "pingan_insurance_signin_log",
+    "domain": "运营域",
+    "comment": "签到记录表",
+    "column_count": 5,
+    "columns": [
+      "sign_id",
+      "user_id",
+      "sign_date",
+      "points_earned",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_signin_log.yaml",
+    "chunk_text": "表: pingan_insurance_signin_log (签到记录表) | 域: 运营域 | 字段: sign_id(签到ID), user_id(用户ID), sign_date(签到日期), points_earned(获得积分), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_smart_inspection",
+    "domain": "其他",
+    "comment": "智慧巡检记录表",
+    "column_count": 6,
+    "columns": [
+      "inspection_id",
+      "enterprise_id",
+      "inspection_date",
+      "inspection_result",
+      "photo_url",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_smart_inspection.yaml",
+    "chunk_text": "表: pingan_insurance_smart_inspection (智慧巡检记录表) | 域: 其他 | 字段: inspection_id(巡检ID), enterprise_id(企业ID), inspection_date(巡检日期), inspection_result(巡检结果JSON), photo_url(照片URL), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_subsidy_record",
+    "domain": "其他",
+    "comment": "补贴记录表",
+    "column_count": 7,
+    "columns": [
+      "subsidy_id",
+      "policy_no",
+      "subsidy_type",
+      "subsidy_amount",
+      "subsidy_date",
+      "source",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_subsidy_record.yaml",
+    "chunk_text": "表: pingan_insurance_subsidy_record (补贴记录表) | 域: 其他 | 字段: subsidy_id(补贴ID), policy_no(保单号), subsidy_type(补贴类型(农险补贴/惠民保补贴)), subsidy_amount(补贴金额（分）), subsidy_date(补贴日期), source(补贴来源(政府/公司)), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_survey_task",
+    "domain": "查勘域",
+    "comment": "查勘任务表",
+    "column_count": 9,
+    "columns": [
+      "task_id",
+      "claim_no",
+      "surveyor_id",
+      "assign_time",
+      "arrive_time",
+      "survey_result",
+      "status",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_survey_task.yaml",
+    "chunk_text": "表: pingan_insurance_survey_task (查勘任务表) | 域: 查勘域 | 字段: task_id(查勘任务ID), claim_no(理赔单号), surveyor_id(查勘员ID), assign_time(派单时间), arrive_time(到达现场时间), survey_result(查勘结果), status(状态：1-已派单，2-已到达，3-已完成), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_surveyor",
+    "domain": "查勘域",
+    "comment": "查勘员信息表",
+    "column_count": 7,
+    "columns": [
+      "surveyor_id",
+      "name",
+      "phone",
+      "org_id",
+      "gps_last_location",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_surveyor.yaml",
+    "chunk_text": "表: pingan_insurance_surveyor (查勘员信息表) | 域: 查勘域 | 字段: surveyor_id(查勘员ID), name(姓名), phone(电话), org_id(所属机构ID), gps_last_location(最后位置（空间坐标）), status(状态：1-在职，0-离职), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_surveyor_location",
+    "domain": "查勘域",
+    "comment": "查勘员实时位置表",
+    "column_count": 4,
+    "columns": [
+      "location_id",
+      "surveyor_id",
+      "gps",
+      "report_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_surveyor_location.yaml",
+    "chunk_text": "表: pingan_insurance_surveyor_location (查勘员实时位置表) | 域: 查勘域 | 字段: location_id(位置ID), surveyor_id(查勘员ID), gps(GPS坐标), report_time(上报时间)"
+  },
+  {
+    "table": "pingan_insurance_system_config",
+    "domain": "其他",
+    "comment": "系统参数配置表",
+    "column_count": 4,
+    "columns": [
+      "config_key",
+      "config_value",
+      "description",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_system_config.yaml",
+    "chunk_text": "表: pingan_insurance_system_config (系统参数配置表) | 域: 其他 | 字段: config_key(配置键), config_value(配置值), description(说明), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_travel_policy",
+    "domain": "其他",
+    "comment": "旅行险专有表",
+    "column_count": 7,
+    "columns": [
+      "id",
+      "policy_no",
+      "destination",
+      "travel_start_date",
+      "travel_end_date",
+      "insured_person_list",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_travel_policy.yaml",
+    "chunk_text": "表: pingan_insurance_travel_policy (旅行险专有表) | 域: 其他 | 字段: id(ID), policy_no(保单号), destination(旅行目的地), travel_start_date(出发日期), travel_end_date(返回日期), insured_person_list(被保险人列表JSON), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_underwriting_log",
+    "domain": "核保域",
+    "comment": "核保日志表",
+    "column_count": 5,
+    "columns": [
+      "log_id",
+      "policy_no",
+      "rule_id",
+      "hit_result",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_underwriting_log.yaml",
+    "chunk_text": "表: pingan_insurance_underwriting_log (核保日志表) | 域: 核保域 | 字段: log_id(日志ID), policy_no(保单号), rule_id(命中的规则ID), hit_result(命中结果：1-通过，2-拒绝，3-人工), create_time(核保时间)"
+  },
+  {
+    "table": "pingan_insurance_underwriting_rule",
+    "domain": "核保域",
+    "comment": "核保规则表",
+    "column_count": 9,
+    "columns": [
+      "rule_id",
+      "product_code",
+      "rule_name",
+      "rule_expression",
+      "action",
+      "priority",
+      "status",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_underwriting_rule.yaml",
+    "chunk_text": "表: pingan_insurance_underwriting_rule (核保规则表) | 域: 核保域 | 字段: rule_id(规则ID), product_code(产品代码), rule_name(规则名称), rule_expression(规则表达式（如 age > 65）), action(动作：1-通过，2-拒绝，3-人工审核), priority(优先级（数值越小越高）), status(状态：1-启用，0-停用), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_user",
+    "domain": "用户域",
+    "comment": "个人用户主表",
+    "column_count": 14,
+    "columns": [
+      "user_id",
+      "mobile",
+      "id_type",
+      "id_no",
+      "real_name",
+      "nickname",
+      "gender",
+      "birth_date",
+      "register_time",
+      "last_login_time",
+      "status",
+      "is_deleted",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_user.yaml",
+    "chunk_text": "表: pingan_insurance_user (个人用户主表) | 域: 用户域 | 字段: user_id(用户ID), mobile(手机号), id_type(证件类型：1-身份证，2-护照，3-军官证，...), id_no(证件号码（加密存储）), real_name(真实姓名), nickname(昵称), gender(性别：0-未知，1-男，2-女), birth_date(出生日期), register_time(注册时间), last_login_time(最后登录时间), status(状态：0-冻结，1-正常，2-注销), is_deleted(逻辑删除标记：0-未删除，1-已删除), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_user_address",
+    "domain": "用户域",
+    "comment": "用户收货地址表",
+    "column_count": 10,
+    "columns": [
+      "address_id",
+      "user_id",
+      "consignee",
+      "phone",
+      "province",
+      "city",
+      "district",
+      "detail",
+      "is_default",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_user_address.yaml",
+    "chunk_text": "表: pingan_insurance_user_address (用户收货地址表) | 域: 用户域 | 字段: address_id(地址ID), user_id(用户ID), consignee(收货人), phone(联系电话), province(省), city(市), district(区), detail(详细地址), is_default(是否默认地址), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_user_auth",
+    "domain": "用户域",
+    "comment": "用户认证信息表",
+    "column_count": 10,
+    "columns": [
+      "auth_id",
+      "user_id",
+      "password_salt",
+      "password_hash",
+      "wechat_openid",
+      "alipay_userid",
+      "unionid",
+      "apple_id",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_user_auth.yaml",
+    "chunk_text": "表: pingan_insurance_user_auth (用户认证信息表) | 域: 用户域 | 字段: auth_id(认证ID), user_id(用户ID), password_salt(密码盐), password_hash(密码哈希), wechat_openid(微信openid), alipay_userid(支付宝用户ID), unionid(微信unionid), apple_id(Apple ID), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_user_behavior_log",
+    "domain": "用户域",
+    "comment": "用户行为埋点表",
+    "column_count": 9,
+    "columns": [
+      "log_id",
+      "user_id",
+      "device_id",
+      "event_name",
+      "event_params_json",
+      "page_name",
+      "session_id",
+      "event_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_user_behavior_log.yaml",
+    "chunk_text": "表: pingan_insurance_user_behavior_log (用户行为埋点表) | 域: 用户域 | 字段: log_id(日志ID), user_id(用户ID（未登录可为空）), device_id(设备ID), event_name(事件名称), event_params_json(事件参数), page_name(页面名称), session_id(会话ID), event_time(事件时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_user_coupon",
+    "domain": "用户域",
+    "comment": "用户优惠券表",
+    "column_count": 12,
+    "columns": [
+      "coupon_id",
+      "user_id",
+      "coupon_type",
+      "face_value",
+      "use_condition",
+      "expire_date",
+      "status",
+      "source_type",
+      "source_id",
+      "use_time",
+      "order_no",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_user_coupon.yaml",
+    "chunk_text": "表: pingan_insurance_user_coupon (用户优惠券表) | 域: 用户域 | 字段: coupon_id(优惠券ID), user_id(用户ID), coupon_type(优惠券类型：1-满减券，2-折扣券，3-直减券), face_value(面值（分）或折扣（百分数）), use_condition(使用条件（满多少元可用）), expire_date(过期日期), status(状态：1-未使用，2-已使用，3-已过期), source_type(来源类型（活动/签到/购买）), source_id(来源ID), use_time(使用时间), order_no(关联订单号), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_user_feedback",
+    "domain": "用户域",
+    "comment": "用户反馈表",
+    "column_count": 7,
+    "columns": [
+      "feedback_id",
+      "user_id",
+      "feedback_type",
+      "target_id",
+      "content",
+      "score",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_user_feedback.yaml",
+    "chunk_text": "表: pingan_insurance_user_feedback (用户反馈表) | 域: 用户域 | 字段: feedback_id(反馈ID), user_id(用户ID), feedback_type(类型(1-评价 2-投诉 3-建议)), target_id(关联对象ID(保单号/订单号)), content(反馈内容), score(评分(1-5)), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_user_profile",
+    "domain": "用户域",
+    "comment": "用户扩展资料表",
+    "column_count": 10,
+    "columns": [
+      "profile_id",
+      "user_id",
+      "occupation",
+      "education",
+      "annual_income",
+      "household_register",
+      "address",
+      "marital_status",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_user_profile.yaml",
+    "chunk_text": "表: pingan_insurance_user_profile (用户扩展资料表) | 域: 用户域 | 字段: profile_id(资料ID), user_id(用户ID), occupation(职业), education(学历), annual_income(年收入（元）), household_register(户籍地址), address(现住址), marital_status(婚姻状况：1-未婚，2-已婚，3-离异，4-丧偶), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_user_risk_score",
+    "domain": "用户域",
+    "comment": "用户风险评分表（历史记录）",
+    "column_count": 6,
+    "columns": [
+      "score_id",
+      "user_id",
+      "score",
+      "score_date",
+      "model_version",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_user_risk_score.yaml",
+    "chunk_text": "表: pingan_insurance_user_risk_score (用户风险评分表（历史记录）) | 域: 用户域 | 字段: score_id(评分ID), user_id(用户ID), score(风险评分（0-100）), score_date(评分日期), model_version(模型版本), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_user_vehicle",
+    "domain": "用户域",
+    "comment": "用户车辆档案表",
+    "column_count": 15,
+    "columns": [
+      "vehicle_id",
+      "user_id",
+      "license_plate",
+      "vin",
+      "brand",
+      "model",
+      "model_code",
+      "register_date",
+      "first_register_date",
+      "engine_no",
+      "seat_count",
+      "vehicle_type",
+      "is_deleted",
+      "create_time",
+      "update_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_user_vehicle.yaml",
+    "chunk_text": "表: pingan_insurance_user_vehicle (用户车辆档案表) | 域: 用户域 | 字段: vehicle_id(车辆档案ID), user_id(车主用户ID), license_plate(车牌号), vin(车架号(VIN)), brand(品牌), model(车型), model_code(车型编码（关联定价）), register_date(首次上牌日期), first_register_date(车辆首次登记日期（新车/二手）), engine_no(发动机号), seat_count(核定载客数), vehicle_type(车辆类型：1-私家车，2-企业车，3-营运车), is_deleted(逻辑删除标记), create_time(创建时间), update_time(更新时间)"
+  },
+  {
+    "table": "pingan_insurance_violation_query_log",
+    "domain": "其他",
+    "comment": "违章查询日志表",
+    "column_count": 6,
+    "columns": [
+      "log_id",
+      "user_id",
+      "vehicle_id",
+      "query_time",
+      "result",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_violation_query_log.yaml",
+    "chunk_text": "表: pingan_insurance_violation_query_log (违章查询日志表) | 域: 其他 | 字段: log_id(日志ID), user_id(用户ID), vehicle_id(车辆ID), query_time(查询时间), result(查询结果JSON), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_wechat_follower",
+    "domain": "触达域",
+    "comment": "公众号粉丝表",
+    "column_count": 6,
+    "columns": [
+      "openid",
+      "user_id",
+      "nickname",
+      "subscribe_time",
+      "unsubscribe_time",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_wechat_follower.yaml",
+    "chunk_text": "表: pingan_insurance_wechat_follower (公众号粉丝表) | 域: 触达域 | 字段: openid(微信openid), user_id(关联用户ID), nickname(昵称), subscribe_time(关注时间), unsubscribe_time(取消关注时间), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_wechat_interaction",
+    "domain": "触达域",
+    "comment": "公众号互动表",
+    "column_count": 5,
+    "columns": [
+      "interaction_id",
+      "openid",
+      "interaction_type",
+      "content",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_wechat_interaction.yaml",
+    "chunk_text": "表: pingan_insurance_wechat_interaction (公众号互动表) | 域: 触达域 | 字段: interaction_id(互动ID), openid(粉丝openid), interaction_type(互动类型：1-点击菜单，2-发送消息，3-扫码), content(互动内容), create_time(创建时间)"
+  },
+  {
+    "table": "pingan_insurance_welfare_entitlement",
+    "domain": "其他",
+    "comment": "公益权益表",
+    "column_count": 7,
+    "columns": [
+      "entitlement_id",
+      "user_id",
+      "entitlement_type",
+      "grant_time",
+      "expire_time",
+      "status",
+      "create_time"
+    ],
+    "foreign_keys": [],
+    "yaml_file": "pingan_insurance_welfare_entitlement.yaml",
+    "chunk_text": "表: pingan_insurance_welfare_entitlement (公益权益表) | 域: 其他 | 字段: entitlement_id(权益ID), user_id(用户ID), entitlement_type(权益类型(道路救援/三免理赔)), grant_time(授予时间), expire_time(过期时间), status(状态(1-有效 0-已使用)), create_time(创建时间)"
+  }
+]

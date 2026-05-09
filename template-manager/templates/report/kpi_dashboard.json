@@ -1,0 +1,16 @@
+{
+  "template_id": "kpi_dashboard",
+  "template_type": "report",
+  "name": "KPI看板报表",
+  "description": "核心KPI指标汇总看板，支持多指标卡片+趋势迷你图",
+  "version": "1.0",
+  "dimensions": [{"name": "kpi_group", "label": "KPI分组", "type": "string", "optional": true}],
+  "metrics": [
+    {"name": "kpi_value", "label": "KPI值", "type": "decimal"},
+    {"name": "kpi_target", "label": "目标值", "type": "decimal", "optional": true},
+    {"name": "kpi_achievement_rate", "label": "达成率", "type": "decimal", "derived": true}
+  ],
+  "features": {"sparkline": true, "target_comparison": true, "color_coding": true, "alert_threshold": true},
+  "storage_engine_hint": "ADS",
+  "render_config": {"chart_type": "kpi_cards", "layout": "grid", "sparkline_days": 30}
+}

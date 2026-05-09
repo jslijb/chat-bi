@@ -1,0 +1,17 @@
+{
+  "template_id": "adhoc_query",
+  "template_type": "analysis",
+  "name": "即席查询",
+  "description": "自由SQL查询+结果导出，支持SQL指纹去重和结果缓存",
+  "version": "1.0",
+  "dimensions": [],
+  "metrics": [],
+  "params": [
+    {"name": "sql_text", "label": "SQL语句", "type": "string", "required": true},
+    {"name": "result_limit", "label": "结果行数限制", "type": "int", "default": 1000},
+    {"name": "cache_ttl", "label": "缓存时间(秒)", "type": "int", "default": 3600}
+  ],
+  "features": {"sql_fingerprint": true, "result_cache": true, "export_csv": true, "export_excel": true},
+  "storage_engine_hint": "ADS",
+  "security": {"max_rows": 10000, "timeout_seconds": 300, "forbidden_patterns": ["DROP", "DELETE", "UPDATE", "TRUNCATE"]}
+}

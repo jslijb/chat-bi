@@ -1,0 +1,5488 @@
+table_count: 128
+domains:
+  产品域:
+    tables: 1
+    names:
+    - pingan_insurance_product_definition
+  代理人域:
+    tables: 4
+    names:
+    - pingan_insurance_agent
+    - pingan_insurance_agent_customer
+    - pingan_insurance_agent_performance
+    - pingan_insurance_agent_tool_log
+  企业域:
+    tables: 9
+    names:
+    - pingan_insurance_enterprise
+    - pingan_insurance_enterprise_user
+    - pingan_insurance_enterprise_policy
+    - pingan_insurance_enterprise_claim
+    - pingan_insurance_enterprise_risk_assessment
+    - pingan_insurance_enterprise_health_service
+    - pingan_insurance_enterprise_finance
+    - pingan_insurance_enterprise_legal
+    - pingan_insurance_enterprise_assistant
+  会话域:
+    tables: 1
+    names:
+    - pingan_insurance_session
+  保单域:
+    tables: 8
+    names:
+    - pingan_insurance_policy_master
+    - pingan_insurance_policy_risk_detail
+    - pingan_insurance_policy_vehicle_detail
+    - pingan_insurance_policy_insured
+    - pingan_insurance_policy_endorsement
+    - pingan_insurance_policy_upload_log
+    - pingan_insurance_policy_renewal
+    - pingan_insurance_policy_query_log
+  保费域:
+    tables: 2
+    names:
+    - pingan_insurance_premium_payment
+    - pingan_insurance_premium_reconciliation
+  其他:
+    tables: 29
+    names:
+    - pingan_insurance_device
+    - pingan_insurance_nonauto_policy
+    - pingan_insurance_health_policy
+    - pingan_insurance_pet_policy
+    - pingan_insurance_property_policy
+    - pingan_insurance_travel_policy
+    - pingan_insurance_reinsurance
+    - pingan_insurance_medical_advance
+    - pingan_insurance_labor_fee_standard
+    - pingan_insurance_invite_relation
+    - pingan_insurance_outbound_call_task
+    - pingan_insurance_violation_query_log
+    - pingan_insurance_order_item
+    - pingan_insurance_smart_inspection
+    - pingan_insurance_gov_insurance_product
+    - pingan_insurance_gov_insurance_policy
+    - pingan_insurance_public_welfare_points
+    - pingan_insurance_road_improvement_project
+    - pingan_insurance_system_config
+    - pingan_insurance_dict
+    - pingan_insurance_region
+    - pingan_insurance_org
+    - pingan_insurance_subsidy_record
+    - pingan_insurance_financial_report
+    - pingan_insurance_shopping_cart
+    - pingan_insurance_fleet_management
+    - pingan_insurance_employee_benefit
+    - pingan_insurance_welfare_entitlement
+    - pingan_insurance_safe_driving_score
+  农险域:
+    tables: 2
+    names:
+    - pingan_insurance_agricultural_product
+    - pingan_insurance_agricultural_policy
+  反欺诈域:
+    tables: 1
+    names:
+    - pingan_insurance_anti_fraud_graph
+  合规域:
+    tables: 1
+    names:
+    - pingan_insurance_compliance_report
+  商城域:
+    tables: 2
+    names:
+    - pingan_insurance_mall_product
+    - pingan_insurance_mall_order
+  商家域:
+    tables: 7
+    names:
+    - pingan_insurance_merchant
+    - pingan_insurance_merchant_product
+    - pingan_insurance_merchant_score
+    - pingan_insurance_merchant_complaint
+    - pingan_insurance_merchant_qualification
+    - pingan_insurance_merchant_region
+    - pingan_insurance_merchant_service_type
+  定价域:
+    tables: 1
+    names:
+    - pingan_insurance_price_factor
+  客服域:
+    tables: 1
+    names:
+    - pingan_insurance_complaint_record
+  查勘域:
+    tables: 3
+    names:
+    - pingan_insurance_survey_task
+    - pingan_insurance_surveyor
+    - pingan_insurance_surveyor_location
+  核保域:
+    tables: 2
+    names:
+    - pingan_insurance_underwriting_rule
+    - pingan_insurance_underwriting_log
+  消息域:
+    tables: 1
+    names:
+    - pingan_insurance_inbox_message
+  灾害域:
+    tables: 1
+    names:
+    - pingan_insurance_disaster_warning
+  理赔域:
+    tables: 11
+    names:
+    - pingan_insurance_claim_report
+    - pingan_insurance_claim_vehicle
+    - pingan_insurance_claim_injury
+    - pingan_insurance_damage_photo
+    - pingan_insurance_damage_assessment
+    - pingan_insurance_damage_part_master
+    - pingan_insurance_claim_approval
+    - pingan_insurance_claim_payment
+    - pingan_insurance_claim_fast_payment
+    - pingan_insurance_claim_anti_fraud
+    - pingan_insurance_claim_progress_query_log
+  用户域:
+    tables: 9
+    names:
+    - pingan_insurance_user
+    - pingan_insurance_user_auth
+    - pingan_insurance_user_profile
+    - pingan_insurance_user_vehicle
+    - pingan_insurance_user_risk_score
+    - pingan_insurance_user_coupon
+    - pingan_insurance_user_address
+    - pingan_insurance_user_behavior_log
+    - pingan_insurance_user_feedback
+  直播域:
+    tables: 4
+    names:
+    - pingan_insurance_live_room
+    - pingan_insurance_live_product
+    - pingan_insurance_live_realtime_data
+    - pingan_insurance_live_order
+  社交域:
+    tables: 1
+    names:
+    - pingan_insurance_share_record
+  积分域:
+    tables: 3
+    names:
+    - pingan_insurance_points_account
+    - pingan_insurance_points_transaction
+    - pingan_insurance_points_exchange_order
+  系统域:
+    tables: 1
+    names:
+    - pingan_insurance_data_audit_log
+  营销域:
+    tables: 2
+    names:
+    - pingan_insurance_campaign_master
+    - pingan_insurance_campaign_participation
+  触达域:
+    tables: 5
+    names:
+    - pingan_insurance_push_task
+    - pingan_insurance_push_record
+    - pingan_insurance_wechat_follower
+    - pingan_insurance_wechat_interaction
+    - pingan_insurance_call_record
+  车服务域:
+    tables: 12
+    names:
+    - pingan_insurance_service_order
+    - pingan_insurance_fuel_order
+    - pingan_insurance_fuel_station
+    - pingan_insurance_charge_order
+    - pingan_insurance_charge_pile
+    - pingan_insurance_car_wash_order
+    - pingan_insurance_car_wash_shop
+    - pingan_insurance_designated_driver_order
+    - pingan_insurance_maintenance_order
+    - pingan_insurance_rescue_order
+    - pingan_insurance_move_car_request
+    - pingan_insurance_service_guarantee
+  运营域:
+    tables: 1
+    names:
+    - pingan_insurance_signin_log
+  道路安全域:
+    tables: 1
+    names:
+    - pingan_insurance_blackspot_road
+  风控域:
+    tables: 2
+    names:
+    - pingan_insurance_blacklist
+    - pingan_insurance_risk_hidden_danger
+tables:
+  pingan_insurance_user:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 个人用户主表
+    primary_key:
+    - user_id
+    columns:
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+        auto_increment: true
+      mobile:
+        type: VARCHAR(20)
+        comment: 手机号
+        nullable: false
+      id_type:
+        type: TINYINT
+        comment: 证件类型：1-身份证，2-护照，3-军官证，...
+        nullable: false
+        default: 1
+      id_no:
+        type: VARCHAR(32)
+        comment: 证件号码（加密存储）
+        nullable: false
+      real_name:
+        type: VARCHAR(64)
+        comment: 真实姓名
+        nullable: true
+        default: null
+      nickname:
+        type: VARCHAR(64)
+        comment: 昵称
+        nullable: true
+        default: null
+      gender:
+        type: TINYINT
+        comment: 性别：0-未知，1-男，2-女
+        nullable: true
+        default: null
+      birth_date:
+        type: DATE
+        comment: 出生日期
+        nullable: true
+        default: null
+      register_time:
+        type: DATETIME
+        comment: 注册时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      last_login_time:
+        type: DATETIME
+        comment: 最后登录时间
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：0-冻结，1-正常，2-注销
+        nullable: false
+        default: 1
+      is_deleted:
+        type: TINYINT
+        comment: 逻辑删除标记：0-未删除，1-已删除
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_user_auth:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 用户认证信息表
+    primary_key:
+    - auth_id
+    columns:
+      auth_id:
+        type: BIGINT
+        comment: 认证ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      password_salt:
+        type: VARCHAR(32)
+        comment: 密码盐
+        nullable: false
+      password_hash:
+        type: VARCHAR(128)
+        comment: 密码哈希
+        nullable: false
+      wechat_openid:
+        type: VARCHAR(64)
+        comment: 微信openid
+        nullable: true
+        default: null
+      alipay_userid:
+        type: VARCHAR(64)
+        comment: 支付宝用户ID
+        nullable: true
+        default: null
+      unionid:
+        type: VARCHAR(64)
+        comment: 微信unionid
+        nullable: true
+        default: null
+      apple_id:
+        type: VARCHAR(64)
+        comment: Apple ID
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_user_profile:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 用户扩展资料表
+    primary_key:
+    - profile_id
+    columns:
+      profile_id:
+        type: BIGINT
+        comment: 资料ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      occupation:
+        type: VARCHAR(64)
+        comment: 职业
+        nullable: true
+        default: null
+      education:
+        type: VARCHAR(32)
+        comment: 学历
+        nullable: true
+        default: null
+      annual_income:
+        type: INT
+        comment: 年收入（元）
+        nullable: true
+        default: null
+      household_register:
+        type: VARCHAR(128)
+        comment: 户籍地址
+        nullable: true
+        default: null
+      address:
+        type: VARCHAR(256)
+        comment: 现住址
+        nullable: true
+        default: null
+      marital_status:
+        type: TINYINT
+        comment: 婚姻状况：1-未婚，2-已婚，3-离异，4-丧偶
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_user_vehicle:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 用户车辆档案表
+    primary_key:
+    - vehicle_id
+    columns:
+      vehicle_id:
+        type: BIGINT
+        comment: 车辆档案ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 车主用户ID
+        nullable: false
+      license_plate:
+        type: VARCHAR(16)
+        comment: 车牌号
+        nullable: false
+      vin:
+        type: VARCHAR(17)
+        comment: 车架号(VIN)
+        nullable: false
+      brand:
+        type: VARCHAR(32)
+        comment: 品牌
+        nullable: false
+      model:
+        type: VARCHAR(64)
+        comment: 车型
+        nullable: false
+      model_code:
+        type: VARCHAR(32)
+        comment: 车型编码（关联定价）
+        nullable: true
+        default: null
+      register_date:
+        type: DATE
+        comment: 首次上牌日期
+        nullable: false
+      first_register_date:
+        type: DATE
+        comment: 车辆首次登记日期（新车/二手）
+        nullable: true
+        default: null
+      engine_no:
+        type: VARCHAR(32)
+        comment: 发动机号
+        nullable: true
+        default: null
+      seat_count:
+        type: TINYINT
+        comment: 核定载客数
+        nullable: true
+        default: null
+      vehicle_type:
+        type: TINYINT
+        comment: 车辆类型：1-私家车，2-企业车，3-营运车
+        nullable: true
+        default: null
+      is_deleted:
+        type: TINYINT
+        comment: 逻辑删除标记
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_user_risk_score:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 用户风险评分表（历史记录）
+    primary_key:
+    - score_id
+    columns:
+      score_id:
+        type: BIGINT
+        comment: 评分ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      score:
+        type: DECIMAL(5,2)
+        comment: 风险评分（0-100）
+        nullable: false
+      score_date:
+        type: DATE
+        comment: 评分日期
+        nullable: false
+      model_version:
+        type: VARCHAR(32)
+        comment: 模型版本
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_enterprise:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 企业客户主表
+    primary_key:
+    - enterprise_id
+    columns:
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+        auto_increment: true
+      name:
+        type: VARCHAR(128)
+        comment: 企业名称
+        nullable: false
+      credit_code:
+        type: VARCHAR(18)
+        comment: 统一社会信用代码
+        nullable: false
+      legal_person:
+        type: VARCHAR(64)
+        comment: 法定代表人
+        nullable: true
+        default: null
+      contact_phone:
+        type: VARCHAR(20)
+        comment: 联系电话
+        nullable: false
+      contact_person:
+        type: VARCHAR(64)
+        comment: 联系人
+        nullable: true
+        default: null
+      address:
+        type: VARCHAR(256)
+        comment: 注册地址
+        nullable: true
+        default: null
+      industry:
+        type: VARCHAR(64)
+        comment: 所属行业
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：0-冻结，1-正常
+        nullable: false
+        default: 1
+      is_deleted:
+        type: TINYINT
+        comment: 逻辑删除标记
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_enterprise_user:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 企业-用户关联表
+    primary_key:
+    - rel_id
+    columns:
+      rel_id:
+        type: BIGINT
+        comment: 关联ID
+        nullable: false
+        auto_increment: true
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      role:
+        type: TINYINT
+        comment: 角色：1-管理员，2-员工，3-经办人
+        nullable: false
+      bind_time:
+        type: DATETIME
+        comment: 绑定时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      unbind_time:
+        type: DATETIME
+        comment: 解绑时间
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：1-生效，0-失效
+        nullable: false
+        default: 1
+  pingan_insurance_agent:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 代理人信息表
+    primary_key:
+    - agent_id
+    columns:
+      agent_id:
+        type: BIGINT
+        comment: 代理人ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 关联用户ID
+        nullable: false
+      agent_code:
+        type: VARCHAR(32)
+        comment: 代理人编号
+        nullable: false
+      level:
+        type: TINYINT
+        comment: 职级：1-普通，2-主管，3-经理
+        nullable: false
+        default: 1
+      org_id:
+        type: BIGINT
+        comment: 所属机构ID
+        nullable: false
+      hire_date:
+        type: DATE
+        comment: 入职日期
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-在职，0-离职
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_agent_customer:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 代理人-客户关系表
+    primary_key:
+    - rel_id
+    columns:
+      rel_id:
+        type: BIGINT
+        comment: 关系ID
+        nullable: false
+        auto_increment: true
+      agent_id:
+        type: BIGINT
+        comment: 代理人ID
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 客户用户ID
+        nullable: false
+      bind_time:
+        type: DATETIME
+        comment: 绑定时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      unbind_time:
+        type: DATETIME
+        comment: 解绑时间
+        nullable: true
+        default: null
+      source:
+        type: VARCHAR(32)
+        comment: 绑定来源
+        nullable: true
+        default: null
+  pingan_insurance_blacklist:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 黑名单表
+    primary_key:
+    - id
+    columns:
+      id:
+        type: BIGINT
+        comment: ID
+        nullable: false
+        auto_increment: true
+      target_type:
+        type: TINYINT
+        comment: 对象类型：1-用户，2-车辆，3-企业
+        nullable: false
+      target_id:
+        type: VARCHAR(64)
+        comment: 对象ID（user_id/vehicle_id/enterprise_id）
+        nullable: false
+      reason:
+        type: VARCHAR(256)
+        comment: 列入原因
+        nullable: false
+      operator:
+        type: VARCHAR(64)
+        comment: 操作人
+        nullable: false
+      add_time:
+        type: DATETIME
+        comment: 列入时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      expire_time:
+        type: DATETIME
+        comment: 过期时间（NULL表示永久）
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：1-生效，0-已解除
+        nullable: false
+        default: 1
+      remove_time:
+        type: DATETIME
+        comment: 解除时间
+        nullable: true
+        default: null
+  pingan_insurance_session:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 用户会话表
+    primary_key:
+    - session_id
+    columns:
+      session_id:
+        type: VARCHAR(64)
+        comment: 会话ID
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      token:
+        type: VARCHAR(512)
+        comment: 认证Token
+        nullable: false
+      expire_time:
+        type: DATETIME
+        comment: 过期时间
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_device:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 用户设备信息表
+    primary_key:
+    - device_id
+    columns:
+      device_id:
+        type: VARCHAR(64)
+        comment: 设备唯一标识
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 用户ID（未登录可为空）
+        nullable: true
+        default: null
+      os_type:
+        type: VARCHAR(16)
+        comment: 操作系统：iOS/Android
+        nullable: true
+        default: null
+      app_version:
+        type: VARCHAR(16)
+        comment: APP版本号
+        nullable: true
+        default: null
+      push_token:
+        type: VARCHAR(256)
+        comment: 推送Token
+        nullable: true
+        default: null
+      last_active_time:
+        type: DATETIME
+        comment: 最后活跃时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      create_time:
+        type: DATETIME
+        comment: 首次记录时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_product_definition:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 保险产品定义表
+    primary_key:
+    - product_code
+    columns:
+      product_code:
+        type: VARCHAR(32)
+        comment: 产品代码
+        nullable: false
+      product_name:
+        type: VARCHAR(128)
+        comment: 产品名称
+        nullable: false
+      product_type:
+        type: TINYINT
+        comment: 产品类型：1-车险，2-健康险，3-家财险，4-旅行险，5-宠物险，6-意外险
+        nullable: false
+      risk_list_json:
+        type: JSON
+        comment: 所含险种列表JSON
+        nullable: false
+      price_formula:
+        type: TEXT
+        comment: 定价公式（表达式）
+        nullable: true
+      description:
+        type: VARCHAR(512)
+        comment: 产品说明
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：1-在售，0-停售
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_price_factor:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 定价因子配置表
+    primary_key:
+    - factor_id
+    columns:
+      factor_id:
+        type: BIGINT
+        comment: 因子ID
+        nullable: false
+        auto_increment: true
+      product_code:
+        type: VARCHAR(32)
+        comment: 产品代码
+        nullable: false
+      factor_name:
+        type: VARCHAR(64)
+        comment: 因子名称（如NCD系数、年龄系数）
+        nullable: false
+      factor_type:
+        type: TINYINT
+        comment: 因子类型：1-连续，2-离散
+        nullable: false
+      factor_values:
+        type: JSON
+        comment: 因子取值范围/映射
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_underwriting_rule:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 核保规则表
+    primary_key:
+    - rule_id
+    columns:
+      rule_id:
+        type: BIGINT
+        comment: 规则ID
+        nullable: false
+        auto_increment: true
+      product_code:
+        type: VARCHAR(32)
+        comment: 产品代码
+        nullable: false
+      rule_name:
+        type: VARCHAR(128)
+        comment: 规则名称
+        nullable: false
+      rule_expression:
+        type: TEXT
+        comment: 规则表达式（如 age > 65）
+        nullable: false
+      action:
+        type: TINYINT
+        comment: 动作：1-通过，2-拒绝，3-人工审核
+        nullable: false
+      priority:
+        type: INT
+        comment: 优先级（数值越小越高）
+        nullable: false
+        default: 0
+      status:
+        type: TINYINT
+        comment: 状态：1-启用，0-停用
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_policy_master:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 保单主表
+    primary_key:
+    - policy_no
+    columns:
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 投保人用户ID
+        nullable: false
+      vehicle_id:
+        type: BIGINT
+        comment: 车辆ID（车险必填）
+        nullable: true
+        default: null
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID（企业保单）
+        nullable: true
+        default: null
+      product_code:
+        type: VARCHAR(32)
+        comment: 产品代码
+        nullable: false
+      premium_total:
+        type: INT
+        comment: 总保费（分）
+        nullable: false
+      effective_date:
+        type: DATE
+        comment: 起保日期
+        nullable: false
+      expiry_date:
+        type: DATE
+        comment: 终保日期
+        nullable: false
+      policy_status:
+        type: TINYINT
+        comment: 保单状态：1-有效，2-已终止，3-已过期，4-待生效
+        nullable: false
+      issue_date:
+        type: DATETIME
+        comment: 出单日期
+        nullable: false
+      underwriter:
+        type: VARCHAR(64)
+        comment: 承保人
+        nullable: true
+        default: null
+      channel:
+        type: VARCHAR(32)
+        comment: 销售渠道
+        nullable: true
+        default: null
+        enum_values:
+        - value: AGENT
+          label: AGENT
+        - value: APP
+          label: APP
+        - value: OFFLINE
+          label: OFFLINE
+      agent_id:
+        type: BIGINT
+        comment: 代理人ID
+        nullable: true
+        default: null
+      is_deleted:
+        type: TINYINT
+        comment: 逻辑删除标记
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_policy_risk_detail:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 险种明细表
+    primary_key:
+    - id
+    columns:
+      id:
+        type: BIGINT
+        comment: ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      risk_code:
+        type: VARCHAR(32)
+        comment: 险种代码
+        nullable: false
+      risk_name:
+        type: VARCHAR(64)
+        comment: 险种名称
+        nullable: false
+      premium:
+        type: INT
+        comment: 保费（分）
+        nullable: false
+      limit_amount:
+        type: INT
+        comment: 保额（分）
+        nullable: true
+        default: null
+      deductible:
+        type: INT
+        comment: 免赔额（分）
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：1-有效，0-失效
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_policy_vehicle_detail:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 车险车辆信息表
+    primary_key:
+    - id
+    columns:
+      id:
+        type: BIGINT
+        comment: ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      vehicle_id:
+        type: BIGINT
+        comment: 车辆ID
+        nullable: false
+      ncd_coefficient:
+        type: DECIMAL(3,2)
+        comment: NCD系数
+        nullable: false
+      risk_score:
+        type: DECIMAL(5,2)
+        comment: 平安内部风险评分
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_policy_insured:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 被保险人信息表
+    primary_key:
+    - id
+    columns:
+      id:
+        type: BIGINT
+        comment: ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      insured_name:
+        type: VARCHAR(64)
+        comment: 被保险人姓名
+        nullable: false
+      insured_id_type:
+        type: TINYINT
+        comment: 证件类型
+        nullable: false
+      insured_id_no:
+        type: VARCHAR(32)
+        comment: 证件号码
+        nullable: false
+      relation_to_applicant:
+        type: TINYINT
+        comment: 与投保人关系：1-本人，2-配偶，3-子女，4-父母
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_policy_endorsement:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 批改记录表
+    primary_key:
+    - endorsement_no
+    columns:
+      endorsement_no:
+        type: VARCHAR(32)
+        comment: 批单号
+        nullable: false
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      endorsement_type:
+        type: TINYINT
+        comment: 批改类型：1-增加险种，2-减少险种，3-变更保额，4-过户，5-车牌变更
+        nullable: false
+      before_json:
+        type: JSON
+        comment: 批改前快照
+        nullable: false
+      after_json:
+        type: JSON
+        comment: 批改后快照
+        nullable: false
+      effective_date:
+        type: DATE
+        comment: 生效日期
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-已申请，2-已生效，3-已作废
+        nullable: false
+      apply_time:
+        type: DATETIME
+        comment: 申请时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      approve_time:
+        type: DATETIME
+        comment: 审核时间
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_nonauto_policy:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 非车险保单扩展表
+    primary_key:
+    - id
+    columns:
+      id:
+        type: BIGINT
+        comment: ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      policy_type:
+        type: TINYINT
+        comment: 险种类别：1-健康险，2-家财险，3-旅行险，4-宠物险，5-意外险
+        nullable: false
+      health_condition:
+        type: JSON
+        comment: 健康告知条件（健康险）
+        nullable: true
+        default: null
+      property_address:
+        type: VARCHAR(256)
+        comment: 房产地址（家财险）
+        nullable: true
+        default: null
+      travel_destination:
+        type: VARCHAR(128)
+        comment: 旅行目的地（旅行险）
+        nullable: true
+        default: null
+      pet_id:
+        type: BIGINT
+        comment: 宠物ID（宠物险）
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_health_policy:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 健康险专有表
+    primary_key:
+    - id
+    columns:
+      id:
+        type: BIGINT
+        comment: ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      health_questions_json:
+        type: JSON
+        comment: 健康问卷答案
+        nullable: false
+      underwriting_result:
+        type: VARCHAR(32)
+        comment: 核保结论：标准体/加费/除外/拒保
+        nullable: false
+      waiting_period:
+        type: SMALLINT
+        comment: 等待期（天）
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_pet_policy:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 宠物险专有表
+    primary_key:
+    - id
+    columns:
+      id:
+        type: BIGINT
+        comment: ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      pet_id:
+        type: BIGINT
+        comment: 宠物ID
+        nullable: false
+      pet_name:
+        type: VARCHAR(64)
+        comment: 宠物名称
+        nullable: false
+      pet_species:
+        type: VARCHAR(32)
+        comment: 宠物种类
+        nullable: false
+      pet_age:
+        type: TINYINT
+        comment: 年龄
+        nullable: true
+        default: null
+      microchip_no:
+        type: VARCHAR(32)
+        comment: 芯片编号
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_property_policy:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 家财险专有表
+    primary_key:
+    - id
+    columns:
+      id:
+        type: BIGINT
+        comment: ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      property_address:
+        type: VARCHAR(256)
+        comment: 房产地址
+        nullable: false
+      building_area:
+        type: DECIMAL(10,2)
+        comment: 建筑面积（平方米）
+        nullable: true
+        default: null
+      construction_type:
+        type: VARCHAR(32)
+        comment: 建筑结构
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_travel_policy:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 旅行险专有表
+    primary_key:
+    - id
+    columns:
+      id:
+        type: BIGINT
+        comment: ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      destination:
+        type: VARCHAR(128)
+        comment: 旅行目的地
+        nullable: false
+      travel_start_date:
+        type: DATE
+        comment: 出发日期
+        nullable: false
+      travel_end_date:
+        type: DATE
+        comment: 返回日期
+        nullable: false
+      insured_person_list:
+        type: JSON
+        comment: 被保险人列表JSON
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_underwriting_log:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 核保日志表
+    primary_key:
+    - log_id
+    columns:
+      log_id:
+        type: BIGINT
+        comment: 日志ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      rule_id:
+        type: BIGINT
+        comment: 命中的规则ID
+        nullable: true
+        default: null
+      hit_result:
+        type: TINYINT
+        comment: 命中结果：1-通过，2-拒绝，3-人工
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 核保时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_reinsurance:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 再保记录表
+    primary_key:
+    - reinsurance_id
+    columns:
+      reinsurance_id:
+        type: BIGINT
+        comment: 再保记录ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      ceding_company:
+        type: VARCHAR(128)
+        comment: 分出公司
+        nullable: false
+      ceding_percentage:
+        type: DECIMAL(5,2)
+        comment: 分出比例（%）
+        nullable: false
+      ceded_premium:
+        type: INT
+        comment: 分出保费（分）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_policy_upload_log:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 中保信上传日志表
+    primary_key:
+    - log_id
+    columns:
+      log_id:
+        type: BIGINT
+        comment: 日志ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      upload_time:
+        type: DATETIME
+        comment: 上传时间
+        nullable: false
+      upload_status:
+        type: TINYINT
+        comment: 状态：1-成功，2-失败，3-重试中
+        nullable: false
+      response_msg:
+        type: VARCHAR(512)
+        comment: 响应信息
+        nullable: true
+        default: null
+      retry_count:
+        type: TINYINT
+        comment: 重试次数
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_premium_payment:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 保费支付记录表
+    primary_key:
+    - payment_id
+    columns:
+      payment_id:
+        type: BIGINT
+        comment: 支付ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      amount:
+        type: INT
+        comment: 支付金额（分）
+        nullable: false
+      payment_channel:
+        type: TINYINT
+        comment: 支付渠道：1-微信，2-支付宝，3-银行卡，4-积分抵扣
+        nullable: false
+      transaction_id:
+        type: VARCHAR(64)
+        comment: 支付平台交易号
+        nullable: false
+      payment_time:
+        type: DATETIME
+        comment: 支付时间
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-成功，2-失败，3-退款
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_premium_reconciliation:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 保费对账表
+    primary_key:
+    - reconciliation_id
+    columns:
+      reconciliation_id:
+        type: BIGINT
+        comment: 对账ID
+        nullable: false
+        auto_increment: true
+      payment_id:
+        type: BIGINT
+        comment: 支付ID
+        nullable: false
+      channel_bill_file:
+        type: VARCHAR(256)
+        comment: 渠道账单文件路径
+        nullable: false
+      channel_amount:
+        type: INT
+        comment: 渠道清算金额（分）
+        nullable: false
+      diff_amount:
+        type: INT
+        comment: 差异金额（分，正数为我方多，负数为渠道多）
+        nullable: false
+      reconcile_status:
+        type: TINYINT
+        comment: 对账状态：1-平账，2-我方长款，3-渠道长款，4-待处理
+        nullable: false
+      reconcile_time:
+        type: DATETIME
+        comment: 对账时间
+        nullable: true
+        default: null
+      remark:
+        type: VARCHAR(256)
+        comment: 备注
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_claim_report:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 报案主表
+    primary_key:
+    - claim_no
+    columns:
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 报案人用户ID
+        nullable: false
+      accident_date:
+        type: DATETIME
+        comment: 出险时间
+        nullable: false
+      accident_location:
+        type: VARCHAR(256)
+        comment: 出险地点
+        nullable: false
+      accident_desc:
+        type: VARCHAR(512)
+        comment: 事故描述
+        nullable: true
+        default: null
+      report_channel:
+        type: TINYINT
+        comment: 报案渠道：1-95511，2-APP，3-微信，4-代理人
+        nullable: false
+      claim_status:
+        type: TINYINT
+        comment: 理赔状态：1-已报案，2-查勘中，3-定损中，4-核赔中，5-已结案，6-拒赔
+        nullable: false
+      is_deleted:
+        type: TINYINT
+        comment: 逻辑删除标记
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_claim_vehicle:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 车险理赔车辆信息表
+    primary_key:
+    - id
+    columns:
+      id:
+        type: BIGINT
+        comment: ID
+        nullable: false
+        auto_increment: true
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      vehicle_id:
+        type: BIGINT
+        comment: 车辆ID
+        nullable: false
+      driver_name:
+        type: VARCHAR(64)
+        comment: 驾驶员姓名
+        nullable: true
+        default: null
+      driver_license:
+        type: VARCHAR(32)
+        comment: 驾驶证号
+        nullable: true
+        default: null
+      accident_type:
+        type: VARCHAR(32)
+        comment: 事故类型
+        nullable: true
+        default: null
+        enum_values:
+        - value: 电影
+          label: 电影
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_claim_injury:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 人伤案件信息表
+    primary_key:
+    - id
+    columns:
+      id:
+        type: BIGINT
+        comment: ID
+        nullable: false
+        auto_increment: true
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      injured_person_name:
+        type: VARCHAR(64)
+        comment: 伤者姓名
+        nullable: false
+      injured_type:
+        type: TINYINT
+        comment: 伤者类型：1-驾驶员，2-乘客，3-第三方
+        nullable: false
+      injury_desc:
+        type: VARCHAR(256)
+        comment: 伤情描述
+        nullable: true
+        default: null
+      hospital_name:
+        type: VARCHAR(128)
+        comment: 就诊医院
+        nullable: true
+        default: null
+      hospitalization_days:
+        type: SMALLINT
+        comment: 住院天数
+        nullable: true
+        default: null
+      disability_level:
+        type: TINYINT
+        comment: 伤残等级（1-10级）
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_medical_advance:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 医疗垫付记录表
+    primary_key:
+    - advance_id
+    columns:
+      advance_id:
+        type: BIGINT
+        comment: 垫付ID
+        nullable: false
+        auto_increment: true
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      amount:
+        type: INT
+        comment: 垫付金额（分）
+        nullable: false
+      hospital_name:
+        type: VARCHAR(128)
+        comment: 垫付医院
+        nullable: false
+      advance_time:
+        type: DATETIME
+        comment: 垫付时间
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-已垫付，2-已结算，3-已核销
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_survey_task:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 查勘任务表
+    primary_key:
+    - task_id
+    columns:
+      task_id:
+        type: BIGINT
+        comment: 查勘任务ID
+        nullable: false
+        auto_increment: true
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      surveyor_id:
+        type: BIGINT
+        comment: 查勘员ID
+        nullable: false
+      assign_time:
+        type: DATETIME
+        comment: 派单时间
+        nullable: false
+      arrive_time:
+        type: DATETIME
+        comment: 到达现场时间
+        nullable: true
+        default: null
+      survey_result:
+        type: VARCHAR(512)
+        comment: 查勘结果
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：1-已派单，2-已到达，3-已完成
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_surveyor:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 查勘员信息表
+    primary_key:
+    - surveyor_id
+    columns:
+      surveyor_id:
+        type: BIGINT
+        comment: 查勘员ID
+        nullable: false
+        auto_increment: true
+      name:
+        type: VARCHAR(64)
+        comment: 姓名
+        nullable: false
+      phone:
+        type: VARCHAR(20)
+        comment: 电话
+        nullable: false
+      org_id:
+        type: BIGINT
+        comment: 所属机构ID
+        nullable: false
+      gps_last_location:
+        type: POINT
+        comment: 最后位置（空间坐标）
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：1-在职，0-离职
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_surveyor_location:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 查勘员实时位置表
+    primary_key:
+    - location_id
+    columns:
+      location_id:
+        type: BIGINT
+        comment: 位置ID
+        nullable: false
+        auto_increment: true
+      surveyor_id:
+        type: BIGINT
+        comment: 查勘员ID
+        nullable: false
+      gps:
+        type: POINT
+        comment: GPS坐标
+        nullable: false
+      report_time:
+        type: DATETIME
+        comment: 上报时间
+        nullable: false
+  pingan_insurance_damage_photo:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 受损照片表
+    primary_key:
+    - photo_id
+    columns:
+      photo_id:
+        type: BIGINT
+        comment: 照片ID
+        nullable: false
+        auto_increment: true
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      photo_type:
+        type: TINYINT
+        comment: 照片类型：1-全景，2-部件特写，3-证件
+        nullable: false
+      photo_url:
+        type: VARCHAR(256)
+        comment: OSS存储路径
+        nullable: false
+      upload_time:
+        type: DATETIME
+        comment: 上传时间
+        nullable: false
+      ai_damage_part:
+        type: VARCHAR(64)
+        comment: AI识别受损部件
+        nullable: true
+        default: null
+      ai_damage_level:
+        type: TINYINT
+        comment: AI损伤程度（1-5）
+        nullable: true
+        default: null
+      ai_model_version:
+        type: VARCHAR(32)
+        comment: AI模型版本
+        nullable: true
+        default: null
+      is_manual_review:
+        type: TINYINT
+        comment: 是否人工复核
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_damage_assessment:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 定损表
+    primary_key:
+    - assessment_id
+    columns:
+      assessment_id:
+        type: BIGINT
+        comment: 定损单号
+        nullable: false
+        auto_increment: true
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      damage_part_code:
+        type: VARCHAR(32)
+        comment: 受损部件编码
+        nullable: false
+      repair_type:
+        type: TINYINT
+        comment: 维修类型：1-换件，2-维修
+        nullable: false
+      part_price:
+        type: INT
+        comment: 配件价格（分）
+        nullable: true
+        default: null
+      labor_fee:
+        type: INT
+        comment: 工时费（分）
+        nullable: true
+        default: null
+      estimated_amount:
+        type: INT
+        comment: AI预估金额（分）
+        nullable: false
+      manual_adjust_amount:
+        type: INT
+        comment: 人工调整金额（分）
+        nullable: true
+        default: null
+      actual_amount:
+        type: INT
+        comment: 核赔确认金额（分）
+        nullable: false
+      is_auto_settled:
+        type: TINYINT
+        comment: 是否自动核赔
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_damage_part_master:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 配件价格库表
+    primary_key:
+    - part_code
+    columns:
+      part_code:
+        type: VARCHAR(32)
+        comment: 配件编码
+        nullable: false
+      part_name:
+        type: VARCHAR(128)
+        comment: 配件名称
+        nullable: false
+      brand:
+        type: VARCHAR(64)
+        comment: 品牌
+        nullable: false
+      price:
+        type: INT
+        comment: 价格（分）
+        nullable: false
+      effective_date:
+        type: DATE
+        comment: 生效日期
+        nullable: false
+      expiry_date:
+        type: DATE
+        comment: 失效日期
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_labor_fee_standard:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 工时费标准表
+    primary_key:
+    - standard_id
+    columns:
+      standard_id:
+        type: BIGINT
+        comment: 标准ID
+        nullable: false
+        auto_increment: true
+      city_code:
+        type: VARCHAR(16)
+        comment: 城市代码
+        nullable: false
+      repair_type:
+        type: VARCHAR(32)
+        comment: 维修类型（如钣金、喷漆）
+        nullable: false
+        enum_values:
+        - value: 喷漆
+          label: 喷漆
+        - value: 钣金
+          label: 钣金
+      labor_fee:
+        type: INT
+        comment: 工时费（分）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_claim_approval:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 核赔审批表
+    primary_key:
+    - approval_id
+    columns:
+      approval_id:
+        type: BIGINT
+        comment: 审批ID
+        nullable: false
+        auto_increment: true
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      approver_id:
+        type: BIGINT
+        comment: 审批人ID
+        nullable: false
+      approval_amount:
+        type: INT
+        comment: 审批金额（分）
+        nullable: false
+      approval_time:
+        type: DATETIME
+        comment: 审批时间
+        nullable: false
+      approval_result:
+        type: TINYINT
+        comment: 结果：1-通过，2-驳回
+        nullable: false
+      remark:
+        type: VARCHAR(256)
+        comment: 备注
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_claim_payment:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 赔款支付表
+    primary_key:
+    - payment_id
+    columns:
+      payment_id:
+        type: BIGINT
+        comment: 支付ID
+        nullable: false
+        auto_increment: true
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      payee_type:
+        type: TINYINT
+        comment: 收款方类型：1-车主，2-修理厂，3-医院
+        nullable: false
+      payee_account:
+        type: VARCHAR(64)
+        comment: 收款账号
+        nullable: false
+      amount:
+        type: INT
+        comment: 支付金额（分）
+        nullable: false
+      payment_time:
+        type: DATETIME
+        comment: 支付时间
+        nullable: false
+      transaction_id:
+        type: VARCHAR(64)
+        comment: 交易流水号
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-成功，2-失败
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_claim_fast_payment:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 三免信用赔表
+    primary_key:
+    - fast_pay_id
+    columns:
+      fast_pay_id:
+        type: BIGINT
+        comment: 快速赔案ID
+        nullable: false
+        auto_increment: true
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      eligible_score:
+        type: DECIMAL(5,2)
+        comment: 符合条件时的安驾分
+        nullable: false
+      payment_time:
+        type: DATETIME
+        comment: 赔付时间
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_claim_anti_fraud:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 反欺诈关系表
+    primary_key:
+    - fraud_id
+    columns:
+      fraud_id:
+        type: BIGINT
+        comment: 欺诈分析ID
+        nullable: false
+        auto_increment: true
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      related_entity_type:
+        type: TINYINT
+        comment: 关联实体类型：1-用户，2-车辆，3-修理厂，4-查勘员
+        nullable: false
+      related_entity_id:
+        type: VARCHAR(64)
+        comment: 关联实体ID
+        nullable: false
+      relationship_graph:
+        type: JSON
+        comment: 关系图谱（节点关系）
+        nullable: true
+        default: null
+      fraud_score:
+        type: DECIMAL(5,2)
+        comment: 欺诈评分
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_campaign_master:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 活动主表
+    primary_key:
+    - campaign_id
+    columns:
+      campaign_id:
+        type: BIGINT
+        comment: 活动ID
+        nullable: false
+        auto_increment: true
+      campaign_name:
+        type: VARCHAR(128)
+        comment: 活动名称
+        nullable: false
+      campaign_type:
+        type: TINYINT
+        comment: 活动类型：1-节日营销，2-裂变活动，3-直播活动，4-签到活动
+        nullable: false
+      start_time:
+        type: DATETIME
+        comment: 开始时间
+        nullable: false
+      end_time:
+        type: DATETIME
+        comment: 结束时间
+        nullable: false
+      budget:
+        type: INT
+        comment: 预算（分）
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：1-未开始，2-进行中，3-已结束，4-已取消
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_campaign_participation:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 活动参与记录表
+    primary_key:
+    - participation_id
+    columns:
+      participation_id:
+        type: BIGINT
+        comment: 参与记录ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      campaign_id:
+        type: BIGINT
+        comment: 活动ID
+        nullable: false
+      participation_time:
+        type: DATETIME
+        comment: 参与时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      reward_status:
+        type: TINYINT
+        comment: 奖励状态：0-未发放，1-已发放
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_user_coupon:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 用户优惠券表
+    primary_key:
+    - coupon_id
+    columns:
+      coupon_id:
+        type: BIGINT
+        comment: 优惠券ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      coupon_type:
+        type: TINYINT
+        comment: 优惠券类型：1-满减券，2-折扣券，3-直减券
+        nullable: false
+      face_value:
+        type: INT
+        comment: 面值（分）或折扣（百分数）
+        nullable: false
+      use_condition:
+        type: INT
+        comment: 使用条件（满多少元可用）
+        nullable: true
+        default: null
+      expire_date:
+        type: DATE
+        comment: 过期日期
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-未使用，2-已使用，3-已过期
+        nullable: false
+        default: 1
+      source_type:
+        type: VARCHAR(32)
+        comment: 来源类型（活动/签到/购买）
+        nullable: true
+        default: null
+      source_id:
+        type: VARCHAR(64)
+        comment: 来源ID
+        nullable: true
+        default: null
+      use_time:
+        type: DATETIME
+        comment: 使用时间
+        nullable: true
+        default: null
+      order_no:
+        type: VARCHAR(64)
+        comment: 关联订单号
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_points_account:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 积分账户表
+    primary_key:
+    - user_id
+    columns:
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      total_points:
+        type: INT
+        comment: 累计获取积分
+        nullable: false
+        default: 0
+      available_points:
+        type: INT
+        comment: 可用积分
+        nullable: false
+        default: 0
+      frozen_points:
+        type: INT
+        comment: 冻结积分
+        nullable: false
+        default: 0
+      total_consumed:
+        type: INT
+        comment: 累计消费积分
+        nullable: false
+        default: 0
+      version:
+        type: INT
+        comment: 乐观锁版本号
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_points_transaction:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 积分流水表
+    primary_key:
+    - trans_id
+    columns:
+      trans_id:
+        type: BIGINT
+        comment: 流水ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      trans_type:
+        type: TINYINT
+        comment: 类型：1-获取，2-消费，3-过期，4-冻结，5-解冻
+        nullable: false
+      points_amount:
+        type: INT
+        comment: 变动积分数量
+        nullable: false
+      source_type:
+        type: VARCHAR(32)
+        comment: 来源类型：SIGNIN/PURCHASE/SERVICE/ACTIVITY
+        nullable: false
+      source_id:
+        type: VARCHAR(64)
+        comment: 来源单号：订单号/活动ID
+        nullable: false
+      balance_before:
+        type: INT
+        comment: 变动前余额
+        nullable: false
+      balance_after:
+        type: INT
+        comment: 变动后余额
+        nullable: false
+      expire_date:
+        type: DATE
+        comment: 积分过期日期
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_signin_log:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 签到记录表
+    primary_key:
+    - sign_id
+    columns:
+      sign_id:
+        type: BIGINT
+        comment: 签到ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      sign_date:
+        type: DATE
+        comment: 签到日期
+        nullable: false
+      points_earned:
+        type: INT
+        comment: 获得积分
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_invite_relation:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 邀请关系表
+    primary_key:
+    - invite_id
+    columns:
+      invite_id:
+        type: BIGINT
+        comment: 邀请ID
+        nullable: false
+        auto_increment: true
+      inviter_user_id:
+        type: BIGINT
+        comment: 邀请人用户ID
+        nullable: false
+      invitee_user_id:
+        type: BIGINT
+        comment: 被邀请人用户ID
+        nullable: false
+      invite_channel:
+        type: VARCHAR(32)
+        comment: 邀请渠道（微信/朋友圈/QQ）
+        nullable: true
+        default: null
+      invite_time:
+        type: DATETIME
+        comment: 邀请时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      is_registered:
+        type: TINYINT
+        comment: 是否已注册
+        nullable: false
+        default: 1
+      is_purchased:
+        type: TINYINT
+        comment: 是否已完成首购
+        nullable: false
+        default: 0
+      reward_status:
+        type: TINYINT
+        comment: 奖励状态：0-未发放，1-已发放
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_push_task:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 推送任务表
+    primary_key:
+    - task_id
+    columns:
+      task_id:
+        type: BIGINT
+        comment: 任务ID
+        nullable: false
+        auto_increment: true
+      task_name:
+        type: VARCHAR(128)
+        comment: 任务名称
+        nullable: false
+      target_user_segment:
+        type: JSON
+        comment: 目标用户分群（JSON条件）
+        nullable: false
+      push_content:
+        type: VARCHAR(512)
+        comment: 推送内容
+        nullable: false
+      send_time:
+        type: DATETIME
+        comment: 计划发送时间
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-待发送，2-发送中，3-已发送，4-已取消
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_push_record:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 推送记录表
+    primary_key:
+    - record_id
+    columns:
+      record_id:
+        type: BIGINT
+        comment: 记录ID
+        nullable: false
+        auto_increment: true
+      task_id:
+        type: BIGINT
+        comment: 任务ID
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      send_time:
+        type: DATETIME
+        comment: 发送时间
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-成功，2-失败
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_inbox_message:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 站内信表
+    primary_key:
+    - msg_id
+    columns:
+      msg_id:
+        type: BIGINT
+        comment: 消息ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      msg_title:
+        type: VARCHAR(128)
+        comment: 标题
+        nullable: false
+      msg_content:
+        type: VARCHAR(1024)
+        comment: 内容
+        nullable: false
+      is_read:
+        type: TINYINT
+        comment: 是否已读
+        nullable: false
+        default: 0
+      read_time:
+        type: DATETIME
+        comment: 阅读时间
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_wechat_follower:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 公众号粉丝表
+    primary_key:
+    - openid
+    columns:
+      openid:
+        type: VARCHAR(64)
+        comment: 微信openid
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 关联用户ID
+        nullable: true
+        default: null
+      nickname:
+        type: VARCHAR(64)
+        comment: 昵称
+        nullable: true
+        default: null
+      subscribe_time:
+        type: DATETIME
+        comment: 关注时间
+        nullable: false
+      unsubscribe_time:
+        type: DATETIME
+        comment: 取消关注时间
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_wechat_interaction:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 公众号互动表
+    primary_key:
+    - interaction_id
+    columns:
+      interaction_id:
+        type: BIGINT
+        comment: 互动ID
+        nullable: false
+        auto_increment: true
+      openid:
+        type: VARCHAR(64)
+        comment: 粉丝openid
+        nullable: false
+      interaction_type:
+        type: TINYINT
+        comment: 互动类型：1-点击菜单，2-发送消息，3-扫码
+        nullable: false
+      content:
+        type: VARCHAR(512)
+        comment: 互动内容
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_outbound_call_task:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 外呼任务表
+    primary_key:
+    - call_task_id
+    columns:
+      call_task_id:
+        type: BIGINT
+        comment: 外呼任务ID
+        nullable: false
+        auto_increment: true
+      campaign_id:
+        type: BIGINT
+        comment: 关联活动ID
+        nullable: true
+        default: null
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      scheduled_time:
+        type: DATETIME
+        comment: 计划外呼时间
+        nullable: false
+      call_status:
+        type: TINYINT
+        comment: 状态：0-待呼叫，1-呼叫中，2-已接通，3-未接通，4-失败
+        nullable: false
+        default: 0
+      call_result:
+        type: VARCHAR(128)
+        comment: 通话结果
+        nullable: true
+        default: null
+        enum_values:
+        - value: 接通
+          label: 接通
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_call_record:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 通话记录表
+    primary_key:
+    - call_id
+    columns:
+      call_id:
+        type: BIGINT
+        comment: 通话记录ID
+        nullable: false
+        auto_increment: true
+      call_task_id:
+        type: BIGINT
+        comment: 外呼任务ID
+        nullable: false
+      start_time:
+        type: DATETIME
+        comment: 开始时间
+        nullable: false
+      end_time:
+        type: DATETIME
+        comment: 结束时间
+        nullable: true
+        default: null
+      duration:
+        type: SMALLINT
+        comment: 通话时长（秒）
+        nullable: true
+        default: null
+      recording_url:
+        type: VARCHAR(256)
+        comment: 录音文件URL
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_share_record:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 分享记录表
+    primary_key:
+    - share_id
+    columns:
+      share_id:
+        type: BIGINT
+        comment: 分享ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 分享用户ID
+        nullable: false
+      share_type:
+        type: TINYINT
+        comment: 分享类型：1-活动，2-商品，3-文章
+        nullable: false
+      target_page:
+        type: VARCHAR(256)
+        comment: 目标页面
+        nullable: false
+      share_channel:
+        type: VARCHAR(32)
+        comment: 分享渠道：微信/朋友圈/QQ
+        nullable: false
+      share_time:
+        type: DATETIME
+        comment: 分享时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_live_room:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 直播间表
+    primary_key:
+    - room_id
+    columns:
+      room_id:
+        type: BIGINT
+        comment: 直播间ID
+        nullable: false
+        auto_increment: true
+      room_name:
+        type: VARCHAR(128)
+        comment: 直播间名称
+        nullable: false
+      anchor:
+        type: VARCHAR(64)
+        comment: 主播
+        nullable: false
+      start_time:
+        type: DATETIME
+        comment: 开始时间
+        nullable: false
+      end_time:
+        type: DATETIME
+        comment: 结束时间
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：1-预约中，2-直播中，3-已结束
+        nullable: false
+      total_viewers:
+        type: INT
+        comment: 累计观看人次
+        nullable: true
+        default: null
+      peak_viewers:
+        type: INT
+        comment: 峰值在线人数
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_live_product:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 直播商品关联表
+    primary_key:
+    - live_product_id
+    columns:
+      live_product_id:
+        type: BIGINT
+        comment: 直播商品ID
+        nullable: false
+        auto_increment: true
+      room_id:
+        type: BIGINT
+        comment: 直播间ID
+        nullable: false
+      product_id:
+        type: BIGINT
+        comment: 商品ID（关联商城商品）
+        nullable: false
+      live_price:
+        type: INT
+        comment: 直播价（分）
+        nullable: false
+      stock:
+        type: INT
+        comment: 直播专享库存
+        nullable: false
+      sold_count:
+        type: INT
+        comment: 已售数量
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_live_realtime_data:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 直播实时数据表（快照）
+    primary_key:
+    - data_id
+    columns:
+      data_id:
+        type: BIGINT
+        comment: 数据ID
+        nullable: false
+        auto_increment: true
+      room_id:
+        type: BIGINT
+        comment: 直播间ID
+        nullable: false
+      stat_time:
+        type: DATETIME
+        comment: 统计时间（秒级）
+        nullable: false
+      current_viewers:
+        type: INT
+        comment: 当前在线人数
+        nullable: false
+      accum_viewers:
+        type: INT
+        comment: 累计观看人次
+        nullable: false
+      order_count:
+        type: INT
+        comment: 累计下单数
+        nullable: false
+      pay_amount:
+        type: BIGINT
+        comment: 累计支付金额（分）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_live_order:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 直播订单表
+    primary_key:
+    - order_id
+    columns:
+      order_id:
+        type: BIGINT
+        comment: 订单ID
+        nullable: false
+        auto_increment: true
+      room_id:
+        type: BIGINT
+        comment: 直播间ID
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      product_id:
+        type: BIGINT
+        comment: 商品ID
+        nullable: false
+      order_amount:
+        type: INT
+        comment: 订单金额（分）
+        nullable: false
+      pay_time:
+        type: DATETIME
+        comment: 支付时间
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_service_order:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 服务订单主表
+    primary_key:
+    - order_no
+    columns:
+      order_no:
+        type: VARCHAR(32)
+        comment: 订单号
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      service_type:
+        type: TINYINT
+        comment: 服务类型：1-加油，2-充电，3-洗车，4-代驾，5-保养，6-救援
+        nullable: false
+      order_status:
+        type: TINYINT
+        comment: 订单状态：1-待支付，2-已支付，3-服务中，4-已完成，5-已取消
+        nullable: false
+      total_amount:
+        type: INT
+        comment: 总金额（分）
+        nullable: false
+      pay_amount:
+        type: INT
+        comment: 实付金额（分）
+        nullable: true
+        default: null
+      coupon_id:
+        type: BIGINT
+        comment: 使用的优惠券ID
+        nullable: true
+        default: null
+      points_used:
+        type: INT
+        comment: 使用的积分
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      pay_time:
+        type: DATETIME
+        comment: 支付时间
+        nullable: true
+        default: null
+      complete_time:
+        type: DATETIME
+        comment: 完成时间
+        nullable: true
+        default: null
+  pingan_insurance_fuel_order:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 加油订单表
+    primary_key:
+    - order_no
+    columns:
+      order_no:
+        type: VARCHAR(32)
+        comment: 订单号
+        nullable: false
+      station_id:
+        type: BIGINT
+        comment: 加油站ID
+        nullable: false
+      fuel_type:
+        type: VARCHAR(16)
+        comment: 油品类型（92#/95#/98#）
+        nullable: false
+      liter:
+        type: DECIMAL(10,2)
+        comment: 加油量（升）
+        nullable: false
+      unit_price:
+        type: INT
+        comment: 单价（分）
+        nullable: false
+      total_price:
+        type: INT
+        comment: 总价（分）
+        nullable: false
+      discount:
+        type: INT
+        comment: 优惠金额（分）
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_fuel_station:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 加油站表
+    primary_key:
+    - station_id
+    columns:
+      station_id:
+        type: BIGINT
+        comment: 加油站ID
+        nullable: false
+        auto_increment: true
+      station_name:
+        type: VARCHAR(128)
+        comment: 加油站名称
+        nullable: false
+      address:
+        type: VARCHAR(256)
+        comment: 地址
+        nullable: false
+      gps:
+        type: POINT
+        comment: 经纬度
+        nullable: false
+      brand:
+        type: VARCHAR(32)
+        comment: 品牌（中石化/中石油/其他）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_charge_order:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 充电订单表
+    primary_key:
+    - order_no
+    columns:
+      order_no:
+        type: VARCHAR(32)
+        comment: 订单号
+        nullable: false
+      pile_id:
+        type: BIGINT
+        comment: 充电桩ID
+        nullable: false
+      charge_start:
+        type: DATETIME
+        comment: 开始充电时间
+        nullable: false
+      charge_end:
+        type: DATETIME
+        comment: 结束充电时间
+        nullable: false
+      power:
+        type: DECIMAL(10,2)
+        comment: 充电量（度）
+        nullable: false
+      total_fee:
+        type: INT
+        comment: 总费用（分）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_charge_pile:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 充电桩表
+    primary_key:
+    - pile_id
+    columns:
+      pile_id:
+        type: BIGINT
+        comment: 充电桩ID
+        nullable: false
+        auto_increment: true
+      station_id:
+        type: BIGINT
+        comment: 所属场站ID
+        nullable: false
+      pile_type:
+        type: VARCHAR(16)
+        comment: 桩类型（快充/慢充）
+        nullable: false
+      power:
+        type: DECIMAL(5,2)
+        comment: 功率（kW）
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-空闲，2-使用中，3-故障
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_car_wash_order:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 洗车订单表
+    primary_key:
+    - order_no
+    columns:
+      order_no:
+        type: VARCHAR(32)
+        comment: 订单号
+        nullable: false
+      shop_id:
+        type: BIGINT
+        comment: 洗车店ID
+        nullable: false
+      wash_type:
+        type: TINYINT
+        comment: 洗车类型：1-普洗，2-精洗
+        nullable: false
+      price:
+        type: INT
+        comment: 价格（分）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_car_wash_shop:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 洗车店表
+    primary_key:
+    - shop_id
+    columns:
+      shop_id:
+        type: BIGINT
+        comment: 洗车店ID
+        nullable: false
+        auto_increment: true
+      shop_name:
+        type: VARCHAR(128)
+        comment: 店铺名称
+        nullable: false
+      address:
+        type: VARCHAR(256)
+        comment: 地址
+        nullable: false
+      gps:
+        type: POINT
+        comment: 经纬度
+        nullable: false
+      price_standard:
+        type: JSON
+        comment: 价格标准（普洗/精洗价格）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_designated_driver_order:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 代驾订单表
+    primary_key:
+    - order_no
+    columns:
+      order_no:
+        type: VARCHAR(32)
+        comment: 订单号
+        nullable: false
+      start_gps:
+        type: POINT
+        comment: 起点经纬度
+        nullable: false
+      end_gps:
+        type: POINT
+        comment: 终点经纬度
+        nullable: false
+      distance:
+        type: INT
+        comment: 距离（米）
+        nullable: false
+      duration:
+        type: SMALLINT
+        comment: 预估时长（分钟）
+        nullable: false
+      fee:
+        type: INT
+        comment: 费用（分）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_maintenance_order:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 保养订单表
+    primary_key:
+    - order_no
+    columns:
+      order_no:
+        type: VARCHAR(32)
+        comment: 订单号
+        nullable: false
+      shop_id:
+        type: BIGINT
+        comment: 保养店ID
+        nullable: false
+      service_items:
+        type: JSON
+        comment: 服务项目列表
+        nullable: false
+      cost:
+        type: INT
+        comment: 费用（分）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_rescue_order:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 救援订单表
+    primary_key:
+    - order_no
+    columns:
+      order_no:
+        type: VARCHAR(32)
+        comment: 订单号
+        nullable: false
+      rescue_type:
+        type: TINYINT
+        comment: 救援类型：1-拖车，2-搭电，3-换胎，4-送油
+        nullable: false
+      location:
+        type: POINT
+        comment: 救援地点
+        nullable: false
+      rescue_time_arrive:
+        type: DATETIME
+        comment: 到达时间
+        nullable: true
+        default: null
+      fee:
+        type: INT
+        comment: 费用（分）
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_violation_query_log:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 违章查询日志表
+    primary_key:
+    - log_id
+    columns:
+      log_id:
+        type: BIGINT
+        comment: 日志ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      vehicle_id:
+        type: BIGINT
+        comment: 车辆ID
+        nullable: false
+      query_time:
+        type: DATETIME
+        comment: 查询时间
+        nullable: false
+      result:
+        type: JSON
+        comment: 查询结果JSON
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_move_car_request:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 一键挪车请求表
+    primary_key:
+    - request_id
+    columns:
+      request_id:
+        type: BIGINT
+        comment: 请求ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 请求用户ID
+        nullable: false
+      target_plate:
+        type: VARCHAR(16)
+        comment: 目标车牌
+        nullable: false
+      location:
+        type: POINT
+        comment: 位置
+        nullable: false
+      request_time:
+        type: DATETIME
+        comment: 请求时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      status:
+        type: TINYINT
+        comment: 状态：0-待处理，1-已通知，2-已取消
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_mall_product:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 商品表
+    primary_key:
+    - product_id
+    columns:
+      product_id:
+        type: BIGINT
+        comment: 商品ID
+        nullable: false
+        auto_increment: true
+      product_name:
+        type: VARCHAR(128)
+        comment: 商品名称
+        nullable: false
+      category:
+        type: TINYINT
+        comment: 分类：1-车品，2-食品，3-家居，4-卡券
+        nullable: false
+      price:
+        type: INT
+        comment: 售价（分）
+        nullable: false
+      points_price:
+        type: INT
+        comment: 积分兑换价格
+        nullable: true
+        default: null
+      stock:
+        type: INT
+        comment: 库存
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-上架，0-下架
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_mall_order:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 商城订单表
+    primary_key:
+    - order_no
+    columns:
+      order_no:
+        type: VARCHAR(32)
+        comment: 订单号
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      total_amount:
+        type: INT
+        comment: 总金额（分）
+        nullable: false
+      pay_amount:
+        type: INT
+        comment: 实付金额（分）
+        nullable: false
+      points_used:
+        type: INT
+        comment: 使用的积分
+        nullable: true
+        default: null
+      order_status:
+        type: TINYINT
+        comment: 状态：1-待支付，2-已支付，3-已发货，4-已完成，5-已取消
+        nullable: false
+      pay_time:
+        type: DATETIME
+        comment: 支付时间
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_order_item:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 订单商品明细表
+    primary_key:
+    - item_id
+    columns:
+      item_id:
+        type: BIGINT
+        comment: 明细ID
+        nullable: false
+        auto_increment: true
+      order_no:
+        type: VARCHAR(32)
+        comment: 订单号
+        nullable: false
+      product_id:
+        type: BIGINT
+        comment: 商品ID
+        nullable: false
+      quantity:
+        type: INT
+        comment: 数量
+        nullable: false
+      price:
+        type: INT
+        comment: 单价（分）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_points_exchange_order:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 积分兑换订单表
+    primary_key:
+    - exchange_id
+    columns:
+      exchange_id:
+        type: BIGINT
+        comment: 兑换ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      product_id:
+        type: BIGINT
+        comment: 商品ID
+        nullable: false
+      points_used:
+        type: INT
+        comment: 使用积分
+        nullable: false
+      order_status:
+        type: TINYINT
+        comment: 状态：1-待发货，2-已发货，3-已完成
+        nullable: false
+      exchange_time:
+        type: DATETIME
+        comment: 兑换时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_agricultural_product:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 助农产品表
+    primary_key:
+    - product_id
+    columns:
+      product_id:
+        type: BIGINT
+        comment: 商品ID
+        nullable: false
+      origin:
+        type: VARCHAR(128)
+        comment: 产地
+        nullable: false
+      farmer_info:
+        type: VARCHAR(256)
+        comment: 农户信息
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_merchant:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 商家表
+    primary_key:
+    - merchant_id
+    columns:
+      merchant_id:
+        type: BIGINT
+        comment: 商家ID
+        nullable: false
+        auto_increment: true
+      merchant_name:
+        type: VARCHAR(128)
+        comment: 商家名称
+        nullable: false
+      merchant_type:
+        type: TINYINT
+        comment: 类型：1-洗车店，2-保养店，3-加油站，4-代驾公司，5-体检机构，6-家政公司
+        nullable: false
+      contact_phone:
+        type: VARCHAR(20)
+        comment: 联系电话
+        nullable: false
+      address:
+        type: VARCHAR(256)
+        comment: 地址
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：1-正常，0-冻结
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_merchant_product:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 商家商品关联表
+    primary_key:
+    - merchant_product_id
+    columns:
+      merchant_product_id:
+        type: BIGINT
+        comment: 关联ID
+        nullable: false
+        auto_increment: true
+      merchant_id:
+        type: BIGINT
+        comment: 商家ID
+        nullable: false
+      product_id:
+        type: BIGINT
+        comment: 商品ID
+        nullable: false
+      supply_price:
+        type: INT
+        comment: 供货价（分）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_user_address:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 用户收货地址表
+    primary_key:
+    - address_id
+    columns:
+      address_id:
+        type: BIGINT
+        comment: 地址ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      consignee:
+        type: VARCHAR(64)
+        comment: 收货人
+        nullable: false
+      phone:
+        type: VARCHAR(20)
+        comment: 联系电话
+        nullable: false
+      province:
+        type: VARCHAR(32)
+        comment: 省
+        nullable: false
+      city:
+        type: VARCHAR(32)
+        comment: 市
+        nullable: false
+      district:
+        type: VARCHAR(32)
+        comment: 区
+        nullable: false
+      detail:
+        type: VARCHAR(256)
+        comment: 详细地址
+        nullable: false
+      is_default:
+        type: TINYINT
+        comment: 是否默认地址
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_enterprise_policy:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 企业保单扩展表
+    primary_key:
+    - policy_no
+    columns:
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      employee_count:
+        type: INT
+        comment: 雇员数量
+        nullable: true
+        default: null
+      industry:
+        type: VARCHAR(64)
+        comment: 行业
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_enterprise_claim:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 企业理赔扩展表
+    primary_key:
+    - claim_no
+    columns:
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      claim_type:
+        type: TINYINT
+        comment: 理赔类型
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_enterprise_risk_assessment:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 企业风险评估表
+    primary_key:
+    - assessment_id
+    columns:
+      assessment_id:
+        type: BIGINT
+        comment: 评估ID
+        nullable: false
+        auto_increment: true
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      risk_score:
+        type: DECIMAL(5,2)
+        comment: 风险评分
+        nullable: false
+      report_url:
+        type: VARCHAR(256)
+        comment: 评估报告URL
+        nullable: true
+        default: null
+      assessment_date:
+        type: DATE
+        comment: 评估日期
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_disaster_warning:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 灾害预警表
+    primary_key:
+    - warning_id
+    columns:
+      warning_id:
+        type: BIGINT
+        comment: 预警ID
+        nullable: false
+        auto_increment: true
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      warning_type:
+        type: TINYINT
+        comment: 预警类型：1-台风，2-暴雨，3-火灾，4-地震
+        nullable: false
+      warning_content:
+        type: VARCHAR(512)
+        comment: 预警内容
+        nullable: false
+      push_time:
+        type: DATETIME
+        comment: 推送时间
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_smart_inspection:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 智慧巡检记录表
+    primary_key:
+    - inspection_id
+    columns:
+      inspection_id:
+        type: BIGINT
+        comment: 巡检ID
+        nullable: false
+        auto_increment: true
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      inspection_date:
+        type: DATE
+        comment: 巡检日期
+        nullable: false
+      inspection_result:
+        type: JSON
+        comment: 巡检结果JSON
+        nullable: false
+      photo_url:
+        type: VARCHAR(256)
+        comment: 照片URL
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_enterprise_health_service:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 企业健康服务表
+    primary_key:
+    - service_id
+    columns:
+      service_id:
+        type: BIGINT
+        comment: 服务ID
+        nullable: false
+        auto_increment: true
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      service_type:
+        type: TINYINT
+        comment: 服务类型：1-在线问诊，2-体检预约，3-健康课堂
+        nullable: false
+      service_date:
+        type: DATE
+        comment: 服务日期
+        nullable: false
+      employee_count:
+        type: INT
+        comment: 参与员工数
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_enterprise_finance:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 企业财税服务表
+    primary_key:
+    - finance_id
+    columns:
+      finance_id:
+        type: BIGINT
+        comment: 服务ID
+        nullable: false
+        auto_increment: true
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      service_type:
+        type: TINYINT
+        comment: 服务类型：1-财税咨询，2-财务工具
+        nullable: false
+      request_time:
+        type: DATETIME
+        comment: 请求时间
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-处理中，2-已完成
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_merchant_score:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 商家评分表
+    primary_key:
+    - merchant_id
+    columns:
+      merchant_id:
+        type: BIGINT
+        comment: 商家ID
+        nullable: false
+      total_orders:
+        type: INT
+        comment: 总服务单数
+        nullable: false
+        default: 0
+      completion_rate:
+        type: DECIMAL(5,2)
+        comment: 履约率（%）
+        nullable: false
+        default: 100.0
+      avg_rating:
+        type: DECIMAL(3,2)
+        comment: 用户平均评分(1-5)
+        nullable: false
+        default: 5.0
+      complaint_count:
+        type: INT
+        comment: 投诉数量
+        nullable: false
+        default: 0
+      on_time_rate:
+        type: DECIMAL(5,2)
+        comment: 准时率（%）
+        nullable: false
+        default: 100.0
+      score_level:
+        type: CHAR(1)
+        comment: 评分等级：S/A/B/C/D
+        nullable: false
+        default: A
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_merchant_complaint:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 商家投诉表
+    primary_key:
+    - complaint_id
+    columns:
+      complaint_id:
+        type: BIGINT
+        comment: 投诉ID
+        nullable: false
+        auto_increment: true
+      merchant_id:
+        type: BIGINT
+        comment: 商家ID
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 投诉用户ID
+        nullable: false
+      complaint_content:
+        type: VARCHAR(512)
+        comment: 投诉内容
+        nullable: false
+      complaint_time:
+        type: DATETIME
+        comment: 投诉时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      handle_status:
+        type: TINYINT
+        comment: 处理状态：0-未处理，1-处理中，2-已处理
+        nullable: false
+        default: 0
+      handle_result:
+        type: VARCHAR(256)
+        comment: 处理结果
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_merchant_qualification:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 商家资质表
+    primary_key:
+    - qual_id
+    columns:
+      qual_id:
+        type: BIGINT
+        comment: 资质ID
+        nullable: false
+        auto_increment: true
+      merchant_id:
+        type: BIGINT
+        comment: 商家ID
+        nullable: false
+      cert_type:
+        type: VARCHAR(32)
+        comment: 证件类型（营业执照/行业许可证）
+        nullable: false
+      cert_no:
+        type: VARCHAR(64)
+        comment: 证件编号
+        nullable: false
+      cert_image:
+        type: VARCHAR(256)
+        comment: 证件图片URL
+        nullable: false
+      expire_date:
+        type: DATE
+        comment: 有效期
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_gov_insurance_product:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 惠民保产品表
+    primary_key:
+    - product_code
+    columns:
+      product_code:
+        type: VARCHAR(32)
+        comment: 产品代码
+        nullable: false
+      product_name:
+        type: VARCHAR(128)
+        comment: 产品名称
+        nullable: false
+      region:
+        type: VARCHAR(64)
+        comment: 地区（省/市）
+        nullable: false
+      coverage:
+        type: JSON
+        comment: 保障范围
+        nullable: false
+      premium_subsidy:
+        type: INT
+        comment: 政府补贴金额（分）
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-在售，0-停售
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_gov_insurance_policy:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 惠民保单表
+    primary_key:
+    - policy_no
+    columns:
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      product_code:
+        type: VARCHAR(32)
+        comment: 产品代码
+        nullable: false
+      subsidy_amount:
+        type: INT
+        comment: 补贴金额（分）
+        nullable: false
+      self_pay_amount:
+        type: INT
+        comment: 个人自付金额（分）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_public_welfare_points:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 公益积分表
+    primary_key:
+    - welfare_id
+    columns:
+      welfare_id:
+        type: BIGINT
+        comment: 公益ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      points:
+        type: INT
+        comment: 公益积分
+        nullable: false
+      source:
+        type: TINYINT
+        comment: 来源：1-安全驾驶，2-公益活动
+        nullable: false
+      convert_time:
+        type: DATETIME
+        comment: 转化时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_blackspot_road:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 隐患路段表
+    primary_key:
+    - road_id
+    columns:
+      road_id:
+        type: BIGINT
+        comment: 路段ID
+        nullable: false
+        auto_increment: true
+      road_name:
+        type: VARCHAR(128)
+        comment: 路段名称
+        nullable: false
+      location_gps:
+        type: POINT
+        comment: 经纬度
+        nullable: false
+      risk_type:
+        type: VARCHAR(32)
+        comment: 风险类型（弯道盲区/行人横穿等）
+        nullable: false
+      accident_count:
+        type: INT
+        comment: 历史事故数量
+        nullable: false
+        default: 0
+      improvement_status:
+        type: TINYINT
+        comment: 改造状态：0-待改造，1-改造中，2-已完成
+        nullable: false
+        default: 0
+      donation_amount:
+        type: INT
+        comment: 平安捐赠金额（分）
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_road_improvement_project:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 路段改造项目表
+    primary_key:
+    - project_id
+    columns:
+      project_id:
+        type: BIGINT
+        comment: 项目ID
+        nullable: false
+        auto_increment: true
+      road_id:
+        type: BIGINT
+        comment: 路段ID
+        nullable: false
+      project_name:
+        type: VARCHAR(128)
+        comment: 项目名称
+        nullable: false
+      start_date:
+        type: DATE
+        comment: 开始日期
+        nullable: false
+      end_date:
+        type: DATE
+        comment: 结束日期
+        nullable: true
+        default: null
+      budget:
+        type: INT
+        comment: 预算（分）
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-进行中，2-已完成，3-暂停
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_agricultural_policy:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 政策性农险保单扩展表
+    primary_key:
+    - policy_no
+    columns:
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      farmer_name:
+        type: VARCHAR(64)
+        comment: 农户姓名
+        nullable: false
+      crop_type:
+        type: VARCHAR(64)
+        comment: 作物类型
+        nullable: false
+        enum_values:
+        - value: 水稻
+          label: 水稻
+      insured_area:
+        type: DECIMAL(10,2)
+        comment: 投保面积（亩）
+        nullable: false
+      subsidy_rate:
+        type: DECIMAL(5,2)
+        comment: 补贴比例（%）
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_compliance_report:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 监管报表表
+    primary_key:
+    - report_id
+    columns:
+      report_id:
+        type: BIGINT
+        comment: 报表ID
+        nullable: false
+        auto_increment: true
+      report_type:
+        type: VARCHAR(32)
+        comment: 报表类型（如偿付能力报告）
+        nullable: false
+        enum_values:
+        - value: 偿付能力
+          label: 偿付能力
+        - value: 资产负债
+          label: 资产负债
+      report_date:
+        type: DATE
+        comment: 报表日期
+        nullable: false
+      file_url:
+        type: VARCHAR(256)
+        comment: 文件URL
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态：1-已生成，2-已报送
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_data_audit_log:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 数据审计日志表
+    primary_key:
+    - log_id
+    columns:
+      log_id:
+        type: BIGINT
+        comment: 日志ID
+        nullable: false
+        auto_increment: true
+      operator_id:
+        type: BIGINT
+        comment: 操作人ID
+        nullable: true
+        default: null
+      operation_type:
+        type: TINYINT
+        comment: 操作类型：1-INSERT，2-UPDATE，3-DELETE
+        nullable: false
+      table_name:
+        type: VARCHAR(64)
+        comment: 表名
+        nullable: false
+      record_id:
+        type: VARCHAR(64)
+        comment: 记录主键
+        nullable: false
+      before_json:
+        type: JSON
+        comment: 修改前JSON
+        nullable: true
+        default: null
+      after_json:
+        type: JSON
+        comment: 修改后JSON
+        nullable: true
+        default: null
+      operation_time:
+        type: DATETIME
+        comment: 操作时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_complaint_record:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 消费者投诉表
+    primary_key:
+    - complaint_id
+    columns:
+      complaint_id:
+        type: BIGINT
+        comment: 投诉ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 投诉用户ID
+        nullable: false
+      policy_no:
+        type: VARCHAR(32)
+        comment: 关联保单号
+        nullable: true
+        default: null
+      claim_no:
+        type: VARCHAR(32)
+        comment: 关联理赔单号
+        nullable: true
+        default: null
+      complaint_content:
+        type: VARCHAR(1024)
+        comment: 投诉内容
+        nullable: false
+      handle_result:
+        type: VARCHAR(512)
+        comment: 处理结果
+        nullable: true
+        default: null
+      close_time:
+        type: DATETIME
+        comment: 结案时间
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态：0-待处理，1-处理中，2-已结案
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_anti_fraud_graph:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 反欺诈图数据表（节点）
+    primary_key:
+    - node_id
+    columns:
+      node_id:
+        type: BIGINT
+        comment: 节点ID
+        nullable: false
+        auto_increment: true
+      node_type:
+        type: TINYINT
+        comment: 节点类型：1-用户，2-车辆，3-修理厂，4-查勘员
+        nullable: false
+      node_properties_json:
+        type: JSON
+        comment: 节点属性
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_system_config:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 系统参数配置表
+    primary_key:
+    - config_key
+    columns:
+      config_key:
+        type: VARCHAR(64)
+        comment: 配置键
+        nullable: false
+      config_value:
+        type: TEXT
+        comment: 配置值
+        nullable: false
+      description:
+        type: VARCHAR(256)
+        comment: 说明
+        nullable: true
+        default: null
+      update_time:
+        type: DATETIME
+        comment: 更新时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_dict:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 数据字典表
+    primary_key:
+    - dict_id
+    columns:
+      dict_id:
+        type: BIGINT
+        comment: 字典ID
+        nullable: false
+        auto_increment: true
+      dict_type:
+        type: VARCHAR(32)
+        comment: 字典类型
+        nullable: false
+      dict_key:
+        type: VARCHAR(32)
+        comment: 字典键
+        nullable: false
+      dict_value:
+        type: VARCHAR(128)
+        comment: 字典值
+        nullable: false
+      sort_order:
+        type: INT
+        comment: 排序
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_region:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 行政区划表
+    primary_key:
+    - region_id
+    columns:
+      region_id:
+        type: BIGINT
+        comment: 区域ID
+        nullable: false
+        auto_increment: true
+      parent_id:
+        type: BIGINT
+        comment: 上级区域ID
+        nullable: true
+        default: null
+      region_name:
+        type: VARCHAR(64)
+        comment: 区域名称
+        nullable: false
+      region_code:
+        type: VARCHAR(16)
+        comment: 区域代码（行政区划代码）
+        nullable: false
+      level:
+        type: TINYINT
+        comment: 层级：1-省，2-市，3-区县
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_org:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 组织机构表
+    primary_key:
+    - org_id
+    columns:
+      org_id:
+        type: BIGINT
+        comment: 机构ID
+        nullable: false
+        auto_increment: true
+      parent_id:
+        type: BIGINT
+        comment: 上级机构ID
+        nullable: true
+        default: null
+      org_name:
+        type: VARCHAR(128)
+        comment: 机构名称
+        nullable: false
+      org_code:
+        type: VARCHAR(32)
+        comment: 机构代码
+        nullable: false
+      org_type:
+        type: TINYINT
+        comment: 机构类型：1-总公司，2-分公司，3-支公司，4-营销服务部
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_user_behavior_log:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 用户行为埋点表
+    columns:
+      log_id:
+        type: BIGINT
+        comment: 日志ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID（未登录可为空）
+        nullable: true
+        default: null
+      device_id:
+        type: VARCHAR(64)
+        comment: 设备ID
+        nullable: true
+        default: null
+      event_name:
+        type: VARCHAR(64)
+        comment: 事件名称
+        nullable: false
+      event_params_json:
+        type: JSON
+        comment: 事件参数
+        nullable: false
+      page_name:
+        type: VARCHAR(128)
+        comment: 页面名称
+        nullable: true
+        default: null
+      session_id:
+        type: VARCHAR(64)
+        comment: 会话ID
+        nullable: true
+        default: null
+      event_time:
+        type: DATETIME
+        comment: 事件时间
+        nullable: false
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_agent_performance:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 代理人业绩表
+    primary_key:
+    - performance_id
+    columns:
+      performance_id:
+        type: BIGINT
+        comment: 业绩ID
+        nullable: false
+        auto_increment: true
+      agent_id:
+        type: BIGINT
+        comment: 代理人ID
+        nullable: false
+      stat_date:
+        type: DATE
+        comment: 统计日期
+        nullable: false
+      policy_count:
+        type: INT
+        comment: 出单数量
+        nullable: true
+        default: 0
+      premium_total:
+        type: BIGINT
+        comment: 总保费（分）
+        nullable: true
+        default: 0
+      commission_total:
+        type: BIGINT
+        comment: 总佣金（分）
+        nullable: true
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_agent_tool_log:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 代理人展业工具日志
+    primary_key:
+    - log_id
+    columns:
+      log_id:
+        type: BIGINT
+        comment: 日志ID
+        nullable: false
+        auto_increment: true
+      agent_id:
+        type: BIGINT
+        comment: 代理人ID
+        nullable: false
+      tool_type:
+        type: TINYINT
+        comment: 工具类型(1-展业码 2-分享链接 3-APP)
+        nullable: false
+      target_id:
+        type: VARCHAR(64)
+        comment: 目标对象ID(保单号/活动ID等)
+        nullable: true
+        default: null
+      operate_time:
+        type: DATETIME
+        comment: 操作时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      etl_time:
+        type: DATETIME
+        comment: ETL时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_policy_renewal:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 续保记录表
+    primary_key:
+    - renewal_id
+    columns:
+      renewal_id:
+        type: BIGINT
+        comment: 续保ID
+        nullable: false
+        auto_increment: true
+      original_policy_no:
+        type: VARCHAR(32)
+        comment: 原保单号
+        nullable: false
+      new_policy_no:
+        type: VARCHAR(32)
+        comment: 新保单号
+        nullable: false
+      renewal_date:
+        type: DATE
+        comment: 续保日期
+        nullable: false
+      renewal_channel:
+        type: VARCHAR(32)
+        comment: 续保渠道
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_subsidy_record:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 补贴记录表
+    primary_key:
+    - subsidy_id
+    columns:
+      subsidy_id:
+        type: BIGINT
+        comment: 补贴ID
+        nullable: false
+        auto_increment: true
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      subsidy_type:
+        type: VARCHAR(32)
+        comment: 补贴类型(农险补贴/惠民保补贴)
+        nullable: false
+      subsidy_amount:
+        type: INT
+        comment: 补贴金额（分）
+        nullable: false
+      subsidy_date:
+        type: DATE
+        comment: 补贴日期
+        nullable: false
+      source:
+        type: VARCHAR(64)
+        comment: 补贴来源(政府/公司)
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_financial_report:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 财务报告表
+    primary_key:
+    - report_id
+    columns:
+      report_id:
+        type: BIGINT
+        comment: 报告ID
+        nullable: false
+        auto_increment: true
+      report_type:
+        type: VARCHAR(32)
+        comment: 报告类型(偿付能力/资产负债)
+        nullable: false
+      report_date:
+        type: DATE
+        comment: 报告日期
+        nullable: false
+      file_url:
+        type: VARCHAR(256)
+        comment: 文件路径
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态(1-已生成 2-已报送)
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_shopping_cart:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 购物车表
+    primary_key:
+    - cart_id
+    columns:
+      cart_id:
+        type: BIGINT
+        comment: 购物车ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      product_id:
+        type: BIGINT
+        comment: 商品ID
+        nullable: false
+      quantity:
+        type: INT
+        comment: 数量
+        nullable: false
+        default: 1
+      add_time:
+        type: DATETIME
+        comment: 加入时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_user_feedback:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 用户反馈表
+    primary_key:
+    - feedback_id
+    columns:
+      feedback_id:
+        type: BIGINT
+        comment: 反馈ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      feedback_type:
+        type: TINYINT
+        comment: 类型(1-评价 2-投诉 3-建议)
+        nullable: false
+      target_id:
+        type: VARCHAR(64)
+        comment: 关联对象ID(保单号/订单号)
+        nullable: true
+        default: null
+      content:
+        type: VARCHAR(1024)
+        comment: 反馈内容
+        nullable: false
+      score:
+        type: TINYINT
+        comment: 评分(1-5)
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_enterprise_legal:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 企业法律服务表
+    primary_key:
+    - service_id
+    columns:
+      service_id:
+        type: BIGINT
+        comment: 服务ID
+        nullable: false
+        auto_increment: true
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      request_time:
+        type: DATETIME
+        comment: 请求时间
+        nullable: false
+      service_type:
+        type: VARCHAR(32)
+        comment: 服务类型(法律咨询/找律师)
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态(1-处理中 2-已完成)
+        nullable: false
+        default: 1
+      result:
+        type: VARCHAR(512)
+        comment: 处理结果
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_enterprise_assistant:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 企业助手服务表
+    primary_key:
+    - service_id
+    columns:
+      service_id:
+        type: BIGINT
+        comment: 服务ID
+        nullable: false
+        auto_increment: true
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      service_type:
+        type: VARCHAR(32)
+        comment: 服务类型(企业培训/年检代办)
+        nullable: false
+      request_time:
+        type: DATETIME
+        comment: 请求时间
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态(1-处理中 2-已完成)
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_fleet_management:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 车队管理表
+    primary_key:
+    - fleet_id
+    columns:
+      fleet_id:
+        type: BIGINT
+        comment: 车队ID
+        nullable: false
+        auto_increment: true
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      vehicle_id:
+        type: BIGINT
+        comment: 车辆ID
+        nullable: false
+      driver_id:
+        type: BIGINT
+        comment: 驾驶员ID(关联用户)
+        nullable: true
+        default: null
+      add_time:
+        type: DATETIME
+        comment: 添加时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      remove_time:
+        type: DATETIME
+        comment: 移除时间
+        nullable: true
+        default: null
+  pingan_insurance_employee_benefit:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 员工福利表
+    primary_key:
+    - benefit_id
+    columns:
+      benefit_id:
+        type: BIGINT
+        comment: 福利ID
+        nullable: false
+        auto_increment: true
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      employee_id:
+        type: BIGINT
+        comment: 员工用户ID
+        nullable: false
+      benefit_type:
+        type: VARCHAR(32)
+        comment: 福利类型(健康/体检/卡券)
+        nullable: false
+      benefit_amount:
+        type: INT
+        comment: 福利金额（分）
+        nullable: true
+        default: null
+      benefit_time:
+        type: DATETIME
+        comment: 发放时间
+        nullable: false
+      status:
+        type: TINYINT
+        comment: 状态(1-有效 0-已使用)
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_service_guarantee:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 服务保障记录表
+    primary_key:
+    - guarantee_id
+    columns:
+      guarantee_id:
+        type: BIGINT
+        comment: 保障ID
+        nullable: false
+        auto_increment: true
+      service_order_no:
+        type: VARCHAR(32)
+        comment: 服务订单号
+        nullable: false
+      guarantee_type:
+        type: VARCHAR(32)
+        comment: 保障类型(洗车重洗/代驾补偿)
+        nullable: false
+      trigger_time:
+        type: DATETIME
+        comment: 触发时间
+        nullable: false
+      compensation_amount:
+        type: INT
+        comment: 补偿金额（分）
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态(1-待处理 2-已处理)
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_merchant_region:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 商家区域覆盖表
+    primary_key:
+    - region_id
+    columns:
+      region_id:
+        type: BIGINT
+        comment: 区域ID
+        nullable: false
+        auto_increment: true
+      merchant_id:
+        type: BIGINT
+        comment: 商家ID
+        nullable: false
+      province:
+        type: VARCHAR(32)
+        comment: 省
+        nullable: false
+      city:
+        type: VARCHAR(32)
+        comment: 市
+        nullable: false
+      district:
+        type: VARCHAR(32)
+        comment: 区
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_merchant_service_type:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 商家服务类型表
+    primary_key:
+    - type_id
+    columns:
+      type_id:
+        type: BIGINT
+        comment: 类型ID
+        nullable: false
+        auto_increment: true
+      merchant_id:
+        type: BIGINT
+        comment: 商家ID
+        nullable: false
+      service_type:
+        type: TINYINT
+        comment: 服务类型(1-洗车 2-保养 3-加油...)
+        nullable: false
+      price_standard:
+        type: JSON
+        comment: 价格标准
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_welfare_entitlement:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 公益权益表
+    primary_key:
+    - entitlement_id
+    columns:
+      entitlement_id:
+        type: BIGINT
+        comment: 权益ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      entitlement_type:
+        type: VARCHAR(32)
+        comment: 权益类型(道路救援/三免理赔)
+        nullable: false
+      grant_time:
+        type: DATETIME
+        comment: 授予时间
+        nullable: false
+      expire_time:
+        type: DATETIME
+        comment: 过期时间
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态(1-有效 0-已使用)
+        nullable: false
+        default: 1
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_safe_driving_score:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 安全驾驶评分表
+    primary_key:
+    - score_id
+    columns:
+      score_id:
+        type: BIGINT
+        comment: 评分ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      vehicle_id:
+        type: BIGINT
+        comment: 车辆ID
+        nullable: true
+        default: null
+      score_date:
+        type: DATE
+        comment: 评分日期
+        nullable: false
+      score:
+        type: DECIMAL(5,2)
+        comment: 评分(0-100)
+        nullable: false
+      model_version:
+        type: VARCHAR(32)
+        comment: 模型版本
+        nullable: true
+        default: null
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_risk_hidden_danger:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 风险隐患表
+    primary_key:
+    - danger_id
+    columns:
+      danger_id:
+        type: BIGINT
+        comment: 隐患ID
+        nullable: false
+        auto_increment: true
+      enterprise_id:
+        type: BIGINT
+        comment: 企业ID
+        nullable: false
+      danger_type:
+        type: VARCHAR(64)
+        comment: 隐患类型
+        nullable: false
+      description:
+        type: VARCHAR(512)
+        comment: 描述
+        nullable: false
+      discovery_date:
+        type: DATE
+        comment: 发现日期
+        nullable: false
+      fix_date:
+        type: DATE
+        comment: 整改日期
+        nullable: true
+        default: null
+      status:
+        type: TINYINT
+        comment: 状态(0-未整改 1-已整改)
+        nullable: false
+        default: 0
+      create_time:
+        type: DATETIME
+        comment: 创建时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+  pingan_insurance_claim_progress_query_log:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 理赔进度查询日志
+    primary_key:
+    - query_id
+    columns:
+      query_id:
+        type: BIGINT
+        comment: 查询ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      claim_no:
+        type: VARCHAR(32)
+        comment: 理赔单号
+        nullable: false
+      query_time:
+        type: DATETIME
+        comment: 查询时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      result:
+        type: JSON
+        comment: 查询结果快照
+        nullable: true
+        default: null
+  pingan_insurance_policy_query_log:
+    catalog: paimon
+    database: cx_ods_safe
+    layer: ODS
+    comment: 保单查询日志
+    primary_key:
+    - query_id
+    columns:
+      query_id:
+        type: BIGINT
+        comment: 查询ID
+        nullable: false
+        auto_increment: true
+      user_id:
+        type: BIGINT
+        comment: 用户ID
+        nullable: false
+      policy_no:
+        type: VARCHAR(32)
+        comment: 保单号
+        nullable: false
+      query_time:
+        type: DATETIME
+        comment: 查询时间
+        nullable: false
+        default: CURRENT_TIMESTAMP
+      result:
+        type: JSON
+        comment: 查询结果快照
+        nullable: true
+        default: null
